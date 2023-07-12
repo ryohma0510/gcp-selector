@@ -1,5 +1,6 @@
-// List of sample services and projects for autoComplete.js
-const projects = ["project1", "project2", "project3", "organic-bivouac-353101"];
+const projects = await chrome.storage.local.get('projects', function (result) {
+    return result;
+});
 const services = [
     {
         "title": "AI Platform Jobs",
