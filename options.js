@@ -2,10 +2,10 @@
 async function save_options() {
     var newProjectID = document.getElementById('project-id').value;
 
-    let projectIDs = await chrome.storate.sync.get('projectIDs')
+    let projectIDs = await chrome.storage.local.get('projectIDs')
     projectIDs.push(newProjectID)
 
-    chrome.storage.sync.set({
+    chrome.storage.local.set({
         projectIDs: projectIDs
     }, function () {
         restore_options();
@@ -15,7 +15,7 @@ async function save_options() {
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
 function restore_options() {
-    chrome.storage.sync.get({
+    chrome.storage.local.get({
         favoriteColor: 'red',
     }, function (items) {
         let projects = []
