@@ -2,7 +2,7 @@ document.getElementById('service').addEventListener('keypress', function(event) 
     // Enterキーが押された場合
     if (event.key === 'Enter') {
       event.preventDefault(); // デフォルトのEnterキーの動作を防止
-      this.submit(); // フォームを送信
+      document.getElementById('myForm').submit();
     }
   });
 
