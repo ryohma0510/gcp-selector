@@ -2,7 +2,7 @@
 async function save_options() {
     var newProjectID = document.getElementById('project-id').value;
 
-    let projectIDs = await chrome.storate.get('projectIDs')
+    let projectIDs = await chrome.storate.sync.get('projectIDs')
     projectIDs.push(newProjectID)
 
     chrome.storage.sync.set({
