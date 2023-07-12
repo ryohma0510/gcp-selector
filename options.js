@@ -1,14 +1,16 @@
 // Saves options to chrome.storage
-async function save_options() {
+function save_options() {
     var newProjectID = document.getElementById('project-id').value;
 
-    let projectIDs = await chrome.storage.local.get('projectIDs')
-    projectIDs.push(newProjectID)
+    chrome.storage.local.get('projectIDs', function(data) {
+        let projectIDs = data.projectIDs || [];
+        projectIDs.push(newProjectID);
 
-    chrome.storage.local.set({
-        projectIDs: projectIDs
-    }, function () {
-        restore_options();
+        chrome.storage.local.set({
+            projectIDs: projectIDs
+        }, function () {
+            restore_options();
+        });
     });
 }
 
@@ -16,14 +18,13 @@ async function save_options() {
 // stored in chrome.storage.
 function restore_options() {
     chrome.storage.local.get({
-        favoriteColor: 'red',
+        projectIDs: [],
     }, function (items) {
         let projects = []
 
         // itemsの中身をliタグに入れた配列を作りたい
-        for (let i = 0; i < items.length; i++) {
-            const element = array[i];
-
+        for (let i = 0; i < items.projectIDs.length; i++) {
+            const element = items.projectIDs[i];
             projects.push(`<li>${element}</li>`)
         }
 
