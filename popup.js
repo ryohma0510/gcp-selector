@@ -230,6 +230,9 @@ const projectAutoCompleteJS = new autoComplete({
     data: {
         src: projects,
     },
+    resultItem: {
+        highlight: true
+    },
     events: {
         input: {
             selection: (event) => {
@@ -246,6 +249,9 @@ const serviceAutoCompleteJS = new autoComplete({
     data: {
         src: services,
         keys: ["title"]
+    },
+    resultItem: {
+        highlight: true
     },
     events: {
         input: {
