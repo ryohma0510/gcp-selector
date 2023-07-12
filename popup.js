@@ -1,6 +1,3 @@
-const projects = await chrome.storage.local.get('projects', function (result) {
-    return result;
-});
 const services = [
     {
         "title": "AI Platform Jobs",
@@ -268,3 +265,11 @@ const serviceAutoCompleteJS = new autoComplete({
         }
     }
 });
+
+function loadProjects() {
+    chrome.storage.local.get('projects', function (result) {
+        projects = result.projectIDs
+    });
+}
+
+document.addEventListener('DOMContentLoaded', loadProjects);
