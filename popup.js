@@ -1,3 +1,4 @@
+let projects = [];
 const services = [
     {
         "title": "AI Platform Jobs",
