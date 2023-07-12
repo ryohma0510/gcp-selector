@@ -1,4 +1,3 @@
-let projects = [];
 const services = [
     {
         "title": "AI Platform Jobs",
@@ -212,65 +211,68 @@ const services = [
 
 
 
-function handleProjectSelection(event) {
-    const selection = event.detail.selection.value;
-    projectAutoCompleteJS.input.value = selection;
-    document.getElementById('service').focus();
-}
 
-function handleServiceSelection(event) {
-    const selection = event.detail.selection.value;
-    serviceAutoCompleteJS.input.value = selection['title'];
-    document.getElementById('service-url').value = selection['url']
 
-    openServiceURL();
-}
-
-function openServiceURL() {
-    const projectName = document.getElementById('project').value;
-    const serviceURL = document.getElementById('service-url').value;
-
-    const url = serviceURL + '?project=' + projectName;
-
-    // Open the URL in a new tab
-    window.open(url, '_blank');
-}
-
-const projectAutoCompleteJS = new autoComplete({
-    selector: "#project",
-    data: {
-        src: projects,
-    },
-    resultItem: {
-        highlight: true
-    },
-    events: {
-        input: {
-            selection: handleProjectSelection
-        }
-    }
-});
-
-const serviceAutoCompleteJS = new autoComplete({
-    selector: "#service",
-    data: {
-        src: services,
-        keys: ["title"]
-    },
-    resultItem: {
-        highlight: true
-    },
-    events: {
-        input: {
-            selection: handleServiceSelection
-        }
-    }
-});
-
-function loadProjects() {
+function onDOMContentLoaded() {
+    let projects = [];
     chrome.storage.local.get('projects', function (result) {
         projects = result.projectIDs
     });
+
+    function handleProjectSelection(event) {
+        const selection = event.detail.selection.value;
+        projectAutoCompleteJS.input.value = selection;
+        document.getElementById('service').focus();
+    }
+    
+    function handleServiceSelection(event) {
+        const selection = event.detail.selection.value;
+        serviceAutoCompleteJS.input.value = selection['title'];
+        document.getElementById('service-url').value = selection['url']
+    
+        openServiceURL();
+    }
+    
+    function openServiceURL() {
+        const projectName = document.getElementById('project').value;
+        const serviceURL = document.getElementById('service-url').value;
+    
+        const url = serviceURL + '?project=' + projectName;
+    
+        // Open the URL in a new tab
+        window.open(url, '_blank');
+    }
+    
+    const projectAutoCompleteJS = new autoComplete({
+        selector: "#project",
+        data: {
+            src: projects,
+        },
+        resultItem: {
+            highlight: true
+        },
+        events: {
+            input: {
+                selection: handleProjectSelection
+            }
+        }
+    });
+    
+    const serviceAutoCompleteJS = new autoComplete({
+        selector: "#service",
+        data: {
+            src: services,
+            keys: ["title"]
+        },
+        resultItem: {
+            highlight: true
+        },
+        events: {
+            input: {
+                selection: handleServiceSelection
+            }
+        }
+    });
 }
 
-document.addEventListener('DOMContentLoaded', loadProjects);
+document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
