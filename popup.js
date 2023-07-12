@@ -251,7 +251,7 @@ const serviceAutoCompleteJS = new autoComplete({
         input: {
             selection: (event) => {
                 const selection = event.detail.selection.value;
-                serviceAutoCompleteJS.input.value = selection;
+                serviceAutoCompleteJS.input.value = selection['title'];
                 document.getElementById('service-url').value = selection['url']
             }
         }
