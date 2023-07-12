@@ -20,6 +20,14 @@ new autoComplete({
     data: {
         src: services,
     },
+    events: {
+        input: {
+            selection: (event) => {
+                const selection = event.detail.selection.value;
+                autoCompleteJS.input.value = selection;
+            }
+        }
+    }
 });
 
 new autoComplete({
@@ -27,4 +35,12 @@ new autoComplete({
     data: {
         src: projects,
     },
+    events: {
+        input: {
+            selection: (event) => {
+                const selection = event.detail.selection.value;
+                autoCompleteJS.input.value = selection;
+            }
+        }
+    }
 });
