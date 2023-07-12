@@ -260,7 +260,14 @@ const serviceAutoCompleteJS = new autoComplete({
                 const selection = event.detail.selection.value;
                 serviceAutoCompleteJS.input.value = selection['title'];
                 document.getElementById('service-url').value = selection['url']
-                document.getElementById('myForm').submit();
+                
+                var projectName = document.getElementById('project').value;
+                var serviceURL = document.getElementById('service-url').value;
+            
+                var url = serviceURL + '?project=' + projectName;
+            
+                // Open the URL in a new tab
+                window.open(url, '_blank');
             }
         }
     }
