@@ -1,11 +1,3 @@
-document.getElementById('service').addEventListener('keypress', function(event) {
-    // Enterキーが押された場合
-    if (event.key === 'Enter') {
-      event.preventDefault(); // デフォルトのEnterキーの動作を防止
-      document.getElementById('myForm').submit();
-    }
-  });
-
 document.getElementById('myForm').addEventListener('submit', function (e) {
     e.preventDefault(); // Stop form from trying to submit
 
@@ -268,6 +260,7 @@ const serviceAutoCompleteJS = new autoComplete({
                 const selection = event.detail.selection.value;
                 serviceAutoCompleteJS.input.value = selection['title'];
                 document.getElementById('service-url').value = selection['url']
+                document.getElementById('myForm').submit();
             }
         }
     }
