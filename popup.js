@@ -4,7 +4,7 @@ document.getElementById('myForm').addEventListener('submit', function (e) {
     var projectName = document.getElementById('project').value;
     var serviceURL = document.getElementById('service-url').value;
 
-    var url = 'https://console.cloud.google.com/' + serviceURL + '?project=' + projectName;
+    var url = serviceURL + '?project=' + projectName;
 
     // Open the URL in a new tab
     window.open(url, '_blank');
