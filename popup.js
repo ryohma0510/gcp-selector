@@ -12,8 +12,8 @@ document.getElementById('myForm').addEventListener('submit', function (e) {
 
 
 // List of sample services and projects for autoComplete.js
-const services = ["service1", "service2", "service3"];
-const projects = [
+const projects = ["project1", "project2", "project3"];
+const services = [
     {
         "title": "AI Platform Jobs",
         "url": "https://console.cloud.google.com/ai-platform/jobs"
