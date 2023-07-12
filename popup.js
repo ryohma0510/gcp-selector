@@ -238,6 +238,7 @@ const projectAutoCompleteJS = new autoComplete({
             selection: (event) => {
                 const selection = event.detail.selection.value;
                 projectAutoCompleteJS.input.value = selection;
+                document.getElementById('service').focus();
             }
         }
     }
