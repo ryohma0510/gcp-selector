@@ -1,26 +1,33 @@
 // Saves options to chrome.storage
-function save_options() {
-    var color = document.getElementById('color').value;
+async function save_options() {
+    var newProjectID = document.getElementById('project-id').value;
+
+    let projectIDs = await chrome.storate.get('projectIDs')
+    projectIDs.push(newProjectID)
+
     chrome.storage.sync.set({
-        favoriteColor: color,
+        projectIDs: projectIDs
     }, function () {
-        // Update status to let user know options were saved.
-        var status = document.getElementById('status');
-        status.textContent = 'Options saved.';
-        setTimeout(function () {
-            status.textContent = '';
-        }, 750);
+        restore_options();
     });
 }
 
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
 function restore_options() {
-    // Use default value color = 'red'
     chrome.storage.sync.get({
         favoriteColor: 'red',
     }, function (items) {
-        document.getElementById('color').value = items.favoriteColor;
+        let projects = []
+
+        // itemsの中身をliタグに入れた配列を作りたい
+        for (let i = 0; i < items.length; i++) {
+            const element = array[i];
+
+            projects.push(`<li>${element}</li>`)
+        }
+
+        document.getElementById('projects').innerHTML = projects.join('')
     });
 }
 
