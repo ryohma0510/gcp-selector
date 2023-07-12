@@ -15,22 +15,8 @@ document.getElementById('myForm').addEventListener('submit', function (e) {
 const services = ["service1", "service2", "service3"];
 const projects = ["project1", "project2", "project3"];
 
-new autoComplete({
-    selector: "#service",
-    data: {
-        src: services,
-    },
-    events: {
-        input: {
-            selection: (event) => {
-                const selection = event.detail.selection.value;
-                autoCompleteJS.input.value = selection;
-            }
-        }
-    }
-});
 
-new autoComplete({
+const projectAutoCompleteJS = new autoComplete({
     selector: "#project",
     data: {
         src: projects,
@@ -39,7 +25,23 @@ new autoComplete({
         input: {
             selection: (event) => {
                 const selection = event.detail.selection.value;
-                autoCompleteJS.input.value = selection;
+                projectAutoCompleteJS.input.value = selection;
+            }
+        }
+    }
+});
+
+
+const serviceAutoCompleteJS = new autoComplete({
+    selector: "#service",
+    data: {
+        src: services,
+    },
+    events: {
+        input: {
+            selection: (event) => {
+                const selection = event.detail.selection.value;
+                serviceAutoCompleteJS.input.value = selection;
             }
         }
     }
