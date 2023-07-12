@@ -1,16 +1,3 @@
-document.getElementById('myForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Stop form from trying to submit
-
-    var projectName = document.getElementById('project').value;
-    var serviceURL = document.getElementById('service-url').value;
-
-    var url = serviceURL + '?project=' + projectName;
-
-    // Open the URL in a new tab
-    window.open(url, '_blank');
-});
-
-
 // List of sample services and projects for autoComplete.js
 const projects = ["project1", "project2", "project3", "organic-bivouac-353101"];
 const services = [
@@ -225,6 +212,31 @@ const services = [
 ];
 
 
+
+function handleProjectSelection(event) {
+    const selection = event.detail.selection.value;
+    projectAutoCompleteJS.input.value = selection;
+    document.getElementById('service').focus();
+}
+
+function handleServiceSelection(event) {
+    const selection = event.detail.selection.value;
+    serviceAutoCompleteJS.input.value = selection['title'];
+    document.getElementById('service-url').value = selection['url']
+
+    openServiceURL();
+}
+
+function openServiceURL() {
+    const projectName = document.getElementById('project').value;
+    const serviceURL = document.getElementById('service-url').value;
+
+    const url = serviceURL + '?project=' + projectName;
+
+    // Open the URL in a new tab
+    window.open(url, '_blank');
+}
+
 const projectAutoCompleteJS = new autoComplete({
     selector: "#project",
     data: {
@@ -235,15 +247,10 @@ const projectAutoCompleteJS = new autoComplete({
     },
     events: {
         input: {
-            selection: (event) => {
-                const selection = event.detail.selection.value;
-                projectAutoCompleteJS.input.value = selection;
-                document.getElementById('service').focus();
-            }
+            selection: handleProjectSelection
         }
     }
 });
-
 
 const serviceAutoCompleteJS = new autoComplete({
     selector: "#service",
@@ -256,19 +263,7 @@ const serviceAutoCompleteJS = new autoComplete({
     },
     events: {
         input: {
-            selection: (event) => {
-                const selection = event.detail.selection.value;
-                serviceAutoCompleteJS.input.value = selection['title'];
-                document.getElementById('service-url').value = selection['url']
-                
-                var projectName = document.getElementById('project').value;
-                var serviceURL = document.getElementById('service-url').value;
-            
-                var url = serviceURL + '?project=' + projectName;
-            
-                // Open the URL in a new tab
-                window.open(url, '_blank');
-            }
+            selection: handleServiceSelection
         }
     }
 });
