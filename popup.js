@@ -1,4 +1,7 @@
-const storageKeyProjectIDs = 'projectIDs';
+const storageKeyProjectIDs = 'storageKeyProjectIDs';
+const htmlKeyProjectID = 'htmlKeyProjectID';
+const htmlKeyServiceName = 'htmlKeyServiceName';
+const htmlKeyServiceURL = 'htmlKeyServiceURL';
 
 const services = [
     {
@@ -220,7 +223,7 @@ function onDOMContentLoaded() {
         let projects = result[storageKeyProjectIDs] || [];
 
         const projectAutoCompleteJS = new autoComplete({
-            selector: "#project",
+            selector: "#" + htmlKeyProjectID,
             data: {
                 src: projects,
             },
@@ -232,14 +235,14 @@ function onDOMContentLoaded() {
                     selection: function handleProjectSelection(event) {
                         const selection = event.detail.selection.value;
                         projectAutoCompleteJS.input.value = selection;
-                        document.getElementById('service').focus();
+                        document.getElementById(htmlKeyServiceName).focus();
                     }
                 }
             }
         });
 
         const serviceAutoCompleteJS = new autoComplete({
-            selector: "#service",
+            selector: "#" + htmlKeyServiceName,
             data: {
                 src: services,
                 keys: ["title"]
@@ -252,7 +255,7 @@ function onDOMContentLoaded() {
                     selection: function handleServiceSelection(event) {
                         const selection = event.detail.selection.value;
                         serviceAutoCompleteJS.input.value = selection['title'];
-                        document.getElementById('service-url').value = selection['url']
+                        document.getElementById(htmlKeyServiceURL).value = selection['url']
 
                         openServiceURL();
                     }
@@ -263,8 +266,8 @@ function onDOMContentLoaded() {
 }
 
 function openServiceURL() {
-    const projectName = document.getElementById('project').value;
-    const serviceURL = document.getElementById('service-url').value;
+    const projectName = document.getElementById(htmlKeyProjectID).value;
+    const serviceURL = document.getElementById(htmlKeyServiceURL).value;
 
     const url = serviceURL + '?project=' + projectName;
 

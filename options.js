@@ -1,8 +1,10 @@
-const storageKeyProjectIDs = 'projectIDs';
+const storageKeyProjectIDs = 'storageKeyProjectIDs';
+const htmlKeyNewProjectID = 'htmlKeyNewProjectID';
+const htmlKeySaveButton = 'htmlKeySaveButton';
 
 // Saves options to chrome.storage
 function save_options() {
-    var newProjectID = document.getElementById('project-id').value;
+    var newProjectID = document.getElementById(htmlKeyNewProjectID).value;
 
     chrome.storage.local.get(storageKeyProjectIDs, function(data) {
         let projectIDs = data[storageKeyProjectIDs] || [];
@@ -34,5 +36,5 @@ function restore_options() {
     });
 }
 
-document.getElementById('save').addEventListener('click', save_options);
+document.getElementById(htmlKeySaveButton).addEventListener('click', save_options);
 document.addEventListener('DOMContentLoaded', restore_options);
