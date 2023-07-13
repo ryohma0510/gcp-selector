@@ -3,6 +3,12 @@
     "name": "GCP Selector",
     "version": "0.1",
     "description": "Jump to GCP console at once",
+    "icons": {
+        "16": "image/gcp-selector.jpg",
+        "48": "image/gcp-selector.jpg",
+        "128": "image/gcp-selector.jpg",
+        "256": "image/gcp-selector.jpg"
+    },
     "action": {
         "default_popup": "popup/popup.html"
     },
