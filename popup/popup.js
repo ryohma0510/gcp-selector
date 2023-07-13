@@ -75,7 +75,7 @@ const services = [
     },
     {
         "title": "Container Registry",
-        "url": "https://console.cloud.google.com/gcr/images"
+        "url": "https://console.cloud.google.com/gcr"
     },
     {
         "title": "Credentials",
