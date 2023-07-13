@@ -215,7 +215,7 @@ const services = [
 
 function onDOMContentLoaded() {
     chrome.storage.local.get('projects', function(result) {
-        let projects = result.projects;
+        let projects = result.projectIDs;
 
         function handleProjectSelection(event) {
             const selection = event.detail.selection.value;
