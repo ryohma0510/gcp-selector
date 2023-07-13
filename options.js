@@ -30,7 +30,7 @@ function restore_options() {
             projectIDs.push(`<li>${projectID}</li>`)
         }
 
-        document.getElementById('projects').innerHTML = projects.join('')
+        document.getElementById('projects').innerHTML = projectIDs.join('')
     });
 }
 
