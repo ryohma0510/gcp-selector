@@ -277,7 +277,7 @@ function openServiceURL() {
 }
 
 document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
-document.querySelector(htmkKeyGoToOptions).addEventListener('click', function () {
+document.getElementById(htmkKeyGoToOptions).addEventListener('click', function () {
     if (chrome.runtime.openOptionsPage) {
         chrome.runtime.openOptionsPage();
     } else {
