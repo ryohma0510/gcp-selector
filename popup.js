@@ -214,63 +214,63 @@ const services = [
 
 
 function onDOMContentLoaded() {
-    let projects = chrome.storage.local.get('projects', function (result) {
-        return result.projectIDs
-    });
+    chrome.storage.local.get('projects', function(result) {
+        let projects = result.projects;
 
-    function handleProjectSelection(event) {
-        const selection = event.detail.selection.value;
-        projectAutoCompleteJS.input.value = selection;
-        document.getElementById('service').focus();
-    }
-    
-    function handleServiceSelection(event) {
-        const selection = event.detail.selection.value;
-        serviceAutoCompleteJS.input.value = selection['title'];
-        document.getElementById('service-url').value = selection['url']
-    
-        openServiceURL();
-    }
-    
-    function openServiceURL() {
-        const projectName = document.getElementById('project').value;
-        const serviceURL = document.getElementById('service-url').value;
-    
-        const url = serviceURL + '?project=' + projectName;
-    
-        // Open the URL in a new tab
-        window.open(url, '_blank');
-    }
-    
-    const projectAutoCompleteJS = new autoComplete({
-        selector: "#project",
-        data: {
-            src: projects,
-        },
-        resultItem: {
-            highlight: true
-        },
-        events: {
-            input: {
-                selection: handleProjectSelection
-            }
+        function handleProjectSelection(event) {
+            const selection = event.detail.selection.value;
+            projectAutoCompleteJS.input.value = selection;
+            document.getElementById('service').focus();
         }
-    });
-    
-    const serviceAutoCompleteJS = new autoComplete({
-        selector: "#service",
-        data: {
-            src: services,
-            keys: ["title"]
-        },
-        resultItem: {
-            highlight: true
-        },
-        events: {
-            input: {
-                selection: handleServiceSelection
-            }
+        
+        function handleServiceSelection(event) {
+            const selection = event.detail.selection.value;
+            serviceAutoCompleteJS.input.value = selection['title'];
+            document.getElementById('service-url').value = selection['url']
+        
+            openServiceURL();
         }
+        
+        function openServiceURL() {
+            const projectName = document.getElementById('project').value;
+            const serviceURL = document.getElementById('service-url').value;
+        
+            const url = serviceURL + '?project=' + projectName;
+        
+            // Open the URL in a new tab
+            window.open(url, '_blank');
+        }
+        
+        const projectAutoCompleteJS = new autoComplete({
+            selector: "#project",
+            data: {
+                src: projects,
+            },
+            resultItem: {
+                highlight: true
+            },
+            events: {
+                input: {
+                    selection: handleProjectSelection
+                }
+            }
+        });
+        
+        const serviceAutoCompleteJS = new autoComplete({
+            selector: "#service",
+            data: {
+                src: services,
+                keys: ["title"]
+            },
+            resultItem: {
+                highlight: true
+            },
+            events: {
+                input: {
+                    selection: handleServiceSelection
+                }
+            }
+        });
     });
 }
 
