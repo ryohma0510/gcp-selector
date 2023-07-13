@@ -1,3 +1,5 @@
+import { STORAGE_PROJECT_IDS_KEY } from "./storage";
+
 const services = [
     {
         "title": "AI Platform Jobs",
@@ -214,37 +216,8 @@ const services = [
 
 
 function onDOMContentLoaded() {
-    chrome.storage.local.get('projectIDs', function (result) {
+    chrome.storage.local.get(STORAGE_PROJECT_IDS_KEY, function (result) {
         let projects = result.projectIDs;
-        // Ensure projects is defined and is an array
-        if (!Array.isArray(projects)) {
-            console.error('Invalid or undefined projects:', projects);
-            return;
-        }
-
-        function handleProjectSelection(event) {
-            const selection = event.detail.selection.value;
-            projectAutoCompleteJS.input.value = selection;
-            document.getElementById('service').focus();
-        }
-
-        function handleServiceSelection(event) {
-            const selection = event.detail.selection.value;
-            serviceAutoCompleteJS.input.value = selection['title'];
-            document.getElementById('service-url').value = selection['url']
-
-            openServiceURL();
-        }
-
-        function openServiceURL() {
-            const projectName = document.getElementById('project').value;
-            const serviceURL = document.getElementById('service-url').value;
-
-            const url = serviceURL + '?project=' + projectName;
-
-            // Open the URL in a new tab
-            window.open(url, '_blank');
-        }
 
         const projectAutoCompleteJS = new autoComplete({
             selector: "#project",
@@ -256,7 +229,11 @@ function onDOMContentLoaded() {
             },
             events: {
                 input: {
-                    selection: handleProjectSelection
+                    selection: function handleProjectSelection(event) {
+                        const selection = event.detail.selection.value;
+                        projectAutoCompleteJS.input.value = selection;
+                        document.getElementById('service').focus();
+                    }
                 }
             }
         });
@@ -272,11 +249,27 @@ function onDOMContentLoaded() {
             },
             events: {
                 input: {
-                    selection: handleServiceSelection
+                    selection: function handleServiceSelection(event) {
+                        const selection = event.detail.selection.value;
+                        serviceAutoCompleteJS.input.value = selection['title'];
+                        document.getElementById('service-url').value = selection['url']
+
+                        openServiceURL();
+                    }
                 }
             }
         });
     });
+}
+
+function openServiceURL() {
+    const projectName = document.getElementById('project').value;
+    const serviceURL = document.getElementById('service-url').value;
+
+    const url = serviceURL + '?project=' + projectName;
+
+    // Open the URL in a new tab
+    window.open(url, '_blank');
 }
 
 document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
