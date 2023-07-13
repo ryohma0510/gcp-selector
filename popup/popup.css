@@ -1,6 +1,5 @@
 body {
     font-size: 16px; /* or any other value that suits your needs */
-    padding: 20px 0; /* Adds some space around the form */
     display: flex;
     justify-content: center; /* Centers the form horizontally */
     flex-direction: column;
