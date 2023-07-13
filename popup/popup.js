@@ -26,10 +26,6 @@ const services = [
         "url": "https://console.cloud.google.com/bigquery/transfers"
     },
     {
-        "title": "BigQuery Legacy",
-        "url": "https://bigquery.cloud.google.com/welcome/{{.ProjectID}}"
-    },
-    {
         "title": "BigQuery Scheduled Queries",
         "url": "https://console.cloud.google.com/bigquery/scheduled-queries"
     },
@@ -79,7 +75,7 @@ const services = [
     },
     {
         "title": "Container Registry",
-        "url": "https://console.cloud.google.com/gcr/images/{{.ProjectID}}"
+        "url": "https://console.cloud.google.com/gcr/images"
     },
     {
         "title": "Credentials",
