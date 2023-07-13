@@ -1,17 +1,8 @@
 body {
     font-size: 16px; /* or any other value that suits your needs */
-    padding: 20px; /* Adds some space around the form */
+    padding: 20px 0; /* Adds some space around the form */
     display: flex;
     justify-content: center; /* Centers the form horizontally */
-}
-
-form {
-    width: 80%; /* Use a percentage to make it responsive */
-}
-
-.autoComplete_wrapper {
-    width: 100%;
-    margin-bottom: 20px; /* Adds some space between form elements */
 }
 
 label, input {
