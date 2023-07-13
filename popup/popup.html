@@ -4,23 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="../vendor/autocompletejs/dist/css/autoComplete.01.css">
 </head>
 
 <body>
     <form>
         <div class="autoComplete_wrapper">
-            <label for="project">Project ID:</label><br>
-            <input type="text" id="htmlKeyProjectID" name="project" autofocus><br><br>
-            <label for="service">Service Name:</label><br>
-            <input type="text" id="htmlKeyServiceName" name="service"><br>
+            <label for="project">Project ID:</label>
+            <input type="text" id="htmlKeyProjectID" name="project" autofocus>
+        </div>
+        <div class="autoComplete_wrapper">
+            <label for="service">Service Name:</label>
+            <input type="text" id="htmlKeyServiceName" name="service">
             <input type="hidden" id="htmlKeyServiceURL" name="service-url">
         </div>
     </form>
 </body>
 
 <script src="../vendor/autocompletejs/dist/autoComplete.min.js"></script>
-<script type="module" src="popup.js"></script>
+<script src="popup.js"></script>
 
 </html>
