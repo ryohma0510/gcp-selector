@@ -4,14 +4,16 @@
     "version": "0.1",
     "description": "Jump to GCP console at once",
     "icons": {
-        "16": "image/gcp-selector.jpg",
-        "48": "image/gcp-selector.jpg",
-        "128": "image/gcp-selector.jpg",
-        "256": "image/gcp-selector.jpg"
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
     },
     "action": {
         "default_popup": "popup/popup.html"
     },
     "options_page": "option/option.html",
-    "permissions": ["storage"]
+    "permissions": [
+        "storage"
+    ]
 }
