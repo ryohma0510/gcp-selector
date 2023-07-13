@@ -9,7 +9,10 @@ function save_options() {
 
     chrome.storage.local.get(storageKeyProjectIDs, function (data) {
         let projectIDs = data[storageKeyProjectIDs] || [];
-        projectIDs.push(newProjectID);
+
+        if (!projectIDs.includes(newProjectID)) {
+            projectIDs.push(newProjectID);
+        }
 
         chrome.storage.local.set({
             [storageKeyProjectIDs]: projectIDs
