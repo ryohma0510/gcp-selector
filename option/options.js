@@ -1,12 +1,13 @@
 const storageKeyProjectIDs = 'storageKeyProjectIDs';
 const htmlKeyNewProjectID = 'htmlKeyNewProjectID';
 const htmlKeySaveButton = 'htmlKeySaveButton';
+const htmlKeyProjectsTable = 'htmlKeyProjectsTable';
 
 // Saves options to chrome.storage
 function save_options() {
     var newProjectID = document.getElementById(htmlKeyNewProjectID).value;
 
-    chrome.storage.local.get(storageKeyProjectIDs, function(data) {
+    chrome.storage.local.get(storageKeyProjectIDs, function (data) {
         let projectIDs = data[storageKeyProjectIDs] || [];
         projectIDs.push(newProjectID);
 
@@ -26,13 +27,31 @@ function restore_options() {
     }, function (items) {
         let projectIDs = []
 
-        // itemsの中身をliタグに入れた配列を作りたい
         for (let i = 0; i < items[storageKeyProjectIDs].length; i++) {
             const projectID = items[storageKeyProjectIDs][i];
-            projectIDs.push(`<li>${projectID}</li>`)
+            projectIDs.push(`<tr>
+<td>${projectID}</td>
+<td><button onclick="deleteProject('${projectID}')">Delete</button></td>
+</tr>
+            `)
         }
 
-        document.getElementById('projects').innerHTML = projectIDs.join('')
+        document.getElementById(htmlKeyProjectsTable).innerHTML = projectIDs.join('')
+    });
+}
+
+function deleteProject(deleteProjectID) {
+    chrome.storage.local.get(storageKeyProjectIDs, function (data) {
+        let projectIDs = data[storageKeyProjectIDs] || [];
+        projectIDs = projectIDs.filter(function (value, _, _) {
+            return value != deleteProjectID;
+        });
+
+        chrome.storage.local.set({
+            [storageKeyProjectIDs]: projectIDs
+        }, function () {
+            restore_options();
+        });
     });
 }
 
