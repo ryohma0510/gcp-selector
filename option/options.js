@@ -42,6 +42,7 @@ function restore_options() {
 
             // Create a new button
             let button = document.createElement('button');
+            button.className = 'bg-red';
             button.textContent = "Delete";
 
             // Add a click event listener to the button
