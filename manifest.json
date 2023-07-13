@@ -2,10 +2,10 @@
     "manifest_version": 3,
     "name": "GCP Selector",
     "version": "0.1",
-    "description": "Selects the GCP project and Service you want to use",
+    "description": "Jump to GCP console at once",
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "popup/popup.html"
     },
-    "options_page": "options.html",
+    "options_page": "option/options.html",
     "permissions": ["storage"]
 }
