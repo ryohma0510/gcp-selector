@@ -15,6 +15,7 @@ function save_options() {
             [storageKeyProjectIDs]: projectIDs
         }, function () {
             restore_options();
+            document.getElementById(htmlKeyNewProjectID).value = '';
         });
     });
 }
