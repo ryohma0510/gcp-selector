@@ -26,3 +26,15 @@ input {
     display: flex;
     justify-content: flex-end;
 }
+
+button {
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 1px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
