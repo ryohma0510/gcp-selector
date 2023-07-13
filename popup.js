@@ -214,7 +214,7 @@ const services = [
 
 
 function onDOMContentLoaded() {
-    chrome.storage.local.get('projects', function (result) {
+    chrome.storage.local.get('projectIDs', function (result) {
         let projects = result.projectIDs;
         // Ensure projects is defined and is an array
         if (!Array.isArray(projects)) {
