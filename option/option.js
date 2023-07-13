@@ -18,7 +18,7 @@ function save_options() {
         }
 
         chrome.storage.local.set({
-            [storageKeyProjectIDs]: projectIDs
+            [storageKeyProjectIDs]: projectIDs.sort()
         }, function () {
             restore_options();
             document.getElementById(htmlKeyNewProjectID).value = '';
