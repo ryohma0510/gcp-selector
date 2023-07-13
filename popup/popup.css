@@ -1,0 +1,20 @@
+body {
+    font-size: 16px; /* or any other value that suits your needs */
+    padding: 20px; /* Adds some space around the form */
+    display: flex;
+    justify-content: center; /* Centers the form horizontally */
+}
+
+form {
+    width: 80%; /* Use a percentage to make it responsive */
+}
+
+.autoComplete_wrapper {
+    margin-bottom: 20px; /* Adds some space between form elements */
+}
+
+label, input {
+    display: block; /* Makes them stack vertically */
+    width: 100%; /* Fills the entire width of the form */
+    margin: 5px 0; /* Adds some space around each element */
+}
