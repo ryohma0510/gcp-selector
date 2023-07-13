@@ -1,4 +1,4 @@
-import { STORAGE_PROJECT_IDS_KEY } from "./storage";
+const storageKeyProjectIDs = 'projectIDs';
 
 const services = [
     {
@@ -216,8 +216,8 @@ const services = [
 
 
 function onDOMContentLoaded() {
-    chrome.storage.local.get(STORAGE_PROJECT_IDS_KEY, function (result) {
-        let projects = result.projectIDs;
+    chrome.storage.local.get(storageKeyProjectIDs, function (result) {
+        let projects = result[storageKeyProjectIDs] || [];
 
         const projectAutoCompleteJS = new autoComplete({
             selector: "#project",

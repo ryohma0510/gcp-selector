@@ -1,15 +1,15 @@
-import { STORAGE_PROJECT_IDS_KEY } from "./storage";
+const storageKeyProjectIDs = 'projectIDs';
 
 // Saves options to chrome.storage
 function save_options() {
     var newProjectID = document.getElementById('project-id').value;
 
-    chrome.storage.local.get(STORAGE_PROJECT_IDS_KEY, function(data) {
-        let projectIDs = data[STORAGE_PROJECT_IDS_KEY] || [];
+    chrome.storage.local.get(storageKeyProjectIDs, function(data) {
+        let projectIDs = data[storageKeyProjectIDs] || [];
         projectIDs.push(newProjectID);
 
         chrome.storage.local.set({
-            [STORAGE_PROJECT_IDS_KEY]: projectIDs
+            [storageKeyProjectIDs]: projectIDs
         }, function () {
             restore_options();
         });
@@ -20,13 +20,13 @@ function save_options() {
 // stored in chrome.storage.
 function restore_options() {
     chrome.storage.local.get({
-        [STORAGE_PROJECT_IDS_KEY]: [],
+        [storageKeyProjectIDs]: [],
     }, function (items) {
         let projectIDs = []
 
         // itemsの中身をliタグに入れた配列を作りたい
-        for (let i = 0; i < items.projectIDs.length; i++) {
-            const projectID = items.projectIDs[i];
+        for (let i = 0; i < items[storageKeyProjectIDs].length; i++) {
+            const projectID = items[storageKeyProjectIDs][i];
             projectIDs.push(`<li>${projectID}</li>`)
         }
 
