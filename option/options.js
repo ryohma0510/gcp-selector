@@ -43,7 +43,7 @@ function restore_options() {
 function deleteProject(deleteProjectID) {
     chrome.storage.local.get(storageKeyProjectIDs, function (data) {
         let projectIDs = data[storageKeyProjectIDs] || [];
-        projectIDs = projectIDs.filter(function (value, _, _) {
+        projectIDs = projectIDs.filter(function (value, _index, _arr) {
             return value != deleteProjectID;
         });
 
