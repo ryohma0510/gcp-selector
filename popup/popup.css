@@ -3,6 +3,7 @@ body {
     padding: 20px 0; /* Adds some space around the form */
     display: flex;
     justify-content: center; /* Centers the form horizontally */
+    flex-direction: column;
 }
 
 label, input {
