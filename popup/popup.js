@@ -2,7 +2,7 @@ const storageKeyProjectIDs = 'storageKeyProjectIDs';
 const htmlKeyProjectID = 'htmlKeyProjectID';
 const htmlKeyServiceName = 'htmlKeyServiceName';
 const htmlKeyServiceURL = 'htmlKeyServiceURL';
-const htmkKeyGoToOptions = 'htmlKeyGoToOptions';
+const htmlKeyGoToOptions = 'htmlKeyGoToOptions';
 
 const services = [
     {
@@ -277,7 +277,7 @@ function openServiceURL() {
 }
 
 document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
-document.getElementById(htmkKeyGoToOptions).addEventListener('click', function () {
+document.getElementById(htmlKeyGoToOptions).addEventListener('click', function () {
     if (chrome.runtime.openOptionsPage) {
         chrome.runtime.openOptionsPage();
     } else {
