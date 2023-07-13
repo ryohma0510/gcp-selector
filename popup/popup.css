@@ -15,3 +15,10 @@ label, input {
 .extension-title {
     color: #659AD2;
 }
+
+hr {
+    height: 2px;
+    width: 100%;
+    background-color: #797979;
+    border: none;
+}
