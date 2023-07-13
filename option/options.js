@@ -6,6 +6,9 @@ const htmlKeyProjectsTable = 'htmlKeyProjectsTable';
 // Saves options to chrome.storage
 function save_options() {
     var newProjectID = document.getElementById(htmlKeyNewProjectID).value;
+    if (!newProjectID) {
+        return;
+    }
 
     chrome.storage.local.get(storageKeyProjectIDs, function (data) {
         let projectIDs = data[storageKeyProjectIDs] || [];
