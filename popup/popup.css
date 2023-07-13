@@ -10,3 +10,7 @@ label, input {
     width: 100%; /* Fills the entire width of the form */
     margin: 5px 0; /* Adds some space around each element */
 }
+
+.extension-title {
+    color: #659AD2;
+}
