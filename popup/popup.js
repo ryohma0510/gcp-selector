@@ -54,6 +54,10 @@ const services = [
         "url": "https://console.cloud.google.com/run"
     },
     {
+        "title": "Cloud Run Jobs",
+        "url": "https://console.cloud.google.com/run/jobs"
+    },
+    {
         "title": "Cloud Scheduler",
         "url": "https://console.cloud.google.com/cloudscheduler"
     },
