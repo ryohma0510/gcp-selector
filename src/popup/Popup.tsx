@@ -3,7 +3,7 @@ import listProjects from '../utils/projects/ListProject';
 import './Popup.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
-import Select from 'react-select';
+import Select, { components, OptionProps } from 'react-select';
 
 interface Service {
   label: string;
@@ -21,6 +21,34 @@ const services: Service[] = [
   },
   // 他のサービスも同様に追加
 ];
+
+const Option = (props: OptionProps<Service, false>) => {
+  const input = props.selectProps.inputValue;
+  const label = props.data.label;
+
+  if (input === "") {
+    return <components.Option {...props} />;
+  }
+
+  const idx = label.toLowerCase().indexOf(input.toLowerCase());
+
+  const styles = {
+    highlight: {
+      fontWeight: "bold",
+      color: "#ee0000"
+    }
+  };
+
+  return (
+    <components.Option {...props}>
+      <div>
+        <span>{label.slice(0, idx)}</span>
+        <span style={styles.highlight}>{label.slice(idx, idx + input.length)}</span>
+        <span>{label.slice(idx + input.length)}</span>
+      </div>
+    </components.Option>
+  );
+};
 
 const Popup: React.FC = () => {
   const [projectIds, setProjectIds] = useState<string[]>([]);
@@ -105,6 +133,7 @@ const Popup: React.FC = () => {
                 value={selectedService}
                 onChange={(newValue) => handleServiceSelect(newValue as Service)}
                 placeholder="Select service"
+                components={{ Option }}
               />
             </div>
           </div>
