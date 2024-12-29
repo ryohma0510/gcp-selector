@@ -1,0 +1,47 @@
+.popup-container {
+  width: 300px;
+  padding: 16px;
+}
+
+.title {
+  color: #659AD2;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.input-section,
+.service-section {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.options-button {
+  width: 100%;
+  padding: 8px;
+  background-color: #659AD2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.options-button:hover {
+  background-color: #5080b3;
+}
