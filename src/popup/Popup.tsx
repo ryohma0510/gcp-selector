@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import listProjects from '../utils/projects/ListProject';
 import './Popup.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 interface Service {
   title: string;
@@ -55,43 +57,49 @@ const Popup: React.FC = () => {
 
   return (
     <div className="popup-container">
-      <h1 className="title">GCP Selector</h1>
+      <div className="header">
+        <h1>GCP Selector</h1>
+        <button onClick={goToOptions} className="settings-button">
+          <FontAwesomeIcon icon={faCog} className="settings-icon" />
+          Settings
+        </button>
+      </div>
 
       <div className="input-section">
         <label htmlFor="project">Project ID</label>
-        <select
-          id="project"
-          value={selectedProject}
-          onChange={(e) => handleProjectSelect(e.target.value)}
-        >
-          <option value="">Select Project</option>
-          {projectIds.map(id => (
-            <option key={id} value={id}>{id}</option>
-          ))}
-        </select>
-
-        <button onClick={goToOptions} className="options-button">
-          Project Settings
-        </button>
+        <div className="select-wrapper">
+          <select
+            id="project"
+            value={selectedProject}
+            onChange={(e) => handleProjectSelect(e.target.value)}
+          >
+            <option value="">Select project</option>
+            {projectIds.map(id => (
+              <option key={id} value={id}>{id}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div className="service-section">
         <label htmlFor="service">Service</label>
-        <select
-          id="service"
-          value={selectedService?.title || ''}
-          onChange={(e) => {
-            const service = services.find(s => s.title === e.target.value);
-            if (service) handleServiceSelect(service);
-          }}
-        >
-          <option value="">Select Service</option>
-          {services.map(service => (
-            <option key={service.title} value={service.title}>
-              {service.title}
-            </option>
-          ))}
-        </select>
+        <div className="select-wrapper">
+          <select
+            id="service"
+            value={selectedService?.title || ''}
+            onChange={(e) => {
+              const service = services.find(s => s.title === e.target.value);
+              if (service) handleServiceSelect(service);
+            }}
+          >
+            <option value="">Select service</option>
+            {services.map(service => (
+              <option key={service.title} value={service.title}>
+                {service.title}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
     </div>
   );

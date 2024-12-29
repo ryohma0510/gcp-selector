@@ -1,47 +1,91 @@
 .popup-container {
-  width: 300px;
-  padding: 16px;
+  padding: 20px;
+  min-width: 300px;
 }
 
-.title {
-  color: #659AD2;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0;
   font-size: 24px;
-  margin-bottom: 16px;
+  color: #4285f4;
+}
+
+.settings-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #5f6368;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.settings-button:hover {
+  background-color: #f1f3f4;
 }
 
 .input-section,
 .service-section {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 label {
   display: block;
   margin-bottom: 8px;
-  color: #333;
-  font-weight: 500;
+  color: #5f6368;
+  font-size: 14px;
+}
+
+.select-wrapper {
+  position: relative;
 }
 
 select {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-
-.options-button {
-  width: 100%;
-  padding: 8px;
-  background-color: #659AD2;
-  color: white;
-  border: none;
-  border-radius: 4px;
+  padding: 12px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 16px;
+  color: #202124;
+  appearance: none;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
 }
 
-.options-button:hover {
-  background-color: #5080b3;
+.select-wrapper::after {
+  content: "▼";
+  font-size: 12px;
+  color: #5f6368;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+select:hover {
+  border-color: #4285f4;
+}
+
+select:focus {
+  outline: none;
+  border-color: #4285f4;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+.settings-icon {
+  font-size: 16px;
+  color: #5f6368;
+}
+
+.settings-button:hover .settings-icon {
+  color: #4285f4;
 }
