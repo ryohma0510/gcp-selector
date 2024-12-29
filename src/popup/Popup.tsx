@@ -3,20 +3,21 @@ import listProjects from '../utils/projects/ListProject';
 import './Popup.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
+import Select from 'react-select';
 
 interface Service {
-  title: string;
-  url: string;
+  label: string;
+  value: string;
 }
 
 const services: Service[] = [
   {
-    title: "AI Platform Jobs",
-    url: "https://console.cloud.google.com/ai-platform/jobs"
+    label: "AI Platform Jobs",
+    value: "https://console.cloud.google.com/ai-platform/jobs"
   },
   {
-    title: "BigQuery",
-    url: "https://console.cloud.google.com/bigquery"
+    label: "BigQuery",
+    value: "https://console.cloud.google.com/bigquery"
   },
   // 他のサービスも同様に追加
 ];
@@ -53,7 +54,7 @@ const Popup: React.FC = () => {
   const handleServiceSelect = (service: Service) => {
     setSelectedService(service);
     if (selectedProject) {
-      const url = `${service.url}?project=${selectedProject}`;
+      const url = `${service.value}?project=${selectedProject}`;
       window.open(url, '_blank');
     }
   };
@@ -99,21 +100,12 @@ const Popup: React.FC = () => {
           <div className="service-section">
             <label htmlFor="service">Service</label>
             <div className="select-wrapper">
-              <select
-                id="service"
-                value={selectedService?.title || ''}
-                onChange={(e) => {
-                  const service = services.find(s => s.title === e.target.value);
-                  if (service) handleServiceSelect(service);
-                }}
-              >
-                <option value="">Select service</option>
-                {services.map(service => (
-                  <option key={service.title} value={service.title}>
-                    {service.title}
-                  </option>
-                ))}
-              </select>
+              <Select
+                options={services}
+                value={selectedService}
+                onChange={(newValue) => handleServiceSelect(newValue as Service)}
+                placeholder="Select service"
+              />
             </div>
           </div>
         </>
