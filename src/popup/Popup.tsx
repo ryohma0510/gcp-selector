@@ -112,16 +112,14 @@ const Popup: React.FC = () => {
           <div className="input-section">
             <label htmlFor="project">Project ID</label>
             <div className="select-wrapper">
-              <select
-                id="project"
-                value={selectedProject}
-                onChange={(e) => handleProjectSelect(e.target.value)}
-              >
-                <option value="">Select project</option>
-                {projectIds.map(id => (
-                  <option key={id} value={id}>{id}</option>
-                ))}
-              </select>
+              <Select
+                options={projectIds.map(id => ({ value: id, label: id }))}
+                value={selectedProject ? { value: selectedProject, label: selectedProject } : null}
+                onChange={(newValue) => handleProjectSelect((newValue as { value: string })?.value)}
+                placeholder="Select project"
+                components={{ Option }}
+              />
+
             </div>
           </div>
 
