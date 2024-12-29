@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Option.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const Option: React.FC = () => {
   const [projectIds, setProjectIds] = useState<string[]>([]);
@@ -48,39 +50,31 @@ const Option: React.FC = () => {
 
   return (
     <div className="option-container">
+      <h1 className="title">Project Manager</h1>
+
       <div className="input-section">
-        <label>
-          <input
-            className="project-input"
-            value={newProjectId}
-            onChange={(e) => setNewProjectId(e.target.value)}
-            placeholder="Project ID"
-          />
-        </label>
-        <button className="add-button" onClick={saveOptions}>Add</button>
+        <input
+          className="project-input"
+          value={newProjectId}
+          onChange={(e) => setNewProjectId(e.target.value)}
+          placeholder="Enter Project ID"
+        />
+        <button className="add-button" onClick={saveOptions}>Add Project</button>
       </div>
 
-      <div className="table-container">
-        <table className="project-table">
-          <thead>
-            <tr>
-              <th>project_id</th>
-              <th>action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {projectIds.map((projectId) => (
-              <tr key={projectId}>
-                <td>{projectId}</td>
-                <td>
-                  <button className="delete-button" onClick={() => deleteProject(projectId)}>
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="project-list">
+        <div className="list-header">
+          <span>Project ID</span>
+          <span>Action</span>
+        </div>
+        {projectIds.map((projectId) => (
+          <div key={projectId} className="project-item">
+            <span>{projectId}</span>
+            <button className="delete-button" onClick={() => deleteProject(projectId)}>
+              <FontAwesomeIcon icon={faTrash} className="trash-icon" />
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
