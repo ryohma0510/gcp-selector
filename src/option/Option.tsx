@@ -9,32 +9,53 @@ import listProjects from '../utils/projects/ListProject';
 const Option: React.FC = () => {
   const [projectIds, setProjectIds] = useState<string[]>([]);
   const [newProjectId, setNewProjectId] = useState('');
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     loadProjects();
   }, []);
 
   const loadProjects = async () => {
-    let projectIds = await listProjects();
-    setProjectIds(projectIds);
+    try {
+      setError(null);
+      const projects = await listProjects();
+      setProjectIds(projects);
+    } catch (err) {
+      setError('Failed to load projects');
+    }
   };
 
   const handleSave = async () => {
-    if (!newProjectId) return;
+    if (!newProjectId.trim()) {
+      setError('Please enter a Project ID');
+      return;
+    }
 
-    await addProject(newProjectId);
-    await loadProjects();
-    setNewProjectId('');
+    try {
+      setError(null);
+      await addProject(newProjectId);
+      await loadProjects();
+      setNewProjectId('');
+    } catch (err) {
+      setError('Failed to add project');
+    }
   };
 
   const handleDelete = async (deleteProjectId: string) => {
-    await deleteProject(deleteProjectId);
-    await loadProjects();
+    try {
+      setError(null);
+      await deleteProject(deleteProjectId);
+      await loadProjects();
+    } catch (err) {
+      setError('Failed to delete project');
+    }
   };
 
   return (
     <div className="option-container">
       <h1 className="title">Project Manager</h1>
+
+      {error && <div className="error-message">{error}</div>}
 
       <div className="input-section">
         <input
