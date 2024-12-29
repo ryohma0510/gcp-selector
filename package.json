@@ -4,9 +4,7 @@
   "description": "Select GCP project and service at once.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "dev": "webpack --mode development --watch",
     "type-check": "tsc --noEmit"
   },
   "keywords": [],
