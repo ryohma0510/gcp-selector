@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   entry: {
     popup: './src/popup/index.tsx',
-    options: './src/options/index.tsx',
+    // options: './src/options/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -34,15 +34,15 @@ module.exports = {
       filename: 'popup.html',
       chunks: ['popup'],
     }),
-    new HtmlWebpackPlugin({
-      template: './src/options/options.html',
-      filename: 'options.html',
-      chunks: ['options'],
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: './src/options/options.html',
+    //   filename: 'options.html',
+    //   chunks: ['options'],
+    // }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'public', to: '.' },
-        { from: 'src/manifest.json', to: 'manifest.json' },
+        { from: 'manifest.json', to: 'manifest.json' },
+        { from: 'icons', to: 'icons' }
       ],
     }),
   ],
