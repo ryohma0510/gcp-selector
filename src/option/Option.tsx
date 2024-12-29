@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Option.css';
 
 const Option: React.FC = () => {
   const [projectIds, setProjectIds] = useState<string[]>([]);
@@ -46,18 +47,21 @@ const Option: React.FC = () => {
   };
 
   return (
-    <div>
-      <label>
-        Project ID:
-        <input
-          value={newProjectId}
-          onChange={(e) => setNewProjectId(e.target.value)}
-        />
-      </label>
-      <button onClick={saveOptions}>Add</button>
+    <div className="option-container">
+      <div className="input-section">
+        <label>
+          <input
+            className="project-input"
+            value={newProjectId}
+            onChange={(e) => setNewProjectId(e.target.value)}
+            placeholder="Project ID"
+          />
+        </label>
+        <button className="add-button" onClick={saveOptions}>Add</button>
+      </div>
 
-      <div>
-        <table>
+      <div className="table-container">
+        <table className="project-table">
           <thead>
             <tr>
               <th>project_id</th>
@@ -69,7 +73,7 @@ const Option: React.FC = () => {
               <tr key={projectId}>
                 <td>{projectId}</td>
                 <td>
-                  <button onClick={() => deleteProject(projectId)}>
+                  <button className="delete-button" onClick={() => deleteProject(projectId)}>
                     Delete
                   </button>
                 </td>
