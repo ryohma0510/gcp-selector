@@ -2,50 +2,34 @@ import React, { useEffect, useState } from 'react';
 import './Option.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import addProject from '../utils/projects/AddProject';
+import deleteProject from '../utils/projects/DeleteProject';
+import listProjects from '../utils/projects/ListProject';
 
 const Option: React.FC = () => {
   const [projectIds, setProjectIds] = useState<string[]>([]);
   const [newProjectId, setNewProjectId] = useState('');
 
   useEffect(() => {
-    restoreOptions();
+    loadProjects();
   }, []);
 
-  const restoreOptions = () => {
-    chrome.storage.local.get({ storageKeyProjectIDs: [] }, (items) => {
-      setProjectIds(items.storageKeyProjectIDs);
-    });
+  const loadProjects = async () => {
+    let projectIds = await listProjects();
+    setProjectIds(projectIds);
   };
 
-  const saveOptions = () => {
+  const handleSave = async () => {
     if (!newProjectId) return;
 
-    chrome.storage.local.get('storageKeyProjectIDs', (data) => {
-      let currentIds = data.storageKeyProjectIDs || [];
-      if (!currentIds.includes(newProjectId)) {
-        currentIds.push(newProjectId);
-      }
-
-      chrome.storage.local.set({
-        storageKeyProjectIDs: currentIds.sort()
-      }, () => {
-        setProjectIds(currentIds);
-        setNewProjectId('');
-      });
-    });
+    await addProject(newProjectId);
+    await loadProjects();
+    setNewProjectId('');
   };
 
-  const deleteProject = (deleteProjectId: string) => {
-    chrome.storage.local.get('storageKeyProjectIDs', (data) => {
-      let currentIds = data.storageKeyProjectIDs || [];
-      const filteredIds = currentIds.filter((id: string) => id !== deleteProjectId);
-
-      chrome.storage.local.set({
-        storageKeyProjectIDs: filteredIds
-      }, () => {
-        setProjectIds(filteredIds);
-      });
-    });
+  const handleDelete = async (deleteProjectId: string) => {
+    await deleteProject(deleteProjectId);
+    await loadProjects();
   };
 
   return (
@@ -59,7 +43,7 @@ const Option: React.FC = () => {
           onChange={(e) => setNewProjectId(e.target.value)}
           placeholder="Enter Project ID"
         />
-        <button className="add-button" onClick={saveOptions}>Add Project</button>
+        <button className="add-button" onClick={handleSave}>Add Project</button>
       </div>
 
       <div className="project-list">
@@ -67,10 +51,10 @@ const Option: React.FC = () => {
           <span>Project ID</span>
           <span>Action</span>
         </div>
-        {projectIds.map((projectId) => (
+        {projectIds.sort().map((projectId) => (
           <div key={projectId} className="project-item">
             <span>{projectId}</span>
-            <button className="delete-button" onClick={() => deleteProject(projectId)}>
+            <button className="delete-button" onClick={() => handleDelete(projectId)}>
               <FontAwesomeIcon icon={faTrash} className="trash-icon" />
             </button>
           </div>
