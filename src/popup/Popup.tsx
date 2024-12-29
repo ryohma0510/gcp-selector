@@ -35,6 +35,17 @@ const Popup: React.FC = () => {
     setProjectIds(projects);
   };
 
+  const NoProjectsMessage = () => (
+    <div className="no-projects-message">
+      <p>No projects found.</p>
+      <p>
+        <button onClick={goToOptions}>
+          Please add project in settings
+        </button>
+      </p>
+    </div>
+  );
+
   const handleProjectSelect = (projectId: string) => {
     setSelectedProject(projectId);
   };
@@ -65,42 +76,48 @@ const Popup: React.FC = () => {
         </button>
       </div>
 
-      <div className="input-section">
-        <label htmlFor="project">Project ID</label>
-        <div className="select-wrapper">
-          <select
-            id="project"
-            value={selectedProject}
-            onChange={(e) => handleProjectSelect(e.target.value)}
-          >
-            <option value="">Select project</option>
-            {projectIds.map(id => (
-              <option key={id} value={id}>{id}</option>
-            ))}
-          </select>
-        </div>
-      </div>
+      {projectIds.length === 0 ? (
+        <NoProjectsMessage />
+      ) : (
+        <>
+          <div className="input-section">
+            <label htmlFor="project">Project ID</label>
+            <div className="select-wrapper">
+              <select
+                id="project"
+                value={selectedProject}
+                onChange={(e) => handleProjectSelect(e.target.value)}
+              >
+                <option value="">Select project</option>
+                {projectIds.map(id => (
+                  <option key={id} value={id}>{id}</option>
+                ))}
+              </select>
+            </div>
+          </div>
 
-      <div className="service-section">
-        <label htmlFor="service">Service</label>
-        <div className="select-wrapper">
-          <select
-            id="service"
-            value={selectedService?.title || ''}
-            onChange={(e) => {
-              const service = services.find(s => s.title === e.target.value);
-              if (service) handleServiceSelect(service);
-            }}
-          >
-            <option value="">Select service</option>
-            {services.map(service => (
-              <option key={service.title} value={service.title}>
-                {service.title}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
+          <div className="service-section">
+            <label htmlFor="service">Service</label>
+            <div className="select-wrapper">
+              <select
+                id="service"
+                value={selectedService?.title || ''}
+                onChange={(e) => {
+                  const service = services.find(s => s.title === e.target.value);
+                  if (service) handleServiceSelect(service);
+                }}
+              >
+                <option value="">Select service</option>
+                {services.map(service => (
+                  <option key={service.title} value={service.title}>
+                    {service.title}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
