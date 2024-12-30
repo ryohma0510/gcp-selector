@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import listProjects from '../utils/projects/ListProject';
 import './Popup.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -54,9 +54,14 @@ const Popup: React.FC = () => {
   const [projectIds, setProjectIds] = useState<string[]>([]);
   const [selectedProject, setSelectedProject] = useState('');
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const serviceSelectRef = useRef<any>(null);
+  const projectSelectRef = useRef<any>(null);
 
   useEffect(() => {
     loadProjects();
+    requestAnimationFrame(() => {
+      projectSelectRef.current?.focus();
+    });
   }, []);
 
   const loadProjects = async () => {
@@ -77,6 +82,9 @@ const Popup: React.FC = () => {
 
   const handleProjectSelect = (projectId: string) => {
     setSelectedProject(projectId);
+    requestAnimationFrame(() => {
+      serviceSelectRef.current?.focus();
+    });
   };
 
   const handleServiceSelect = (service: Service) => {
@@ -113,13 +121,13 @@ const Popup: React.FC = () => {
             <label htmlFor="project">Project ID</label>
             <div className="select-wrapper">
               <Select
+                ref={projectSelectRef}
                 options={projectIds.map(id => ({ value: id, label: id }))}
                 value={selectedProject ? { value: selectedProject, label: selectedProject } : null}
                 onChange={(newValue) => handleProjectSelect((newValue as { value: string })?.value)}
                 placeholder="Select project"
                 components={{ Option }}
               />
-
             </div>
           </div>
 
@@ -127,6 +135,7 @@ const Popup: React.FC = () => {
             <label htmlFor="service">Service</label>
             <div className="select-wrapper">
               <Select
+                ref={serviceSelectRef}
                 options={services}
                 value={selectedService}
                 onChange={(newValue) => handleServiceSelect(newValue as Service)}
