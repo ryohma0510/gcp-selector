@@ -2,7 +2,7 @@
 
 Select GCP project and service at once.
 
-<img height="300" src="image/gcp-selector.gif">
+<img height="300" src="image/popup.gif">
 
 ## Install
 
@@ -10,4 +10,4 @@ Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/gcp-se
 
 ## Setting
 
-<img height="300" src="image/gcp-selector-setting.png">
+<img height="300" src="image/option.png">
