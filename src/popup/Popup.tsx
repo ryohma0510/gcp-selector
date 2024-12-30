@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import Select from 'react-select';
 import Option from '../components/select/Option';
-import Service from '../types/Service';
 import listServices from '../utils/services/ListServices';
 
 type SelectOption = {

@@ -13,13 +13,21 @@ const Option = (props: OptionProps<Item, false>) => {
     return <components.Option {...props} />;
   }
 
+  const styles = {
+    highlight: {
+      fontWeight: "bold",
+      color: "#ee0000"
+    }
+  };
+
+
   const idx = label.toLowerCase().indexOf(input.toLowerCase());
 
   return (
     <components.Option {...props}>
       <div>
         <span>{label.slice(0, idx)}</span>
-        <span className="highlight">{label.slice(idx, idx + input.length)}</span>
+        <span style={styles.highlight}>{label.slice(idx, idx + input.length)}</span>
         <span>{label.slice(idx + input.length)}</span>
       </div>
     </components.Option>
