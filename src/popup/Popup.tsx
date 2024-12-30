@@ -3,59 +3,23 @@ import listProjects from '../utils/projects/ListProject';
 import './Popup.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
-import Select, { components, OptionProps } from 'react-select';
+import Select from 'react-select';
+import Option from '../components/select/Option';
+import Service from '../types/Service';
+import listServices from '../utils/services/ListServices';
 
-interface Service {
-  label: string;
+interface SelectOption {
   value: string;
+  label: string;
 }
-
-const services: Service[] = [
-  {
-    label: "AI Platform Jobs",
-    value: "https://console.cloud.google.com/ai-platform/jobs"
-  },
-  {
-    label: "BigQuery",
-    value: "https://console.cloud.google.com/bigquery"
-  },
-  // 他のサービスも同様に追加
-];
-
-const Option = (props: OptionProps<Service, false>) => {
-  const input = props.selectProps.inputValue;
-  const label = props.data.label;
-
-  if (input === "") {
-    return <components.Option {...props} />;
-  }
-
-  const idx = label.toLowerCase().indexOf(input.toLowerCase());
-
-  const styles = {
-    highlight: {
-      fontWeight: "bold",
-      color: "#ee0000"
-    }
-  };
-
-  return (
-    <components.Option {...props}>
-      <div>
-        <span>{label.slice(0, idx)}</span>
-        <span style={styles.highlight}>{label.slice(idx, idx + input.length)}</span>
-        <span>{label.slice(idx + input.length)}</span>
-      </div>
-    </components.Option>
-  );
-};
 
 const Popup: React.FC = () => {
   const [projectIds, setProjectIds] = useState<string[]>([]);
   const [selectedProject, setSelectedProject] = useState('');
-  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [selectedService, setSelectedService] = useState<SelectOption | null>(null);
   const serviceSelectRef = useRef<any>(null);
   const projectSelectRef = useRef<any>(null);
+  const services = listServices().map(service => ({ value: service.url, label: service.label }));
 
   useEffect(() => {
     loadProjects();
@@ -87,9 +51,13 @@ const Popup: React.FC = () => {
     });
   };
 
-  const handleServiceSelect = (service: Service) => {
+  const handleServiceSelect = (service: SelectOption | null) => {
+    if (!service) {
+      return;
+    }
+
     setSelectedService(service);
-    if (selectedProject) {
+    if (selectedProject && service) {
       const url = `${service.value}?project=${selectedProject}`;
       window.open(url, '_blank');
     }
@@ -138,7 +106,7 @@ const Popup: React.FC = () => {
                 ref={serviceSelectRef}
                 options={services}
                 value={selectedService}
-                onChange={(newValue) => handleServiceSelect(newValue as Service)}
+                onChange={handleServiceSelect}
                 placeholder="Select service"
                 components={{ Option }}
               />
