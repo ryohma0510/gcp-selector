@@ -8,7 +8,7 @@ import Option from '../components/select/Option';
 import Service from '../types/Service';
 import listServices from '../utils/services/ListServices';
 
-interface SelectOption {
+type SelectOption = {
   value: string;
   label: string;
 }
