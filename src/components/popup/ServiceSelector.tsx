@@ -1,11 +1,7 @@
 import { forwardRef } from 'react';
 import Select from 'react-select';
 import Option from '../select/Option';
-
-type SelectOption = {
-  value: string;
-  label: string;
-}
+import { SelectOption } from '../../types/SelectOption';
 
 interface ServiceSelectorProps {
   services: SelectOption[];
