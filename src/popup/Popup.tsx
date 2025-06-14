@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import listProjects from '../utils/projects/ListProject';
 import './Popup.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
-import Select from 'react-select';
-import Option from '../components/select/Option';
 import listServices from '../utils/services/ListServices';
+import PopupHeader from '../components/popup/PopupHeader';
+import ProjectSelector from '../components/popup/ProjectSelector';
+import ServiceSelector from '../components/popup/ServiceSelector';
 
 type SelectOption = {
   value: string;
@@ -72,45 +71,25 @@ const Popup: React.FC = () => {
 
   return (
     <div className="popup-container">
-      <div className="header">
-        <h1>GCP Selector</h1>
-        <button onClick={goToOptions} className="settings-button">
-          <FontAwesomeIcon icon={faCog} className="settings-icon" />
-          Settings
-        </button>
-      </div>
+      <PopupHeader onSettingsClick={goToOptions} />
 
       {projectIds.length === 0 ? (
         <NoProjectsMessage />
       ) : (
         <>
-          <div className="input-section">
-            <label htmlFor="project">Project ID</label>
-            <div className="select-wrapper">
-              <Select
-                ref={projectSelectRef}
-                options={projectIds.map(id => ({ value: id, label: id }))}
-                value={selectedProject ? { value: selectedProject, label: selectedProject } : null}
-                onChange={(newValue) => handleProjectSelect((newValue as { value: string })?.value)}
-                placeholder="Select project"
-                components={{ Option }}
-              />
-            </div>
-          </div>
+          <ProjectSelector
+            ref={projectSelectRef}
+            projectIds={projectIds}
+            selectedProject={selectedProject}
+            onProjectSelect={handleProjectSelect}
+          />
 
-          <div className="service-section">
-            <label htmlFor="service">Service</label>
-            <div className="select-wrapper">
-              <Select
-                ref={serviceSelectRef}
-                options={services}
-                value={selectedService}
-                onChange={handleServiceSelect}
-                placeholder="Select service"
-                components={{ Option }}
-              />
-            </div>
-          </div>
+          <ServiceSelector
+            ref={serviceSelectRef}
+            services={services}
+            selectedService={selectedService}
+            onServiceSelect={handleServiceSelect}
+          />
         </>
       )}
     </div>
