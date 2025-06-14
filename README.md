@@ -9,76 +9,76 @@ The list supports fuzzy search, with matching characters highlighted in red for 
 
 <img width="300px" height="auto" src="image/popup-service.png">
 
-## プロジェクト構成
+## Project Structure
 
-### アーキテクチャ
-このプロジェクトはChrome拡張機能として設計されており、React + TypeScriptで構築されています。
+### Architecture
+This project is a Chrome extension built with React + TypeScript.
 
-### ディレクトリ構造
+### Directory Structure
 ```
-├── manifest.json          # Chrome拡張機能マニフェスト
-├── package.json           # プロジェクト依存関係
-├── tsconfig.json          # TypeScript設定
-├── webpack.config.js      # Webpack設定
-├── jest.config.js         # テスト設定
+├── manifest.json          # Chrome extension manifest
+├── package.json           # Project dependencies
+├── tsconfig.json          # TypeScript configuration
+├── webpack.config.js      # Webpack configuration
+├── jest.config.js         # Test configuration
 │
-├── src/                   # ソースコード
-│   ├── popup/             # ポップアップ画面
-│   │   ├── Popup.tsx      # メインポップアップコンポーネント
-│   │   ├── popup.html     # ポップアップHTML
-│   │   └── index.tsx      # ポップアップエントリーポイント
+├── src/                   # Source code
+│   ├── popup/             # Popup screen
+│   │   ├── Popup.tsx      # Main popup component
+│   │   ├── popup.html     # Popup HTML
+│   │   └── index.tsx      # Popup entry point
 │   │
-│   ├── option/            # 設定画面
-│   │   ├── Option.tsx     # 設定コンポーネント
-│   │   ├── option.html    # 設定HTML
-│   │   └── index.tsx      # 設定エントリーポイント
+│   ├── option/            # Settings screen
+│   │   ├── Option.tsx     # Settings component
+│   │   ├── option.html    # Settings HTML
+│   │   └── index.tsx      # Settings entry point
 │   │
-│   ├── components/        # 再利用可能コンポーネント
-│   │   ├── popup/         # ポップアップ専用コンポーネント
-│   │   │   ├── PopupHeader.tsx        # ヘッダーコンポーネント
-│   │   │   ├── ProjectSelector.tsx    # プロジェクト選択コンポーネント
-│   │   │   ├── ServiceSelector.tsx    # サービス選択コンポーネント
-│   │   │   └── NoProjectsMessage.tsx  # プロジェクト未登録メッセージ
-│   │   └── select/        # セレクト関連コンポーネント
-│   │       └── Option.tsx # カスタムオプションコンポーネント
+│   ├── components/        # Reusable components
+│   │   ├── popup/         # Popup-specific components
+│   │   │   ├── PopupHeader.tsx        # Header component
+│   │   │   ├── ProjectSelector.tsx    # Project selection component
+│   │   │   ├── ServiceSelector.tsx    # Service selection component
+│   │   │   └── NoProjectsMessage.tsx  # No projects message
+│   │   └── select/        # Select-related components
+│   │       └── Option.tsx # Custom option component
 │   │
-│   ├── hooks/             # カスタムフック
-│   │   ├── useNavigation.ts  # ナビゲーション管理
-│   │   ├── useOptions.ts     # 設定管理
-│   │   └── useProjects.ts    # プロジェクト管理
+│   ├── hooks/             # Custom hooks
+│   │   ├── useNavigation.ts  # Navigation management
+│   │   ├── useOptions.ts     # Settings management
+│   │   └── useProjects.ts    # Project management
 │   │
-│   ├── utils/             # ユーティリティ関数
-│   │   ├── projects/      # プロジェクト関連
-│   │   │   ├── AddProject.ts     # プロジェクト追加
-│   │   │   ├── DeleteProject.ts  # プロジェクト削除
-│   │   │   ├── ListProject.ts    # プロジェクト一覧取得
-│   │   │   └── Constant.ts       # 定数定義
-│   │   └── services/      # サービス関連
-│   │       └── ListServices.ts   # サービス一覧取得
+│   ├── utils/             # Utility functions
+│   │   ├── projects/      # Project-related utilities
+│   │   │   ├── AddProject.ts     # Add project
+│   │   │   ├── DeleteProject.ts  # Delete project
+│   │   │   ├── ListProject.ts    # List projects
+│   │   │   └── Constant.ts       # Constants
+│   │   └── services/      # Service-related utilities
+│   │       └── ListServices.ts   # List services
 │   │
-│   └── types/             # 型定義
-│       ├── SelectOption.ts    # セレクトオプション型
-│       └── Service.ts         # サービス型
+│   └── types/             # Type definitions
+│       ├── SelectOption.ts    # Select option types
+│       └── Service.ts         # Service types
 │
-├── public/                # パブリックアセット
-├── dist/                  # ビルド出力
-├── icons/                 # アイコンファイル
-└── image/                 # ドキュメント用画像
+├── public/                # Public assets
+├── dist/                  # Build output
+├── icons/                 # Icon files
+└── image/                 # Documentation images
 ```
 
-### 技術スタック
-- **フレームワーク**: React 19.0.0
-- **言語**: TypeScript
+### Technology Stack
+- **Framework**: React 19.0.0
+- **Language**: TypeScript
 - **UI**: react-select, FontAwesome
-- **ビルドツール**: Webpack
-- **テスト**: Jest, React Testing Library
-- **パッケージマネージャ**: npm
+- **Build Tool**: Webpack
+- **Testing**: Jest, React Testing Library
+- **Package Manager**: npm
 
-### 主要機能
-- GCPプロジェクトとサービスの同時選択
-- ファジー検索対応
-- Chrome拡張機能としてのシームレスな統合
-- ローカルストレージでのプロジェクト管理
+### Key Features
+- Simultaneous GCP project and service selection
+- Fuzzy search support
+- Seamless Chrome extension integration
+- Local storage for project management
 
 ## Features
 - Select both project and service simultaneously
