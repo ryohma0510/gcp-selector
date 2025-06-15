@@ -10,7 +10,7 @@ interface ProjectSelectorProps {
 
 type ProjectOption = { value: string; label: string };
 
-const ProjectSelector = forwardRef<React.ComponentRef<typeof Select>, ProjectSelectorProps>(
+const ProjectSelector = forwardRef<React.ComponentRef<typeof Select<ProjectOption>>, ProjectSelectorProps>(
   ({ projectIds, selectedProject, onProjectSelect }, ref) => {
     const handleChange = (newValue: SingleValue<ProjectOption>) => {
       onProjectSelect(newValue?.value || '');
@@ -20,7 +20,7 @@ const ProjectSelector = forwardRef<React.ComponentRef<typeof Select>, ProjectSel
       <div className="input-section">
         <label htmlFor="project">Project ID</label>
         <div className="select-wrapper">
-          <Select
+          <Select<ProjectOption>
             ref={ref}
             options={projectIds.map(id => ({ value: id, label: id }))}
             value={selectedProject ? { value: selectedProject, label: selectedProject } : null}

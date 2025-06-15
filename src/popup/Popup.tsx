@@ -11,13 +11,15 @@ import { useNavigation } from '../hooks/useNavigation';
 import { useOptions } from '../hooks/useOptions';
 import Select from 'react-select';
 
+type ProjectOption = { value: string; label: string };
+
 const Popup: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState('');
   const [selectedService, setSelectedService] = useState<SelectOption | null>(
     null
   );
-  const serviceSelectRef = useRef<React.ComponentRef<typeof Select>>(null);
-  const projectSelectRef = useRef<React.ComponentRef<typeof Select>>(null);
+  const serviceSelectRef = useRef<React.ComponentRef<typeof Select<SelectOption>>>(null);
+  const projectSelectRef = useRef<React.ComponentRef<typeof Select<ProjectOption>>>(null);
 
   const { projectIds } = useProjects();
   const { openGcpUrl } = useNavigation();

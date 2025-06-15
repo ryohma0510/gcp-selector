@@ -9,13 +9,13 @@ interface ServiceSelectorProps {
   onServiceSelect: (service: SelectOption | null) => void;
 }
 
-const ServiceSelector = forwardRef<React.ComponentRef<typeof Select>, ServiceSelectorProps>(
+const ServiceSelector = forwardRef<React.ComponentRef<typeof Select<SelectOption>>, ServiceSelectorProps>(
   ({ services, selectedService, onServiceSelect }, ref) => {
     return (
       <div className="service-section">
         <label htmlFor="service">Service</label>
         <div className="select-wrapper">
-          <Select
+          <Select<SelectOption>
             ref={ref}
             options={services}
             value={selectedService}
