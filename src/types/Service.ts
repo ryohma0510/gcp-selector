@@ -4,4 +4,3 @@ type Service = {
 };
 
 export default Service;
-
