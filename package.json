@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch",
     "type-check": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "zip": "npm run build && zip -r gcp-selector.zip dist"
   },
   "keywords": [],
@@ -23,12 +27,20 @@
     "react-select": "^5.9.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/chrome": "^0.0.287",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.10.2",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "style-loader": "^4.0.0",
+    "ts-jest": "^29.4.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.7.2",
     "webpack": "^5.97.1",

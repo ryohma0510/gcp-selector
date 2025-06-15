@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  devtool: 'cheap-module-source-map',
   entry: {
     popup: './src/popup/index.tsx',
     option: './src/option/index.tsx',
