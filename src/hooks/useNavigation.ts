@@ -7,6 +7,6 @@ export const useNavigation = () => {
   };
 
   return {
-    openGcpUrl
+    openGcpUrl,
   };
 };

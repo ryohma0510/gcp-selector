@@ -13,7 +13,7 @@
 .header h1 {
   margin: 0;
   font-size: 24px;
-  color: #659AD2;
+  color: #659ad2;
 }
 
 .settings-button {
@@ -61,12 +61,12 @@ select {
 }
 
 select:hover {
-  border-color: #659AD2;
+  border-color: #659ad2;
 }
 
 select:focus {
   outline: none;
-  border-color: #659AD2;
+  border-color: #659ad2;
   box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
 }
 
@@ -76,7 +76,7 @@ select:focus {
 }
 
 .settings-button:hover .settings-icon {
-  color: #659AD2;
+  color: #659ad2;
 }
 
 .no-projects-message {
@@ -87,7 +87,7 @@ select:focus {
 .no-projects-message button {
   margin-top: 10px;
   padding: 8px 16px;
-  background-color: #659AD2;
+  background-color: #659ad2;
   color: white;
   border: none;
   border-radius: 4px;
@@ -95,5 +95,5 @@ select:focus {
 }
 
 .no-projects-message button:hover {
-  background-color: #659AD2;
+  background-color: #659ad2;
 }

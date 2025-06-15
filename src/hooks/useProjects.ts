@@ -24,6 +24,6 @@ export const useProjects = () => {
   return {
     projectIds,
     loading,
-    refetch: loadProjects
+    refetch: loadProjects,
   };
 };

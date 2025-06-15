@@ -36,7 +36,9 @@ describe('PopupHeader', () => {
   it('renders with correct CSS classes', () => {
     render(<PopupHeader onSettingsClick={mockOnSettingsClick} />);
 
-    expect(screen.getByText('GCP Selector').closest('.header')).toBeInTheDocument();
+    expect(
+      screen.getByText('GCP Selector').closest('.header')
+    ).toBeInTheDocument();
     expect(screen.getByRole('button')).toHaveClass('settings-button');
   });
 

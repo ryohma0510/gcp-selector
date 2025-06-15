@@ -4,13 +4,13 @@ interface NoProjectsMessageProps {
   onSettingsClick: () => void;
 }
 
-const NoProjectsMessage: React.FC<NoProjectsMessageProps> = ({ onSettingsClick }) => (
+const NoProjectsMessage: React.FC<NoProjectsMessageProps> = ({
+  onSettingsClick,
+}) => (
   <div className="no-projects-message">
     <p>No projects found.</p>
     <p>
-      <button onClick={onSettingsClick}>
-        Please add project in settings
-      </button>
+      <button onClick={onSettingsClick}>Please add project in settings</button>
     </p>
   </div>
 );

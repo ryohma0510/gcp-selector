@@ -20,7 +20,7 @@ const Option: React.FC = () => {
       setError(null);
       const projects = await listProjects();
       setProjectIds(projects);
-    } catch (err) {
+    } catch {
       setError('Failed to load projects');
     }
   };
@@ -36,7 +36,7 @@ const Option: React.FC = () => {
       await addProject(newProjectId);
       await loadProjects();
       setNewProjectId('');
-    } catch (err) {
+    } catch {
       setError('Failed to add project');
     }
   };
@@ -46,7 +46,7 @@ const Option: React.FC = () => {
       setError(null);
       await deleteProject(deleteProjectId);
       await loadProjects();
-    } catch (err) {
+    } catch {
       setError('Failed to delete project');
     }
   };
@@ -61,10 +61,12 @@ const Option: React.FC = () => {
         <input
           className="project-input"
           value={newProjectId}
-          onChange={(e) => setNewProjectId(e.target.value)}
+          onChange={e => setNewProjectId(e.target.value)}
           placeholder="Enter Project ID"
         />
-        <button className="add-button" onClick={handleSave}>Add Project</button>
+        <button className="add-button" onClick={handleSave}>
+          Add Project
+        </button>
       </div>
 
       <div className="project-list">
@@ -72,10 +74,13 @@ const Option: React.FC = () => {
           <span>Project ID</span>
           <span>Action</span>
         </div>
-        {projectIds.sort().map((projectId) => (
+        {projectIds.sort().map(projectId => (
           <div key={projectId} className="project-item">
             <span>{projectId}</span>
-            <button className="delete-button" onClick={() => handleDelete(projectId)}>
+            <button
+              className="delete-button"
+              onClick={() => handleDelete(projectId)}
+            >
               <FontAwesomeIcon icon={faTrash} className="trash-icon" />
             </button>
           </div>

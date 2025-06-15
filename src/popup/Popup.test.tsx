@@ -13,7 +13,11 @@ jest.mock('../utils/services/ListServices');
 
 // Mock the child components
 jest.mock('../components/popup/PopupHeader', () => {
-  return function MockPopupHeader({ onSettingsClick }: { onSettingsClick: () => void }) {
+  return function MockPopupHeader({
+    onSettingsClick,
+  }: {
+    onSettingsClick: () => void;
+  }) {
     return (
       <div data-testid="popup-header">
         <button onClick={onSettingsClick}>Settings</button>
@@ -31,7 +35,7 @@ jest.mock('../components/popup/ProjectSelector', () => {
       <div data-testid="project-selector" ref={ref}>
         <select
           value={selectedProject}
-          onChange={(e) => onProjectSelect(e.target.value)}
+          onChange={e => onProjectSelect(e.target.value)}
           data-testid="project-select"
         >
           <option value="">Select project</option>
@@ -55,8 +59,10 @@ jest.mock('../components/popup/ServiceSelector', () => {
       <div data-testid="service-selector" ref={ref}>
         <select
           value={selectedService?.value || ''}
-          onChange={(e) => {
-            const service = services.find((s: any) => s.value === e.target.value);
+          onChange={e => {
+            const service = services.find(
+              (s: any) => s.value === e.target.value
+            );
             onServiceSelect(service || null);
           }}
           data-testid="service-select"
@@ -74,7 +80,11 @@ jest.mock('../components/popup/ServiceSelector', () => {
 });
 
 jest.mock('../components/popup/NoProjectsMessage', () => {
-  return function MockNoProjectsMessage({ onSettingsClick }: { onSettingsClick: () => void }) {
+  return function MockNoProjectsMessage({
+    onSettingsClick,
+  }: {
+    onSettingsClick: () => void;
+  }) {
     return (
       <div data-testid="no-projects-message">
         <p>No projects found.</p>
@@ -90,9 +100,13 @@ import { useOptions } from '../hooks/useOptions';
 import listServices from '../utils/services/ListServices';
 
 const mockUseProjects = useProjects as jest.MockedFunction<typeof useProjects>;
-const mockUseNavigation = useNavigation as jest.MockedFunction<typeof useNavigation>;
+const mockUseNavigation = useNavigation as jest.MockedFunction<
+  typeof useNavigation
+>;
 const mockUseOptions = useOptions as jest.MockedFunction<typeof useOptions>;
-const mockListServices = listServices as jest.MockedFunction<typeof listServices>;
+const mockListServices = listServices as jest.MockedFunction<
+  typeof listServices
+>;
 
 describe('Popup', () => {
   const mockOpenGcpUrl = jest.fn();
@@ -100,7 +114,10 @@ describe('Popup', () => {
 
   const mockServices = [
     { label: 'BigQuery', url: 'https://console.cloud.google.com/bigquery' },
-    { label: 'Cloud Functions', url: 'https://console.cloud.google.com/functions/list' },
+    {
+      label: 'Cloud Functions',
+      url: 'https://console.cloud.google.com/functions/list',
+    },
   ];
 
   beforeEach(() => {
@@ -193,7 +210,10 @@ describe('Popup', () => {
 
     // Select a service
     const serviceSelect = screen.getByTestId('service-select');
-    await user.selectOptions(serviceSelect, 'https://console.cloud.google.com/bigquery');
+    await user.selectOptions(
+      serviceSelect,
+      'https://console.cloud.google.com/bigquery'
+    );
 
     expect(mockOpenGcpUrl).toHaveBeenCalledWith(
       { label: 'BigQuery', value: 'https://console.cloud.google.com/bigquery' },
@@ -207,7 +227,10 @@ describe('Popup', () => {
 
     // Select a service without selecting a project
     const serviceSelect = screen.getByTestId('service-select');
-    await user.selectOptions(serviceSelect, 'https://console.cloud.google.com/bigquery');
+    await user.selectOptions(
+      serviceSelect,
+      'https://console.cloud.google.com/bigquery'
+    );
 
     expect(mockOpenGcpUrl).not.toHaveBeenCalled();
   });
@@ -246,8 +269,12 @@ describe('Popup', () => {
     const popupContainer = container.querySelector('.popup-container');
     expect(popupContainer).toBeInTheDocument();
     expect(popupContainer).toContainElement(screen.getByTestId('popup-header'));
-    expect(popupContainer).toContainElement(screen.getByTestId('project-selector'));
-    expect(popupContainer).toContainElement(screen.getByTestId('service-selector'));
+    expect(popupContainer).toContainElement(
+      screen.getByTestId('project-selector')
+    );
+    expect(popupContainer).toContainElement(
+      screen.getByTestId('service-selector')
+    );
   });
 
   it('uses custom hooks correctly', () => {
