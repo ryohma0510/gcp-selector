@@ -4,7 +4,7 @@ const addProject = async (projectId: string): Promise<void> => {
   if (!projectId) return;
 
   const items = await chrome.storage.local.get({ [STORAGE_KEY_PROJECT_IDS]: [] });
-  let currentIds = items[STORAGE_KEY_PROJECT_IDS] || [];
+  const currentIds = items[STORAGE_KEY_PROJECT_IDS] || [];
 
   if (currentIds.includes(projectId)) return;
 

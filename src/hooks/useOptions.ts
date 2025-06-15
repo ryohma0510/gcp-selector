@@ -8,6 +8,6 @@ export const useOptions = () => {
   };
 
   return {
-    goToOptions
+    goToOptions,
   };
 };

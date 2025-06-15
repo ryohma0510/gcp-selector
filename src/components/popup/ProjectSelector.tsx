@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import Select from 'react-select';
+import Select, { SingleValue } from 'react-select';
 import Option from '../select/Option';
 
 interface ProjectSelectorProps {
@@ -8,10 +8,12 @@ interface ProjectSelectorProps {
   onProjectSelect: (projectId: string) => void;
 }
 
-const ProjectSelector = forwardRef<any, ProjectSelectorProps>(
+type ProjectOption = { value: string; label: string };
+
+const ProjectSelector = forwardRef<React.ComponentRef<typeof Select>, ProjectSelectorProps>(
   ({ projectIds, selectedProject, onProjectSelect }, ref) => {
-    const handleChange = (newValue: any) => {
-      onProjectSelect(newValue?.value);
+    const handleChange = (newValue: SingleValue<ProjectOption>) => {
+      onProjectSelect(newValue?.value || '');
     };
 
     return (
