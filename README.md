@@ -12,21 +12,21 @@ project setting page
 
 <img width="300px" height="auto" src="image/option.png">
 
-## Features
+## ✨ Features
 - Select both project and service simultaneously
 - Register your GCP project IDs
 
-## Installation
+## 📦 Installation
 
 Install easily from the [Chrome Web Store](https://chrome.google.com/webstore/detail/gcp-selector/gdfiojnnhlfmkbghihllimpaanldflag)
 
 
-## Project Structure
+## 🏗️ Project Structure
 
-### Architecture
+### 🔧 Architecture
 This project is a Chrome extension built with React + TypeScript.
 
-### Directory Structure
+### 📁 Directory Structure
 ```
 ├── manifest.json          # Chrome extension manifest
 ├── package.json           # Project dependencies
@@ -78,7 +78,7 @@ This project is a Chrome extension built with React + TypeScript.
 └── image/                 # Documentation images
 ```
 
-### Technology Stack
+### 🛠️ Technology Stack
 - **Framework**: React 19.0.0
 - **Language**: TypeScript
 - **UI**: react-select, FontAwesome
@@ -86,15 +86,15 @@ This project is a Chrome extension built with React + TypeScript.
 - **Testing**: Jest, React Testing Library
 - **Package Manager**: npm
 
-### Key Features
+### 🚀 Key Features
 - Simultaneous GCP project and service selection
 - Fuzzy search support
 - Seamless Chrome extension integration
 - Local storage for project management
 
-## Development
+## 💻 Development
 
-### Hot Reload Development
+### 🔥 Hot Reload Development
 For efficient development, use the hot reload feature:
 
 ```bash
@@ -103,12 +103,12 @@ npm run dev
 
 This command starts webpack in watch mode, automatically rebuilding when files change.
 
-### Loading the Extension
+### 🔌 Loading the Extension
 1. Navigate to `chrome://extensions/`
 2. Enable "Developer mode" (toggle in top right)
 3. Click "Load unpacked" and select the `dist` folder
 4. The extension icon will appear in your Chrome toolbar
 
-## Requirements
+## 📋 Requirements
 - Google Chrome browser
 - Account with access to GCP console
