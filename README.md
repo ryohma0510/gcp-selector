@@ -6,8 +6,20 @@ A Chrome extension that allows you to quickly select Google Cloud Platform (GCP)
 
 The list supports fuzzy search, with matching characters highlighted in red for easy identification.
 
-
 <img width="300px" height="auto" src="image/popup-service.png">
+
+project setting page
+
+<img width="300px" height="auto" src="image/option.png">
+
+## Features
+- Select both project and service simultaneously
+- Register your GCP project IDs
+
+## Installation
+
+Install easily from the [Chrome Web Store](https://chrome.google.com/webstore/detail/gcp-selector/gdfiojnnhlfmkbghihllimpaanldflag)
+
 
 ## Project Structure
 
@@ -80,17 +92,22 @@ This project is a Chrome extension built with React + TypeScript.
 - Seamless Chrome extension integration
 - Local storage for project management
 
-## Features
-- Select both project and service simultaneously
-- Register your GCP project IDs
+## Development
 
-## Installation
+### Hot Reload Development
+For efficient development, use the hot reload feature:
 
-Install easily from the [Chrome Web Store](https://chrome.google.com/webstore/detail/gcp-selector/gdfiojnnhlfmkbghihllimpaanldflag)
+```bash
+npm run dev
+```
 
-## Settings
+This command starts webpack in watch mode, automatically rebuilding when files change.
 
-<img width="300px" height="auto" src="image/option.png">
+### Loading the Extension
+1. Navigate to `chrome://extensions/`
+2. Enable "Developer mode" (toggle in top right)
+3. Click "Load unpacked" and select the `dist` folder
+4. The extension icon will appear in your Chrome toolbar
 
 ## Requirements
 - Google Chrome browser
