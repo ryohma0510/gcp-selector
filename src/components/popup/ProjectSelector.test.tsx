@@ -95,8 +95,12 @@ describe('ProjectSelector', () => {
       />
     );
 
-    expect(screen.getByText('Project ID').closest('.input-section')).toBeInTheDocument();
-    expect(screen.getByText('Project ID').nextElementSibling).toHaveClass('select-wrapper');
+    expect(
+      screen.getByText('Project ID').closest('.input-section')
+    ).toBeInTheDocument();
+    expect(screen.getByText('Project ID').nextElementSibling).toHaveClass(
+      'select-wrapper'
+    );
   });
 
   it('handles null value selection correctly', async () => {

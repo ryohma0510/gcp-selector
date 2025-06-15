@@ -10,4 +10,3 @@ const deleteProject = async (projectId: string): Promise<void> => {
 };
 
 export default deleteProject;
-

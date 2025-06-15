@@ -3,9 +3,12 @@ import userEvent from '@testing-library/user-event';
 import ServiceSelector from './ServiceSelector';
 
 const mockServices = [
-  { value: 'https://console.cloud.google.com/compute', label: 'Compute Engine' },
+  {
+    value: 'https://console.cloud.google.com/compute',
+    label: 'Compute Engine',
+  },
   { value: 'https://console.cloud.google.com/storage', label: 'Cloud Storage' },
-  { value: 'https://console.cloud.google.com/sql', label: 'Cloud SQL' }
+  { value: 'https://console.cloud.google.com/sql', label: 'Cloud SQL' },
 ];
 
 describe('ServiceSelector', () => {
@@ -61,7 +64,10 @@ describe('ServiceSelector', () => {
     const option = screen.getByText('Cloud Storage');
     await user.click(option);
 
-    expect(mockOnServiceSelect).toHaveBeenCalledWith(mockServices[1], expect.any(Object));
+    expect(mockOnServiceSelect).toHaveBeenCalledWith(
+      mockServices[1],
+      expect.any(Object)
+    );
   });
 
   it('handles empty services list', () => {
@@ -101,7 +107,11 @@ describe('ServiceSelector', () => {
       />
     );
 
-    expect(screen.getByText('Service').closest('.service-section')).toBeInTheDocument();
-    expect(screen.getByText('Service').nextElementSibling).toHaveClass('select-wrapper');
+    expect(
+      screen.getByText('Service').closest('.service-section')
+    ).toBeInTheDocument();
+    expect(screen.getByText('Service').nextElementSibling).toHaveClass(
+      'select-wrapper'
+    );
   });
 });
