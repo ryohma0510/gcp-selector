@@ -18,8 +18,10 @@ const Popup: React.FC = () => {
   const [selectedService, setSelectedService] = useState<SelectOption | null>(
     null
   );
-  const serviceSelectRef = useRef<React.ComponentRef<typeof Select<SelectOption>>>(null);
-  const projectSelectRef = useRef<React.ComponentRef<typeof Select<ProjectOption>>>(null);
+  const serviceSelectRef =
+    useRef<React.ComponentRef<typeof Select<SelectOption>>>(null);
+  const projectSelectRef =
+    useRef<React.ComponentRef<typeof Select<ProjectOption>>>(null);
 
   const { projectIds } = useProjects();
   const { openGcpUrl } = useNavigation();
