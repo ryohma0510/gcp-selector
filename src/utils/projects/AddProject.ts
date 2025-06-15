@@ -13,3 +13,4 @@ const addProject = async (projectId: string): Promise<void> => {
 };
 
 export default addProject;
+

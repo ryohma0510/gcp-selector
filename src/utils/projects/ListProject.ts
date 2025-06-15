@@ -7,3 +7,4 @@ const listProjects = async (): Promise<string[]> => {
 };
 
 export default listProjects;
+
