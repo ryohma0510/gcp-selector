@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -27,9 +31,11 @@ jobs:
 
     - name: Run tests
       run: npm test
+      continue-on-error: false
 
     - name: Run tests with coverage
       run: npm run test:coverage
+      continue-on-error: false
 
   build:
     runs-on: ubuntu-latest
