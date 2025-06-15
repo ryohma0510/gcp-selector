@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npm test)",
       "Bash(npm test:*)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }
