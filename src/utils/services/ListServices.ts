@@ -209,6 +209,82 @@ const services: Service[] = [
     label: 'Cloud Armor',
     url: 'https://console.cloud.google.com/net-security/securitypolicies/list',
   },
+  {
+    label: 'Vertex AI',
+    url: 'https://console.cloud.google.com/vertex-ai',
+  },
+  {
+    label: 'Filestore',
+    url: 'https://console.cloud.google.com/filestore',
+  },
+  {
+    label: 'Cloud Vision API',
+    url: 'https://console.cloud.google.com/vision',
+  },
+  {
+    label: 'Cloud Source Repositories',
+    url: 'https://console.cloud.google.com/code',
+  },
+  {
+    label: 'Security Command Center',
+    url: 'https://console.cloud.google.com/security',
+  },
+  {
+    label: 'Cloud CDN',
+    url: 'https://console.cloud.google.com/net-services/cdn',
+  },
+  {
+    label: 'Cloud NAT',
+    url: 'https://console.cloud.google.com/net-services/nat',
+  },
+  {
+    label: 'Firebase',
+    url: 'https://console.firebase.google.com',
+  },
+  {
+    label: 'Cloud Debugger',
+    url: 'https://console.cloud.google.com/debug',
+  },
+  {
+    label: 'Cloud Profiler',
+    url: 'https://console.cloud.google.com/profiler',
+  },
+  {
+    label: 'Cloud Translation',
+    url: 'https://console.cloud.google.com/translation',
+  },
+  {
+    label: 'Cloud Speech-to-Text',
+    url: 'https://console.cloud.google.com/speech',
+  },
+  {
+    label: 'Cloud Text-to-Speech',
+    url: 'https://console.cloud.google.com/text-to-speech',
+  },
+  {
+    label: 'Cloud Natural Language',
+    url: 'https://console.cloud.google.com/natural-language',
+  },
+  {
+    label: 'Recommendations AI',
+    url: 'https://console.cloud.google.com/recommendation',
+  },
+  {
+    label: 'AutoML',
+    url: 'https://console.cloud.google.com/automl',
+  },
+  {
+    label: 'Cloud Healthcare API',
+    url: 'https://console.cloud.google.com/healthcare',
+  },
+  {
+    label: 'Cloud Life Sciences',
+    url: 'https://console.cloud.google.com/lifesciences',
+  },
+  {
+    label: 'Binary Authorization',
+    url: 'https://console.cloud.google.com/security/binary-authorization',
+  },
 ];
 
 const listServices = () => {
