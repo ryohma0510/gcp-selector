@@ -189,6 +189,14 @@ Once CI completes, `gcp-selector.zip` with the version injected from the tag wil
 3. Select **GCP Selector** → **Package** → **Upload new package**
 4. Submit for review
 
+## 🤖 Claude Skills
+
+This project includes [Claude Code](https://claude.ai/code) skills under `.claude/skills/`. If you use Claude Code, these skills are available as slash commands:
+
+| Skill | Command | Description |
+|---|---|---|
+| Release | `/release` | Guides through the full release process — create a GitHub Release, wait for CI, and upload to Chrome Web Store |
+
 ## 📋 Requirements
 - Google Chrome browser
 - Account with access to GCP console
