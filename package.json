@@ -1,6 +1,6 @@
 {
   "name": "gcp-selector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Select GCP project and service at once.",
   "main": "index.js",
   "scripts": {
