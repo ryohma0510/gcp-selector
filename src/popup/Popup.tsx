@@ -22,6 +22,7 @@ const Popup: React.FC = () => {
     useRef<React.ComponentRef<typeof Select<SelectOption>>>(null);
   const projectSelectRef =
     useRef<React.ComponentRef<typeof Select<ProjectOption>>>(null);
+  const hasInitialFocus = useRef(false);
 
   const { projectIds } = useProjects();
   const { openGcpUrl } = useNavigation();
@@ -33,10 +34,13 @@ const Popup: React.FC = () => {
   }));
 
   useEffect(() => {
-    requestAnimationFrame(() => {
-      projectSelectRef.current?.focus();
-    });
-  }, []);
+    if (projectIds.length > 0 && !hasInitialFocus.current) {
+      hasInitialFocus.current = true;
+      requestAnimationFrame(() => {
+        projectSelectRef.current?.focus();
+      });
+    }
+  }, [projectIds]);
 
   const handleProjectSelect = (projectId: string) => {
     setSelectedProject(projectId);

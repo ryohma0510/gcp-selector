@@ -32,7 +32,14 @@ This project is a Chrome extension built with React + TypeScript.
 ├── package.json           # Project dependencies
 ├── tsconfig.json          # TypeScript configuration
 ├── webpack.config.js      # Webpack configuration
-├── jest.config.js         # Test configuration
+├── jest.config.js         # Jest configuration
+├── playwright.config.ts   # Playwright configuration
+│
+├── e2e/                   # E2E tests (Playwright)
+│   ├── fixtures.ts        # Custom fixtures for extension loading
+│   ├── popup.spec.ts      # Popup tests
+│   ├── option.spec.ts     # Option page tests
+│   └── integration.spec.ts # Cross-page integration tests
 │
 ├── src/                   # Source code
 │   ├── popup/             # Popup screen
@@ -83,7 +90,7 @@ This project is a Chrome extension built with React + TypeScript.
 - **Language**: TypeScript
 - **UI**: react-select, FontAwesome
 - **Build Tool**: Webpack
-- **Testing**: Jest, React Testing Library
+- **Testing**: Jest, React Testing Library, Playwright
 - **Package Manager**: npm
 
 ### 🚀 Key Features
@@ -108,6 +115,87 @@ This command starts webpack in watch mode, automatically rebuilding when files c
 2. Enable "Developer mode" (toggle in top right)
 3. Click "Load unpacked" and select the `dist` folder
 4. The extension icon will appear in your Chrome toolbar
+
+## 🧪 Testing
+
+### Unit Tests
+
+```bash
+npm test
+```
+
+### E2E Tests (Playwright)
+
+E2E tests run against the actual built extension in a real Chromium browser.
+
+```bash
+npm run test:e2e        # Build and run all E2E tests
+npm run test:e2e:ui     # Run with Playwright UI mode
+```
+
+The E2E suite covers:
+- **Popup**: auto-focus, keyboard navigation, URL generation, settings navigation
+- **Option page**: add/delete projects, validation, Enter key support
+- **Integration**: cross-page storage consistency, full setup flow
+
+## 🚀 Release
+
+**Versions are managed automatically by CI.** The version in `manifest.json` / `package.json` is not tracked in source — CI injects it from the tag name at build time. No version bump commit is needed in PRs.
+
+### Version numbering
+
+This project follows [Semantic Versioning](https://semver.org/):
+
+| Change type | Example |
+|---|---|
+| Bug fix | `1.0.0` → `1.0.1` |
+| New feature | `1.0.0` → `1.1.0` |
+| Breaking change | `1.0.0` → `2.0.0` |
+
+### Release steps
+
+#### 1. Merge the PR
+
+Ensure all changes are merged into `main`. No version bump commit is needed.
+
+#### 2. Create a GitHub Release
+
+```bash
+# Check commits since the last release
+gh release list --limit 5
+
+# Create a release (auto-generates tag and release notes)
+gh release create v1.0.1 --generate-notes --target main
+```
+
+Alternatively, via GitHub UI:
+1. **Releases → Draft a new release**
+2. **"Choose a tag"** → type the version (e.g. `v1.0.1`) → **"+ Create new tag"**
+3. Target: **`main`**
+4. Fill in release notes → **"Publish release"**
+
+#### 3. Wait for CI to attach the zip
+
+```bash
+gh run list --workflow=release.yml --limit 3
+```
+
+Once CI completes, `gcp-selector.zip` with the version injected from the tag will be attached to the release automatically.
+
+#### 4. Upload to Chrome Web Store (manual)
+
+1. Download `gcp-selector.zip` from the [GitHub Release](../../releases)
+2. Open the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole)
+3. Select **GCP Selector** → **Package** → **Upload new package**
+4. Submit for review
+
+## 🤖 Claude Skills
+
+This project includes [Claude Code](https://claude.ai/code) skills under `.claude/skills/`. If you use Claude Code, these skills are available as slash commands:
+
+| Skill | Command | Description |
+|---|---|---|
+| Release | `/release` | Guides through the full release process — create a GitHub Release, wait for CI, and upload to Chrome Web Store |
 
 ## 📋 Requirements
 - Google Chrome browser
