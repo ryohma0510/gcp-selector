@@ -62,6 +62,7 @@ const Option: React.FC = () => {
           className="project-input"
           value={newProjectId}
           onChange={e => setNewProjectId(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && handleSave()}
           placeholder="Enter Project ID"
         />
         <button className="add-button" onClick={handleSave}>

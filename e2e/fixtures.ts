@@ -4,12 +4,15 @@ import os from 'os';
 import path from 'path';
 
 const EXTENSION_PATH = path.join(__dirname, '../dist');
+export const STORAGE_KEY_PROJECT_IDS = 'storageKeyProjectIDs';
 
 export const test = base.extend<{
   context: BrowserContext;
   extensionId: string;
+  popupUrl: string;
+  optionUrl: string;
+  seedProjects: (projects: string[]) => Promise<void>;
 }>({
-  // Fresh browser profile per test to avoid state pollution
   context: async ({}, use) => {
     const tmpProfile = fs.mkdtempSync(path.join(os.tmpdir(), 'gcp-selector-e2e-'));
     const context = await chromium.launchPersistentContext(tmpProfile, {
@@ -26,7 +29,6 @@ export const test = base.extend<{
   },
 
   extensionId: async ({ context }, use) => {
-    // Detect extension ID via chrome://extensions
     const page = await context.newPage();
     await page.goto('chrome://extensions');
     await page.waitForTimeout(1000);
@@ -42,9 +44,29 @@ export const test = base.extend<{
       return '';
     });
     await page.close();
-
     if (!id) throw new Error('GCP Selector extension not found. Run `npm run build` first.');
     await use(id);
+  },
+
+  popupUrl: async ({ extensionId }, use) => {
+    await use(`chrome-extension://${extensionId}/popup/popup.html`);
+  },
+
+  optionUrl: async ({ extensionId }, use) => {
+    await use(`chrome-extension://${extensionId}/option/option.html`);
+  },
+
+  seedProjects: async ({ context, popupUrl }, use) => {
+    const seed = async (projects: string[]) => {
+      const page = await context.newPage();
+      await page.goto(popupUrl);
+      await page.evaluate(
+        ({ key, projects }) => chrome.storage.local.set({ [key]: projects }),
+        { key: STORAGE_KEY_PROJECT_IDS, projects }
+      );
+      await page.close();
+    };
+    await use(seed);
   },
 });
 
