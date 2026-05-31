@@ -140,7 +140,7 @@ The E2E suite covers:
 
 ## 🚀 Release
 
-When a version tag is pushed, CI automatically runs tests, builds `gcp-selector.zip`, and attaches it to the GitHub Release.
+**Versions are managed automatically by CI.** The version in `manifest.json` / `package.json` is not tracked in source — CI injects it from the tag name at build time. No version bump commit is needed in PRs.
 
 ### Version numbering
 
@@ -152,56 +152,42 @@ This project follows [Semantic Versioning](https://semver.org/):
 | New feature | `1.0.0` → `1.1.0` |
 | Breaking change | `1.0.0` → `2.0.0` |
 
-> **Note:** `manifest.json` uses `major.minor.patch` (e.g. `1.0.1`), while the Chrome Web Store only shows `major.minor`.
-
 ### Release steps
 
-#### 1. Update versions
+#### 1. Merge the PR
 
-Edit the version field in both files:
+Ensure all changes are merged into `main`. No version bump commit is needed.
 
-**`manifest.json`**
-```json
-{
-  "version": "1.0.1"
-}
-```
-
-**`package.json`**
-```json
-{
-  "version": "1.0.1"
-}
-```
-
-#### 2. Commit and push to `main`
+#### 2. Create a GitHub Release
 
 ```bash
-git add manifest.json package.json
-git commit -m "chore: bump version to 1.0.1"
-git push origin main
+# Check commits since the last release
+gh release list --limit 5
+
+# Create a release (auto-generates tag and release notes)
+gh release create v1.0.1 --generate-notes --target main
 ```
 
-#### 3. Create a GitHub Release
+Alternatively, via GitHub UI:
+1. **Releases → Draft a new release**
+2. **"Choose a tag"** → type the version (e.g. `v1.0.1`) → **"+ Create new tag"**
+3. Target: **`main`**
+4. Fill in release notes → **"Publish release"**
 
-1. Open the repository on GitHub and go to **Releases → Draft a new release**
-2. Click **"Choose a tag"** → type the new version (e.g. `v1.0.1`) → **"+ Create new tag"**
-3. Make sure the target is **`main`**
-4. Fill in the release title (e.g. `v1.0.1`) and write release notes
-5. Click **"Publish release"**
+#### 3. Wait for CI to attach the zip
 
-This publishes the tag, which triggers the CI release workflow.
+```bash
+gh run list --workflow=release.yml --limit 3
+```
 
-#### 4. Wait for CI to attach the zip
+Once CI completes, `gcp-selector.zip` with the version injected from the tag will be attached to the release automatically.
 
-Go to **Actions** and wait for the **Release** workflow to complete (about 1–2 minutes). Once done, `gcp-selector.zip` will be attached to the release automatically.
-
-#### 5. Upload to Chrome Web Store
+#### 4. Upload to Chrome Web Store (manual)
 
 1. Download `gcp-selector.zip` from the [GitHub Release](../../releases)
 2. Open the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole)
 3. Select **GCP Selector** → **Package** → **Upload new package**
-4. Upload the zip and submit for review
+4. Submit for review
 
 ## 📋 Requirements
 - Google Chrome browser

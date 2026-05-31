@@ -38,7 +38,7 @@ yarn-error.log*
 .npm/
 
 # Claude Code specific files
-.claude/
+.claude/settings.local.json
 CLAUDE.md
 
 gcp-selector.zip

@@ -27,6 +27,16 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Extract version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
+
+      - name: Inject version into manifest.json and package.json
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          jq --arg v "$VERSION" '.version = $v' manifest.json > manifest.tmp.json && mv manifest.tmp.json manifest.json
+          jq --arg v "$VERSION" '.version = $v' package.json > package.tmp.json && mv package.tmp.json package.json
+
       - name: Build and package
         run: npm run zip
 
