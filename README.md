@@ -140,20 +140,68 @@ The E2E suite covers:
 
 ## 🚀 Release
 
-Releases are triggered by pushing a version tag. CI will automatically run tests, build `gcp-selector.zip`, and create a GitHub Release with the zip attached.
+When a version tag is pushed, CI automatically runs tests, builds `gcp-selector.zip`, and attaches it to the GitHub Release.
 
-### Steps
+### Version numbering
 
-1. Update the version in `manifest.json` and `package.json`
-2. Commit and push to `main`
-3. Push a version tag:
+This project follows [Semantic Versioning](https://semver.org/):
 
-```bash
-git tag v1.0.1
-git push origin v1.0.1
+| Change type | Example |
+|---|---|
+| Bug fix | `1.0.0` → `1.0.1` |
+| New feature | `1.0.0` → `1.1.0` |
+| Breaking change | `1.0.0` → `2.0.0` |
+
+> **Note:** `manifest.json` uses `major.minor.patch` (e.g. `1.0.1`), while the Chrome Web Store only shows `major.minor`.
+
+### Release steps
+
+#### 1. Update versions
+
+Edit the version field in both files:
+
+**`manifest.json`**
+```json
+{
+  "version": "1.0.1"
+}
 ```
 
-4. Download `gcp-selector.zip` from the [GitHub Release](../../releases) and upload it to the [Chrome Web Store](https://chrome.google.com/webstore/detail/gcp-selector/gdfiojnnhlfmkbghihllimpaanldflag) manually.
+**`package.json`**
+```json
+{
+  "version": "1.0.1"
+}
+```
+
+#### 2. Commit and push to `main`
+
+```bash
+git add manifest.json package.json
+git commit -m "chore: bump version to 1.0.1"
+git push origin main
+```
+
+#### 3. Create a GitHub Release
+
+1. Open the repository on GitHub and go to **Releases → Draft a new release**
+2. Click **"Choose a tag"** → type the new version (e.g. `v1.0.1`) → **"+ Create new tag"**
+3. Make sure the target is **`main`**
+4. Fill in the release title (e.g. `v1.0.1`) and write release notes
+5. Click **"Publish release"**
+
+This publishes the tag, which triggers the CI release workflow.
+
+#### 4. Wait for CI to attach the zip
+
+Go to **Actions** and wait for the **Release** workflow to complete (about 1–2 minutes). Once done, `gcp-selector.zip` will be attached to the release automatically.
+
+#### 5. Upload to Chrome Web Store
+
+1. Download `gcp-selector.zip` from the [GitHub Release](../../releases)
+2. Open the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole)
+3. Select **GCP Selector** → **Package** → **Upload new package**
+4. Upload the zip and submit for review
 
 ## 📋 Requirements
 - Google Chrome browser

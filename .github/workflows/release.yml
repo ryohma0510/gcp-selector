@@ -30,8 +30,7 @@ jobs:
       - name: Build and package
         run: npm run zip
 
-      - name: Create GitHub Release
+      - name: Upload zip to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: gcp-selector.zip
-          generate_release_notes: true
