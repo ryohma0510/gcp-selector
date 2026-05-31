@@ -32,7 +32,14 @@ This project is a Chrome extension built with React + TypeScript.
 ├── package.json           # Project dependencies
 ├── tsconfig.json          # TypeScript configuration
 ├── webpack.config.js      # Webpack configuration
-├── jest.config.js         # Test configuration
+├── jest.config.js         # Jest configuration
+├── playwright.config.ts   # Playwright configuration
+│
+├── e2e/                   # E2E tests (Playwright)
+│   ├── fixtures.ts        # Custom fixtures for extension loading
+│   ├── popup.spec.ts      # Popup tests
+│   ├── option.spec.ts     # Option page tests
+│   └── integration.spec.ts # Cross-page integration tests
 │
 ├── src/                   # Source code
 │   ├── popup/             # Popup screen
@@ -83,7 +90,7 @@ This project is a Chrome extension built with React + TypeScript.
 - **Language**: TypeScript
 - **UI**: react-select, FontAwesome
 - **Build Tool**: Webpack
-- **Testing**: Jest, React Testing Library
+- **Testing**: Jest, React Testing Library, Playwright
 - **Package Manager**: npm
 
 ### 🚀 Key Features
@@ -108,6 +115,45 @@ This command starts webpack in watch mode, automatically rebuilding when files c
 2. Enable "Developer mode" (toggle in top right)
 3. Click "Load unpacked" and select the `dist` folder
 4. The extension icon will appear in your Chrome toolbar
+
+## 🧪 Testing
+
+### Unit Tests
+
+```bash
+npm test
+```
+
+### E2E Tests (Playwright)
+
+E2E tests run against the actual built extension in a real Chromium browser.
+
+```bash
+npm run test:e2e        # Build and run all E2E tests
+npm run test:e2e:ui     # Run with Playwright UI mode
+```
+
+The E2E suite covers:
+- **Popup**: auto-focus, keyboard navigation, URL generation, settings navigation
+- **Option page**: add/delete projects, validation, Enter key support
+- **Integration**: cross-page storage consistency, full setup flow
+
+## 🚀 Release
+
+Releases are triggered by pushing a version tag. CI will automatically run tests, build `gcp-selector.zip`, and create a GitHub Release with the zip attached.
+
+### Steps
+
+1. Update the version in `manifest.json` and `package.json`
+2. Commit and push to `main`
+3. Push a version tag:
+
+```bash
+git tag v1.0.1
+git push origin v1.0.1
+```
+
+4. Download `gcp-selector.zip` from the [GitHub Release](../../releases) and upload it to the [Chrome Web Store](https://chrome.google.com/webstore/detail/gcp-selector/gdfiojnnhlfmkbghihllimpaanldflag) manually.
 
 ## 📋 Requirements
 - Google Chrome browser
