@@ -1,12 +1,12 @@
 import { test, expect } from './fixtures';
 
-test.describe('ページ間連携', () => {
-  test('I-1: Option で追加したプロジェクトが Popup の選択肢に表示される', async ({
+test.describe('Cross-page integration', () => {
+  test('I-1: project added in Options appears in Popup dropdown', async ({
     context,
     popupUrl,
     optionUrl,
   }) => {
-    // Option ページでプロジェクトを追加
+    // Add a project on the Option page
     const optionPage = await context.newPage();
     await optionPage.goto(optionUrl);
     await optionPage.fill('.project-input', 'option-added-project');
@@ -16,7 +16,7 @@ test.describe('ページ間連携', () => {
     ).toBeVisible();
     await optionPage.close();
 
-    // Popup を開いてドロップダウンに表示されることを確認
+    // Open Popup and verify the project appears in the dropdown
     const popupPage = await context.newPage();
     await popupPage.goto(popupUrl);
     await popupPage.waitForFunction(() => document.activeElement?.tagName === 'INPUT');
@@ -27,7 +27,7 @@ test.describe('ページ間連携', () => {
     ).toBeVisible();
   });
 
-  test('I-2: Option で削除したプロジェクトが Popup の選択肢から消える', async ({
+  test('I-2: project deleted in Options disappears from Popup dropdown', async ({
     context,
     popupUrl,
     optionUrl,
@@ -35,7 +35,7 @@ test.describe('ページ間連携', () => {
   }) => {
     await seedProjects(['project-keep', 'project-remove']);
 
-    // Option ページで削除
+    // Delete a project on the Option page
     const optionPage = await context.newPage();
     await optionPage.goto(optionUrl);
     await optionPage
@@ -48,7 +48,7 @@ test.describe('ページ間連携', () => {
     ).not.toBeVisible();
     await optionPage.close();
 
-    // Popup を開いて削除されたプロジェクトが表示されないことを確認
+    // Open Popup and verify the deleted project is gone
     const popupPage = await context.newPage();
     await popupPage.goto(popupUrl);
     await popupPage.waitForFunction(() => document.activeElement?.tagName === 'INPUT');
@@ -62,30 +62,30 @@ test.describe('ページ間連携', () => {
     ).toBeVisible();
   });
 
-  test('I-3: 初回セットアップフロー: Popup Settings → Option でプロジェクト追加 → Popup に反映', async ({
+  test('I-3: full setup flow: Popup Settings → add project in Options → reflected in Popup', async ({
     context,
     popupUrl,
     extensionId,
   }) => {
-    // 1. Popup を開く（プロジェクト未登録）
+    // 1. Open Popup with no projects registered
     const popupPage = await context.newPage();
     await popupPage.goto(popupUrl);
     await expect(popupPage.locator('.no-projects-message')).toBeVisible();
 
-    // 2. Settings ボタンで Option ページを開く
+    // 2. Open Options page via Settings button
     const newPagePromise = context.waitForEvent('page');
     await popupPage.locator('.settings-button').click();
     const optionPage = await newPagePromise;
     expect(optionPage.url()).toContain(`chrome-extension://${extensionId}`);
 
-    // 3. Option ページでプロジェクトを追加
+    // 3. Add a project on the Options page
     await optionPage.fill('.project-input', 'flow-test-project');
     await optionPage.click('.add-button');
     await expect(
       optionPage.locator('.project-item').filter({ hasText: 'flow-test-project' })
     ).toBeVisible();
 
-    // 4. Popup を再度開いてプロジェクトが選択肢に表示されることを確認
+    // 4. Reopen Popup and verify the project appears in the dropdown
     const popupPage2 = await context.newPage();
     await popupPage2.goto(popupUrl);
     await popupPage2.waitForFunction(() => document.activeElement?.tagName === 'INPUT');

@@ -2,8 +2,8 @@ import { test, expect } from './fixtures';
 
 const TEST_PROJECTS = ['test-project-alpha', 'test-project-beta'];
 
-test.describe('Popup - プロジェクト未登録', () => {
-  test('P-2: NoProjectsMessage が表示されフォーカスエラーが起きない', async ({
+test.describe('Popup - no projects registered', () => {
+  test('P-2: shows NoProjectsMessage without focus errors', async ({
     context,
     popupUrl,
   }) => {
@@ -15,12 +15,12 @@ test.describe('Popup - プロジェクト未登録', () => {
   });
 });
 
-test.describe('Popup - プロジェクトあり', () => {
+test.describe('Popup - with projects', () => {
   test.beforeEach(async ({ seedProjects }) => {
     await seedProjects(TEST_PROJECTS);
   });
 
-  test('P-1: ポップアップを開くとプロジェクト入力欄に自動フォーカスされる', async ({
+  test('P-1: project input is auto-focused on open', async ({
     context,
     popupUrl,
   }) => {
@@ -32,7 +32,7 @@ test.describe('Popup - プロジェクトあり', () => {
     expect(activeTag).toBe('INPUT');
   });
 
-  test('P-3: プロジェクト選択後にサービス入力欄へフォーカスが移る', async ({
+  test('P-3: focus moves to service input after project selection', async ({
     context,
     popupUrl,
   }) => {
@@ -40,11 +40,11 @@ test.describe('Popup - プロジェクトあり', () => {
     await page.goto(popupUrl);
     await page.waitForFunction(() => document.activeElement?.tagName === 'INPUT');
 
-    // プロジェクトを選択（ArrowDown でドロップダウンを開き Enter で確定）
+    // Open dropdown with ArrowDown and confirm with Enter
     await page.keyboard.press('ArrowDown');
     await page.keyboard.press('Enter');
 
-    // RAF によるフォーカス移動を待機
+    // Wait for RAF-based focus transition
     await page.waitForFunction(
       () => !!document.activeElement?.closest('.service-section')
     );
@@ -55,7 +55,7 @@ test.describe('Popup - プロジェクトあり', () => {
     expect(isServiceFocused).toBe(true);
   });
 
-  test('P-4: プロジェクト＋サービス選択で新しいタブが開く', async ({
+  test('P-4: selecting project and service opens a new tab', async ({
     context,
     popupUrl,
   }) => {
@@ -65,14 +65,14 @@ test.describe('Popup - プロジェクトあり', () => {
 
     const newPagePromise = context.waitForEvent('page');
 
-    // プロジェクト選択
+    // Select project
     await page.keyboard.press('ArrowDown');
     await page.keyboard.press('Enter');
     await page.waitForFunction(
       () => !!document.activeElement?.closest('.service-section')
     );
 
-    // サービス選択
+    // Select service
     await page.keyboard.press('ArrowDown');
     await page.keyboard.press('Enter');
 
@@ -80,7 +80,7 @@ test.describe('Popup - プロジェクトあり', () => {
     expect(newPage.url()).toBeTruthy();
   });
 
-  test('P-5: 開いたタブの URL にプロジェクト ID が含まれる', async ({
+  test('P-5: opened tab URL contains the project ID', async ({
     context,
     popupUrl,
   }) => {
@@ -99,12 +99,12 @@ test.describe('Popup - プロジェクトあり', () => {
     await page.keyboard.press('Enter');
 
     const newPage = await newPagePromise;
-    // リダイレクト先でもデコードしたURLにプロジェクト ID が含まれること
+    // Check decoded URL to handle Google sign-in redirect
     const decodedUrl = decodeURIComponent(newPage.url());
     expect(decodedUrl).toContain(`project=${TEST_PROJECTS[0]}`);
   });
 
-  test('P-6: キーボードのみでポップアップを操作して GCP を開ける', async ({
+  test('P-6: popup can be completed with keyboard only', async ({
     context,
     popupUrl,
   }) => {
@@ -114,14 +114,14 @@ test.describe('Popup - プロジェクトあり', () => {
 
     const newPagePromise = context.waitForEvent('page');
 
-    // プロジェクト: 矢印キー → Enter
+    // Project: ArrowDown → Enter
     await page.keyboard.press('ArrowDown');
     await page.keyboard.press('Enter');
     await page.waitForFunction(
       () => !!document.activeElement?.closest('.service-section')
     );
 
-    // サービス: 矢印キー → Enter
+    // Service: ArrowDown → Enter
     await page.keyboard.press('ArrowDown');
     await page.keyboard.press('Enter');
 
@@ -131,7 +131,7 @@ test.describe('Popup - プロジェクトあり', () => {
     expect(decodedUrl).toContain('project=');
   });
 
-  test('P-7: Settings ボタンでオプションページが開く', async ({
+  test('P-7: settings button opens the options page', async ({
     context,
     popupUrl,
     extensionId,

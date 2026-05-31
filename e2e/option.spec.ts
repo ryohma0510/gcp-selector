@@ -1,7 +1,7 @@
 import { test, expect } from './fixtures';
 
-test.describe('Option ページ', () => {
-  test('O-1: プロジェクトを追加すると一覧に表示される', async ({
+test.describe('Option page', () => {
+  test('O-1: added project appears in the list', async ({
     context,
     optionUrl,
   }) => {
@@ -16,7 +16,7 @@ test.describe('Option ページ', () => {
     ).toBeVisible();
   });
 
-  test('O-2: 追加したプロジェクトはリロード後も残る', async ({
+  test('O-2: added project persists after reload', async ({
     context,
     optionUrl,
   }) => {
@@ -32,7 +32,7 @@ test.describe('Option ページ', () => {
     ).toBeVisible();
   });
 
-  test('O-3: 空の Project ID で追加するとエラーメッセージが表示される', async ({
+  test('O-3: shows error message when adding an empty project ID', async ({
     context,
     optionUrl,
   }) => {
@@ -47,7 +47,7 @@ test.describe('Option ページ', () => {
     );
   });
 
-  test('O-4: プロジェクトを削除すると一覧から消える', async ({
+  test('O-4: deleted project disappears from the list', async ({
     context,
     optionUrl,
     seedProjects,
@@ -70,7 +70,7 @@ test.describe('Option ページ', () => {
     ).toBeVisible();
   });
 
-  test('O-5: Enter キーでプロジェクトを追加できる', async ({
+  test('O-5: Enter key adds a project', async ({
     context,
     optionUrl,
   }) => {
