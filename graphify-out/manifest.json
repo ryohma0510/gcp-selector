@@ -1,0 +1,257 @@
+{
+  "/Users/ryoma.kawahara/projects/gcp-selector/e2e/fixtures.ts": {
+    "mtime": 1780722687.1087186,
+    "ast_hash": "2f763ec30166ac204efc8188d146ff5b",
+    "semantic_hash": "2f763ec30166ac204efc8188d146ff5b"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/e2e/integration.spec.ts": {
+    "mtime": 1780722687.1091003,
+    "ast_hash": "506b5affce13d13259b3079b3f1977b4",
+    "semantic_hash": "506b5affce13d13259b3079b3f1977b4"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/e2e/option.spec.ts": {
+    "mtime": 1780722687.109434,
+    "ast_hash": "5aaa25eb5a782a895723cbc62bfa239d",
+    "semantic_hash": "5aaa25eb5a782a895723cbc62bfa239d"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/e2e/popup.spec.ts": {
+    "mtime": 1780722687.109763,
+    "ast_hash": "0d3c48eee4424d69886c9a06f13ab20e",
+    "semantic_hash": "0d3c48eee4424d69886c9a06f13ab20e"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/eslint.config.js": {
+    "mtime": 1750165379.4272335,
+    "ast_hash": "dc2231023e031d6c3cc39722cc829978",
+    "semantic_hash": "dc2231023e031d6c3cc39722cc829978"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/jest.config.js": {
+    "mtime": 1749975447.1965806,
+    "ast_hash": "d1834d9bfb21e2a69418b792539fb931",
+    "semantic_hash": "d1834d9bfb21e2a69418b792539fb931"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/manifest.json": {
+    "mtime": 1780722687.1101604,
+    "ast_hash": "8ce40a4574c435974cf0af386f0a7ed0",
+    "semantic_hash": "8ce40a4574c435974cf0af386f0a7ed0"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/package.json": {
+    "mtime": 1780722687.1124823,
+    "ast_hash": "22ae696443d73fb79f574ea67b6f951c",
+    "semantic_hash": "22ae696443d73fb79f574ea67b6f951c"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/playwright.config.ts": {
+    "mtime": 1780722687.1128204,
+    "ast_hash": "6b6026d6a094deb704d95a1d8c0600a5",
+    "semantic_hash": "6b6026d6a094deb704d95a1d8c0600a5"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/components/popup/NoProjectsMessage.tsx": {
+    "mtime": 1750165379.4312918,
+    "ast_hash": "37df931050f4f79a1f6448dacfc8b472",
+    "semantic_hash": "37df931050f4f79a1f6448dacfc8b472"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/components/popup/PopupHeader.test.tsx": {
+    "mtime": 1750165379.4314983,
+    "ast_hash": "03c5a38444f0aea5dca2a91f169211da",
+    "semantic_hash": "03c5a38444f0aea5dca2a91f169211da"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/components/popup/PopupHeader.tsx": {
+    "mtime": 1750164649.4500418,
+    "ast_hash": "7e413759ce462501761ee6c768feabcf",
+    "semantic_hash": "7e413759ce462501761ee6c768feabcf"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/components/popup/ProjectSelector.test.tsx": {
+    "mtime": 1750165379.4322457,
+    "ast_hash": "f30dbabd5089f36adda1b36bdc31a92c",
+    "semantic_hash": "f30dbabd5089f36adda1b36bdc31a92c"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/components/popup/ProjectSelector.tsx": {
+    "mtime": 1750165379.4324887,
+    "ast_hash": "0df619d887c3cbab2cfa7e04ebccb63d",
+    "semantic_hash": "0df619d887c3cbab2cfa7e04ebccb63d"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/components/popup/ServiceSelector.test.tsx": {
+    "mtime": 1750165379.4327528,
+    "ast_hash": "27c8ec54e2651da01d235d0390518377",
+    "semantic_hash": "27c8ec54e2651da01d235d0390518377"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/components/popup/ServiceSelector.tsx": {
+    "mtime": 1750165379.4329622,
+    "ast_hash": "ef123d9eeaf78ac689e0122b962c58af",
+    "semantic_hash": "ef123d9eeaf78ac689e0122b962c58af"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/components/select/Option.tsx": {
+    "mtime": 1750165379.4336917,
+    "ast_hash": "35615ea4ac20e904423cd6301143c532",
+    "semantic_hash": "35615ea4ac20e904423cd6301143c532"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/hooks/useNavigation.ts": {
+    "mtime": 1750165379.4339347,
+    "ast_hash": "17133c11f227a5d0490fcf08271f112e",
+    "semantic_hash": "17133c11f227a5d0490fcf08271f112e"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/hooks/useOptions.ts": {
+    "mtime": 1750165379.434177,
+    "ast_hash": "fb99379be556d17b802e9955fc43408b",
+    "semantic_hash": "fb99379be556d17b802e9955fc43408b"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/hooks/useProjects.ts": {
+    "mtime": 1750165379.434924,
+    "ast_hash": "ffa269a7904506ab3ddd1e75ff78775b",
+    "semantic_hash": "ffa269a7904506ab3ddd1e75ff78775b"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/option/Option.tsx": {
+    "mtime": 1780722687.113138,
+    "ast_hash": "3b6d08812a648940ed95e460f30afd22",
+    "semantic_hash": "3b6d08812a648940ed95e460f30afd22"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/option/index.tsx": {
+    "mtime": 1749977829.9758754,
+    "ast_hash": "d4d8ce658b1692354b01ff550f189052",
+    "semantic_hash": "d4d8ce658b1692354b01ff550f189052"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/popup/Popup.test.tsx": {
+    "mtime": 1750165379.4365976,
+    "ast_hash": "8a153817149d8e475ff91a912a4620eb",
+    "semantic_hash": "8a153817149d8e475ff91a912a4620eb"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/popup/Popup.tsx": {
+    "mtime": 1780722687.113606,
+    "ast_hash": "858882eef45e54175180317f133b2a49",
+    "semantic_hash": "858882eef45e54175180317f133b2a49"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/popup/index.tsx": {
+    "mtime": 1749977830.1660838,
+    "ast_hash": "a7be11a15ec98563ba8478015e556031",
+    "semantic_hash": "a7be11a15ec98563ba8478015e556031"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/setupTests.ts": {
+    "mtime": 1749978723.745406,
+    "ast_hash": "00e47f7b9836e8f731101981fa2bb2de",
+    "semantic_hash": "00e47f7b9836e8f731101981fa2bb2de"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/types/SelectOption.ts": {
+    "mtime": 1749977829.846014,
+    "ast_hash": "dd3e70f8997c96320e4ee29af351b68b",
+    "semantic_hash": "dd3e70f8997c96320e4ee29af351b68b"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/types/Service.ts": {
+    "mtime": 1750165379.4376,
+    "ast_hash": "706fd8402bec31943177b43aa30d664e",
+    "semantic_hash": "706fd8402bec31943177b43aa30d664e"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/utils/projects/AddProject.ts": {
+    "mtime": 1750165379.4377663,
+    "ast_hash": "0e274f66aaad0640be3250a629c38c8e",
+    "semantic_hash": "0e274f66aaad0640be3250a629c38c8e"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/utils/projects/Constant.ts": {
+    "mtime": 1749978723.7803698,
+    "ast_hash": "6efb6d0ac8015d8d4001704c560a0b55",
+    "semantic_hash": "6efb6d0ac8015d8d4001704c560a0b55"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/utils/projects/DeleteProject.ts": {
+    "mtime": 1750165379.4379916,
+    "ast_hash": "b314d45d4c0fd642eaacba2f6e3f4aca",
+    "semantic_hash": "b314d45d4c0fd642eaacba2f6e3f4aca"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/utils/projects/ListProject.ts": {
+    "mtime": 1750165379.4381497,
+    "ast_hash": "09e23a4d3da980d01bbd5f64f630e7a9",
+    "semantic_hash": "09e23a4d3da980d01bbd5f64f630e7a9"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/utils/services/ListServices.ts": {
+    "mtime": 1780722687.114144,
+    "ast_hash": "e504710ea758f716517f7efe27e4fe72",
+    "semantic_hash": "e504710ea758f716517f7efe27e4fe72"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/tsconfig.json": {
+    "mtime": 1749912689.2350898,
+    "ast_hash": "3a0d125109f501dfba36bee0f5b1e623",
+    "semantic_hash": "3a0d125109f501dfba36bee0f5b1e623"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/webpack.config.js": {
+    "mtime": 1749975447.2029722,
+    "ast_hash": "5fe8061b1ef3538c1556b4c23fa971f0",
+    "semantic_hash": "5fe8061b1ef3538c1556b4c23fa971f0"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/.claude/skills/release/skill.md": {
+    "mtime": 1780722687.1070504,
+    "ast_hash": "141a6143ab34c65ac4ec30afd6d594da",
+    "semantic_hash": "141a6143ab34c65ac4ec30afd6d594da"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/.github/workflows/release.yml": {
+    "mtime": 1780722687.107337,
+    "ast_hash": "d11cee8bf2e44572ad0bb85d3af14cab",
+    "semantic_hash": "d11cee8bf2e44572ad0bb85d3af14cab"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/.github/workflows/test.yml": {
+    "mtime": 1750165379.4267216,
+    "ast_hash": "9f27cd81d9d285412c0f924e07b8c7e3",
+    "semantic_hash": "9f27cd81d9d285412c0f924e07b8c7e3"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/README.md": {
+    "mtime": 1780722687.1081147,
+    "ast_hash": "c3a6f6dcfdfece246509dfcabd692db3",
+    "semantic_hash": "c3a6f6dcfdfece246509dfcabd692db3"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/option/option.html": {
+    "mtime": 1750165379.4355915,
+    "ast_hash": "27227b1a69fc48e7946373485c38c952",
+    "semantic_hash": "27227b1a69fc48e7946373485c38c952"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/src/popup/popup.html": {
+    "mtime": 1750165379.4373736,
+    "ast_hash": "ab3f1563c5923bfe5435fc0367deb8e4",
+    "semantic_hash": "ab3f1563c5923bfe5435fc0367deb8e4"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/icons/icon.svg": {
+    "mtime": 1735475877.4245636,
+    "ast_hash": "974e5770e2623841488d9e7c9fd9461c",
+    "semantic_hash": "974e5770e2623841488d9e7c9fd9461c"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/icons/icon128.png": {
+    "mtime": 1735475877.424989,
+    "ast_hash": "4a6a58b4fa1484917cec5f4bb1a17ef3",
+    "semantic_hash": "4a6a58b4fa1484917cec5f4bb1a17ef3"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/icons/icon16.png": {
+    "mtime": 1735475877.425161,
+    "ast_hash": "68750944a6d74a3a20bed70a4f358936",
+    "semantic_hash": "68750944a6d74a3a20bed70a4f358936"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/icons/icon32.png": {
+    "mtime": 1735475877.4253356,
+    "ast_hash": "665fda6ff3eee92a242bd1106c30e379",
+    "semantic_hash": "665fda6ff3eee92a242bd1106c30e379"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/icons/icon48.png": {
+    "mtime": 1735475877.4255378,
+    "ast_hash": "59480176765b1e46404b78b5552cd4f8",
+    "semantic_hash": "59480176765b1e46404b78b5552cd4f8"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/image/option.png": {
+    "mtime": 1749912689.2175875,
+    "ast_hash": "a1e11106fb1cb4f86d024b8f8da24627",
+    "semantic_hash": "a1e11106fb1cb4f86d024b8f8da24627"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/image/popup-project.png": {
+    "mtime": 1749912689.218813,
+    "ast_hash": "f2e9a3c010e574cc79c88704ce858fe3",
+    "semantic_hash": "f2e9a3c010e574cc79c88704ce858fe3"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/image/popup-service.png": {
+    "mtime": 1749912689.219994,
+    "ast_hash": "7887624384121b50355072609f694d9a",
+    "semantic_hash": "7887624384121b50355072609f694d9a"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/image/popup.gif": {
+    "mtime": 1749912689.2252374,
+    "ast_hash": "a1e5cb5db71396f14ccb6374c5922bb2",
+    "semantic_hash": "a1e5cb5db71396f14ccb6374c5922bb2"
+  },
+  "/Users/ryoma.kawahara/projects/gcp-selector/image/popup.png": {
+    "mtime": 1749912689.2268286,
+    "ast_hash": "480636b33de855d2b86d634db57691f0",
+    "semantic_hash": "480636b33de855d2b86d634db57691f0"
+  }
+}

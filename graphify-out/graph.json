@@ -1,0 +1,4892 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "ci_cd_pipeline",
+        "label": "CI/CD Pipeline: Test, Build, Release",
+        "nodes": [
+          "workflows_test",
+          "workflows_release",
+          "package_package",
+          "manifest_manifest"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.9,
+        "source_file": ".github/workflows/release.yml"
+      },
+      {
+        "id": "chrome_extension_entry_points",
+        "label": "Chrome Extension Entry Points (Popup and Option)",
+        "nodes": [
+          "manifest_manifest",
+          "popup_popup",
+          "option_option"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "manifest.json"
+      },
+      {
+        "id": "release_process_flow",
+        "label": "Full Release Process Flow",
+        "nodes": [
+          "release_skill",
+          "workflows_release",
+          "readme_readme",
+          "gcp_selector_extension"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": ".claude/skills/release/skill.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "fixtures.ts",
+      "file_type": "code",
+      "source_file": "e2e/fixtures.ts",
+      "source_location": "L1",
+      "id": "e2e_fixtures",
+      "community": 11,
+      "norm_label": "fixtures.ts"
+    },
+    {
+      "label": "EXTENSION_PATH",
+      "file_type": "code",
+      "source_file": "e2e/fixtures.ts",
+      "source_location": "L6",
+      "id": "e2e_fixtures_extension_path",
+      "community": 11,
+      "norm_label": "extension_path"
+    },
+    {
+      "label": "test",
+      "file_type": "code",
+      "source_file": "e2e/fixtures.ts",
+      "source_location": "L9",
+      "id": "e2e_fixtures_test",
+      "community": 11,
+      "norm_label": "test"
+    },
+    {
+      "label": "integration.spec.ts",
+      "file_type": "code",
+      "source_file": "e2e/integration.spec.ts",
+      "source_location": "L1",
+      "id": "e2e_integration_spec",
+      "community": 11,
+      "norm_label": "integration.spec.ts"
+    },
+    {
+      "label": "option.spec.ts",
+      "file_type": "code",
+      "source_file": "e2e/option.spec.ts",
+      "source_location": "L1",
+      "id": "e2e_option_spec",
+      "community": 11,
+      "norm_label": "option.spec.ts"
+    },
+    {
+      "label": "popup.spec.ts",
+      "file_type": "code",
+      "source_file": "e2e/popup.spec.ts",
+      "source_location": "L1",
+      "id": "e2e_popup_spec",
+      "community": 11,
+      "norm_label": "popup.spec.ts"
+    },
+    {
+      "label": "TEST_PROJECTS",
+      "file_type": "code",
+      "source_file": "e2e/popup.spec.ts",
+      "source_location": "L3",
+      "id": "e2e_popup_spec_test_projects",
+      "community": 11,
+      "norm_label": "test_projects"
+    },
+    {
+      "label": "eslint.config.js",
+      "file_type": "code",
+      "source_file": "eslint.config.js",
+      "source_location": "L1",
+      "id": "eslint_config",
+      "community": 18,
+      "norm_label": "eslint.config.js"
+    },
+    {
+      "label": "jest.config.js",
+      "file_type": "code",
+      "source_file": "jest.config.js",
+      "source_location": "L1",
+      "id": "jest_config",
+      "community": 19,
+      "norm_label": "jest.config.js"
+    },
+    {
+      "label": "manifest.json",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L1",
+      "id": "manifest",
+      "community": 4,
+      "norm_label": "manifest.json"
+    },
+    {
+      "label": "manifest_version",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L2",
+      "id": "manifest_manifest_version",
+      "community": 4,
+      "norm_label": "manifest_version"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L3",
+      "id": "manifest_name",
+      "community": 4,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L4",
+      "id": "manifest_version",
+      "community": 4,
+      "norm_label": "version"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L5",
+      "id": "manifest_description",
+      "community": 4,
+      "norm_label": "description"
+    },
+    {
+      "label": "icons",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L6",
+      "id": "manifest_icons",
+      "community": 4,
+      "norm_label": "icons"
+    },
+    {
+      "label": "16",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L7",
+      "id": "manifest_icons_16",
+      "community": 4,
+      "norm_label": "16"
+    },
+    {
+      "label": "32",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L8",
+      "id": "manifest_icons_32",
+      "community": 4,
+      "norm_label": "32"
+    },
+    {
+      "label": "48",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L9",
+      "id": "manifest_icons_48",
+      "community": 4,
+      "norm_label": "48"
+    },
+    {
+      "label": "128",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L10",
+      "id": "manifest_icons_128",
+      "community": 4,
+      "norm_label": "128"
+    },
+    {
+      "label": "action",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L12",
+      "id": "manifest_action",
+      "community": 4,
+      "norm_label": "action"
+    },
+    {
+      "label": "default_popup",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L13",
+      "id": "manifest_action_default_popup",
+      "community": 4,
+      "norm_label": "default_popup"
+    },
+    {
+      "label": "options_page",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L15",
+      "id": "manifest_options_page",
+      "community": 4,
+      "norm_label": "options_page"
+    },
+    {
+      "label": "permissions",
+      "file_type": "code",
+      "source_file": "manifest.json",
+      "source_location": "L16",
+      "id": "manifest_permissions",
+      "community": 4,
+      "norm_label": "permissions"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "id": "package",
+      "community": 2,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "id": "package_name",
+      "community": 2,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "id": "package_version",
+      "community": 2,
+      "norm_label": "version"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "id": "package_description",
+      "community": 2,
+      "norm_label": "description"
+    },
+    {
+      "label": "main",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "id": "package_main",
+      "community": 2,
+      "norm_label": "main"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "id": "package_scripts",
+      "community": 5,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "id": "package_scripts_build",
+      "community": 5,
+      "norm_label": "build"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "id": "package_scripts_dev",
+      "community": 5,
+      "norm_label": "dev"
+    },
+    {
+      "label": "type-check",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "id": "package_scripts_type_check",
+      "community": 5,
+      "norm_label": "type-check"
+    },
+    {
+      "label": "test",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "id": "package_scripts_test",
+      "community": 5,
+      "norm_label": "test"
+    },
+    {
+      "label": "test:watch",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "id": "package_scripts_test_watch",
+      "community": 5,
+      "norm_label": "test:watch"
+    },
+    {
+      "label": "test:coverage",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "id": "package_scripts_test_coverage",
+      "community": 5,
+      "norm_label": "test:coverage"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "id": "package_scripts_lint",
+      "community": 5,
+      "norm_label": "lint"
+    },
+    {
+      "label": "lint:fix",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "id": "package_scripts_lint_fix",
+      "community": 5,
+      "norm_label": "lint:fix"
+    },
+    {
+      "label": "format",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "id": "package_scripts_format",
+      "community": 5,
+      "norm_label": "format"
+    },
+    {
+      "label": "format:check",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "id": "package_scripts_format_check",
+      "community": 5,
+      "norm_label": "format:check"
+    },
+    {
+      "label": "zip",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "id": "package_scripts_zip",
+      "community": 5,
+      "norm_label": "zip"
+    },
+    {
+      "label": "test:e2e",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "id": "package_scripts_test_e2e",
+      "community": 5,
+      "norm_label": "test:e2e"
+    },
+    {
+      "label": "test:e2e:ui",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "id": "package_scripts_test_e2e_ui",
+      "community": 5,
+      "norm_label": "test:e2e:ui"
+    },
+    {
+      "label": "keywords",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "id": "package_keywords",
+      "community": 2,
+      "norm_label": "keywords"
+    },
+    {
+      "label": "author",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "id": "package_author",
+      "community": 2,
+      "norm_label": "author"
+    },
+    {
+      "label": "license",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "id": "package_license",
+      "community": 2,
+      "norm_label": "license"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "id": "package_dependencies",
+      "community": 2,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@fortawesome/fontawesome-svg-core",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "id": "package_dependencies_fortawesome_fontawesome_svg_core",
+      "community": 2,
+      "norm_label": "@fortawesome/fontawesome-svg-core"
+    },
+    {
+      "label": "@fortawesome/free-solid-svg-icons",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "id": "package_dependencies_fortawesome_free_solid_svg_icons",
+      "community": 2,
+      "norm_label": "@fortawesome/free-solid-svg-icons"
+    },
+    {
+      "label": "@fortawesome/react-fontawesome",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "id": "package_dependencies_fortawesome_react_fontawesome",
+      "community": 2,
+      "norm_label": "@fortawesome/react-fontawesome"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "id": "package_dependencies_types_react",
+      "community": 2,
+      "norm_label": "@types/react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "id": "package_dependencies_types_react_dom",
+      "community": 2,
+      "norm_label": "@types/react-dom"
+    },
+    {
+      "label": "@types/react-select",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "id": "package_dependencies_types_react_select",
+      "community": 2,
+      "norm_label": "@types/react-select"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "id": "package_dependencies_react",
+      "community": 2,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "id": "package_dependencies_react_dom",
+      "community": 2,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "react-select",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "id": "package_dependencies_react_select",
+      "community": 2,
+      "norm_label": "react-select"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "id": "package_devdependencies",
+      "community": 1,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@eslint/js",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "id": "package_devdependencies_eslint_js",
+      "community": 1,
+      "norm_label": "@eslint/js"
+    },
+    {
+      "label": "@playwright/test",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "id": "package_devdependencies_playwright_test",
+      "community": 1,
+      "norm_label": "@playwright/test"
+    },
+    {
+      "label": "@testing-library/jest-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "id": "package_devdependencies_testing_library_jest_dom",
+      "community": 1,
+      "norm_label": "@testing-library/jest-dom"
+    },
+    {
+      "label": "@testing-library/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L39",
+      "id": "package_devdependencies_testing_library_react",
+      "community": 1,
+      "norm_label": "@testing-library/react"
+    },
+    {
+      "label": "@testing-library/user-event",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L40",
+      "id": "package_devdependencies_testing_library_user_event",
+      "community": 1,
+      "norm_label": "@testing-library/user-event"
+    },
+    {
+      "label": "@types/chrome",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L41",
+      "id": "package_devdependencies_types_chrome",
+      "community": 1,
+      "norm_label": "@types/chrome"
+    },
+    {
+      "label": "@types/eslint__js",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L42",
+      "id": "package_devdependencies_types_eslint_js",
+      "community": 1,
+      "norm_label": "@types/eslint__js"
+    },
+    {
+      "label": "@types/jest",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L43",
+      "id": "package_devdependencies_types_jest",
+      "community": 1,
+      "norm_label": "@types/jest"
+    },
+    {
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L44",
+      "id": "package_devdependencies_types_node",
+      "community": 1,
+      "norm_label": "@types/node"
+    },
+    {
+      "label": "@typescript-eslint/eslint-plugin",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L45",
+      "id": "package_devdependencies_typescript_eslint_eslint_plugin",
+      "community": 1,
+      "norm_label": "@typescript-eslint/eslint-plugin"
+    },
+    {
+      "label": "@typescript-eslint/parser",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L46",
+      "id": "package_devdependencies_typescript_eslint_parser",
+      "community": 1,
+      "norm_label": "@typescript-eslint/parser"
+    },
+    {
+      "label": "copy-webpack-plugin",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L47",
+      "id": "package_devdependencies_copy_webpack_plugin",
+      "community": 1,
+      "norm_label": "copy-webpack-plugin"
+    },
+    {
+      "label": "css-loader",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L48",
+      "id": "package_devdependencies_css_loader",
+      "community": 1,
+      "norm_label": "css-loader"
+    },
+    {
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L49",
+      "id": "package_devdependencies_eslint",
+      "community": 1,
+      "norm_label": "eslint"
+    },
+    {
+      "label": "eslint-config-prettier",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L50",
+      "id": "package_devdependencies_eslint_config_prettier",
+      "community": 1,
+      "norm_label": "eslint-config-prettier"
+    },
+    {
+      "label": "eslint-plugin-prettier",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L51",
+      "id": "package_devdependencies_eslint_plugin_prettier",
+      "community": 1,
+      "norm_label": "eslint-plugin-prettier"
+    },
+    {
+      "label": "eslint-plugin-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L52",
+      "id": "package_devdependencies_eslint_plugin_react",
+      "community": 1,
+      "norm_label": "eslint-plugin-react"
+    },
+    {
+      "label": "eslint-plugin-react-hooks",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L53",
+      "id": "package_devdependencies_eslint_plugin_react_hooks",
+      "community": 1,
+      "norm_label": "eslint-plugin-react-hooks"
+    },
+    {
+      "label": "html-webpack-plugin",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L54",
+      "id": "package_devdependencies_html_webpack_plugin",
+      "community": 1,
+      "norm_label": "html-webpack-plugin"
+    },
+    {
+      "label": "identity-obj-proxy",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L55",
+      "id": "package_devdependencies_identity_obj_proxy",
+      "community": 1,
+      "norm_label": "identity-obj-proxy"
+    },
+    {
+      "label": "jest",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L56",
+      "id": "package_devdependencies_jest",
+      "community": 1,
+      "norm_label": "jest"
+    },
+    {
+      "label": "jest-environment-jsdom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L57",
+      "id": "package_devdependencies_jest_environment_jsdom",
+      "community": 1,
+      "norm_label": "jest-environment-jsdom"
+    },
+    {
+      "label": "prettier",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L58",
+      "id": "package_devdependencies_prettier",
+      "community": 1,
+      "norm_label": "prettier"
+    },
+    {
+      "label": "style-loader",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L59",
+      "id": "package_devdependencies_style_loader",
+      "community": 1,
+      "norm_label": "style-loader"
+    },
+    {
+      "label": "ts-jest",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L60",
+      "id": "package_devdependencies_ts_jest",
+      "community": 1,
+      "norm_label": "ts-jest"
+    },
+    {
+      "label": "ts-loader",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L61",
+      "id": "package_devdependencies_ts_loader",
+      "community": 1,
+      "norm_label": "ts-loader"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L62",
+      "id": "package_devdependencies_typescript",
+      "community": 1,
+      "norm_label": "typescript"
+    },
+    {
+      "label": "typescript-eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L63",
+      "id": "package_devdependencies_typescript_eslint",
+      "community": 1,
+      "norm_label": "typescript-eslint"
+    },
+    {
+      "label": "webpack",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L64",
+      "id": "package_devdependencies_webpack",
+      "community": 1,
+      "norm_label": "webpack"
+    },
+    {
+      "label": "webpack-cli",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L65",
+      "id": "package_devdependencies_webpack_cli",
+      "community": 1,
+      "norm_label": "webpack-cli"
+    },
+    {
+      "label": "webpack-dev-server",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L66",
+      "id": "package_devdependencies_webpack_dev_server",
+      "community": 1,
+      "norm_label": "webpack-dev-server"
+    },
+    {
+      "label": "playwright.config.ts",
+      "file_type": "code",
+      "source_file": "playwright.config.ts",
+      "source_location": "L1",
+      "id": "playwright_config",
+      "community": 20,
+      "norm_label": "playwright.config.ts"
+    },
+    {
+      "label": "NoProjectsMessage.tsx",
+      "file_type": "code",
+      "source_file": "src/components/popup/NoProjectsMessage.tsx",
+      "source_location": "L1",
+      "id": "popup_noprojectsmessage",
+      "community": 0,
+      "norm_label": "noprojectsmessage.tsx"
+    },
+    {
+      "label": "NoProjectsMessageProps",
+      "file_type": "code",
+      "source_file": "src/components/popup/NoProjectsMessage.tsx",
+      "source_location": "L3",
+      "id": "popup_noprojectsmessage_noprojectsmessageprops",
+      "community": 0,
+      "norm_label": "noprojectsmessageprops"
+    },
+    {
+      "label": "NoProjectsMessage()",
+      "file_type": "code",
+      "source_file": "src/components/popup/NoProjectsMessage.tsx",
+      "source_location": "L7",
+      "id": "popup_noprojectsmessage_noprojectsmessage",
+      "community": 0,
+      "norm_label": "noprojectsmessage()"
+    },
+    {
+      "label": "PopupHeader.test.tsx",
+      "file_type": "code",
+      "source_file": "src/components/popup/PopupHeader.test.tsx",
+      "source_location": "L1",
+      "id": "popup_popupheader_test",
+      "community": 16,
+      "norm_label": "popupheader.test.tsx"
+    },
+    {
+      "label": "PopupHeader.tsx",
+      "file_type": "code",
+      "source_file": "src/components/popup/PopupHeader.tsx",
+      "source_location": "L1",
+      "id": "popup_popupheader",
+      "community": 16,
+      "norm_label": "popupheader.tsx"
+    },
+    {
+      "label": "PopupHeaderProps",
+      "file_type": "code",
+      "source_file": "src/components/popup/PopupHeader.tsx",
+      "source_location": "L5",
+      "id": "popup_popupheader_popupheaderprops",
+      "community": 16,
+      "norm_label": "popupheaderprops"
+    },
+    {
+      "label": "PopupHeader()",
+      "file_type": "code",
+      "source_file": "src/components/popup/PopupHeader.tsx",
+      "source_location": "L9",
+      "id": "popup_popupheader_popupheader",
+      "community": 16,
+      "norm_label": "popupheader()"
+    },
+    {
+      "label": "ProjectSelector.test.tsx",
+      "file_type": "code",
+      "source_file": "src/components/popup/ProjectSelector.test.tsx",
+      "source_location": "L1",
+      "id": "popup_projectselector_test",
+      "community": 8,
+      "norm_label": "projectselector.test.tsx"
+    },
+    {
+      "label": "mockProjectIds",
+      "file_type": "code",
+      "source_file": "src/components/popup/ProjectSelector.test.tsx",
+      "source_location": "L5",
+      "id": "popup_projectselector_test_mockprojectids",
+      "community": 8,
+      "norm_label": "mockprojectids"
+    },
+    {
+      "label": "ProjectSelector.tsx",
+      "file_type": "code",
+      "source_file": "src/components/popup/ProjectSelector.tsx",
+      "source_location": "L1",
+      "id": "popup_projectselector",
+      "community": 8,
+      "norm_label": "projectselector.tsx"
+    },
+    {
+      "label": "ProjectSelectorProps",
+      "file_type": "code",
+      "source_file": "src/components/popup/ProjectSelector.tsx",
+      "source_location": "L5",
+      "id": "popup_projectselector_projectselectorprops",
+      "community": 8,
+      "norm_label": "projectselectorprops"
+    },
+    {
+      "label": "ProjectOption",
+      "file_type": "code",
+      "source_file": "src/components/popup/ProjectSelector.tsx",
+      "source_location": "L11",
+      "id": "popup_projectselector_projectoption",
+      "community": 8,
+      "norm_label": "projectoption"
+    },
+    {
+      "label": "ProjectSelector",
+      "file_type": "code",
+      "source_file": "src/components/popup/ProjectSelector.tsx",
+      "source_location": "L13",
+      "id": "popup_projectselector_projectselector",
+      "community": 8,
+      "norm_label": "projectselector"
+    },
+    {
+      "label": "ServiceSelector.test.tsx",
+      "file_type": "code",
+      "source_file": "src/components/popup/ServiceSelector.test.tsx",
+      "source_location": "L1",
+      "id": "popup_serviceselector_test",
+      "community": 0,
+      "norm_label": "serviceselector.test.tsx"
+    },
+    {
+      "label": "mockServices",
+      "file_type": "code",
+      "source_file": "src/components/popup/ServiceSelector.test.tsx",
+      "source_location": "L5",
+      "id": "popup_serviceselector_test_mockservices",
+      "community": 0,
+      "norm_label": "mockservices"
+    },
+    {
+      "label": "ServiceSelector.tsx",
+      "file_type": "code",
+      "source_file": "src/components/popup/ServiceSelector.tsx",
+      "source_location": "L1",
+      "id": "popup_serviceselector",
+      "community": 0,
+      "norm_label": "serviceselector.tsx"
+    },
+    {
+      "label": "ServiceSelectorProps",
+      "file_type": "code",
+      "source_file": "src/components/popup/ServiceSelector.tsx",
+      "source_location": "L6",
+      "id": "popup_serviceselector_serviceselectorprops",
+      "community": 0,
+      "norm_label": "serviceselectorprops"
+    },
+    {
+      "label": "ServiceSelector",
+      "file_type": "code",
+      "source_file": "src/components/popup/ServiceSelector.tsx",
+      "source_location": "L12",
+      "id": "popup_serviceselector_serviceselector",
+      "community": 0,
+      "norm_label": "serviceselector"
+    },
+    {
+      "label": "Option.tsx",
+      "file_type": "code",
+      "source_file": "src/components/select/Option.tsx",
+      "source_location": "L1",
+      "id": "select_option",
+      "community": 8,
+      "norm_label": "option.tsx"
+    },
+    {
+      "label": "Item",
+      "file_type": "code",
+      "source_file": "src/components/select/Option.tsx",
+      "source_location": "L3",
+      "id": "select_option_item",
+      "community": 8,
+      "norm_label": "item"
+    },
+    {
+      "label": "Option()",
+      "file_type": "code",
+      "source_file": "src/components/select/Option.tsx",
+      "source_location": "L8",
+      "id": "select_option_option",
+      "community": 8,
+      "norm_label": "option()"
+    },
+    {
+      "label": "useNavigation.ts",
+      "file_type": "code",
+      "source_file": "src/hooks/useNavigation.ts",
+      "source_location": "L1",
+      "id": "hooks_usenavigation",
+      "community": 0,
+      "norm_label": "usenavigation.ts"
+    },
+    {
+      "label": "useNavigation()",
+      "file_type": "code",
+      "source_file": "src/hooks/useNavigation.ts",
+      "source_location": "L3",
+      "id": "hooks_usenavigation_usenavigation",
+      "community": 0,
+      "norm_label": "usenavigation()"
+    },
+    {
+      "label": "useOptions.ts",
+      "file_type": "code",
+      "source_file": "src/hooks/useOptions.ts",
+      "source_location": "L1",
+      "id": "hooks_useoptions",
+      "community": 0,
+      "norm_label": "useoptions.ts"
+    },
+    {
+      "label": "useOptions()",
+      "file_type": "code",
+      "source_file": "src/hooks/useOptions.ts",
+      "source_location": "L1",
+      "id": "hooks_useoptions_useoptions",
+      "community": 0,
+      "norm_label": "useoptions()"
+    },
+    {
+      "label": "useProjects.ts",
+      "file_type": "code",
+      "source_file": "src/hooks/useProjects.ts",
+      "source_location": "L1",
+      "id": "hooks_useprojects",
+      "community": 0,
+      "norm_label": "useprojects.ts"
+    },
+    {
+      "label": "useProjects()",
+      "file_type": "code",
+      "source_file": "src/hooks/useProjects.ts",
+      "source_location": "L4",
+      "id": "hooks_useprojects_useprojects",
+      "community": 0,
+      "norm_label": "useprojects()"
+    },
+    {
+      "label": "Option.tsx",
+      "file_type": "code",
+      "source_file": "src/option/Option.tsx",
+      "source_location": "L1",
+      "id": "option_option",
+      "community": 6,
+      "norm_label": "option.tsx"
+    },
+    {
+      "label": "Option()",
+      "file_type": "code",
+      "source_file": "src/option/Option.tsx",
+      "source_location": "L9",
+      "id": "option_option_option",
+      "community": 6,
+      "norm_label": "option()"
+    },
+    {
+      "label": "index.tsx",
+      "file_type": "code",
+      "source_file": "src/option/index.tsx",
+      "source_location": "L1",
+      "id": "option_index",
+      "community": 6,
+      "norm_label": "index.tsx"
+    },
+    {
+      "label": "container",
+      "file_type": "code",
+      "source_file": "src/option/index.tsx",
+      "source_location": "L4",
+      "id": "option_index_container",
+      "community": 6,
+      "norm_label": "container"
+    },
+    {
+      "label": "root",
+      "file_type": "code",
+      "source_file": "src/option/index.tsx",
+      "source_location": "L5",
+      "id": "option_index_root",
+      "community": 6,
+      "norm_label": "root"
+    },
+    {
+      "label": "Popup.test.tsx",
+      "file_type": "code",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L1",
+      "id": "popup_popup_test",
+      "community": 0,
+      "norm_label": "popup.test.tsx"
+    },
+    {
+      "label": "mockUseProjects",
+      "file_type": "code",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L102",
+      "id": "popup_popup_test_mockuseprojects",
+      "community": 0,
+      "norm_label": "mockuseprojects"
+    },
+    {
+      "label": "mockUseNavigation",
+      "file_type": "code",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L103",
+      "id": "popup_popup_test_mockusenavigation",
+      "community": 0,
+      "norm_label": "mockusenavigation"
+    },
+    {
+      "label": "mockUseOptions",
+      "file_type": "code",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L106",
+      "id": "popup_popup_test_mockuseoptions",
+      "community": 0,
+      "norm_label": "mockuseoptions"
+    },
+    {
+      "label": "mockListServices",
+      "file_type": "code",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L107",
+      "id": "popup_popup_test_mocklistservices",
+      "community": 0,
+      "norm_label": "mocklistservices"
+    },
+    {
+      "label": "Popup.tsx",
+      "file_type": "code",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L1",
+      "id": "popup_popup",
+      "community": 0,
+      "norm_label": "popup.tsx"
+    },
+    {
+      "label": "ProjectOption",
+      "file_type": "code",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L14",
+      "id": "popup_popup_projectoption",
+      "community": 0,
+      "norm_label": "projectoption"
+    },
+    {
+      "label": "Popup()",
+      "file_type": "code",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L16",
+      "id": "popup_popup_popup",
+      "community": 0,
+      "norm_label": "popup()"
+    },
+    {
+      "label": "index.tsx",
+      "file_type": "code",
+      "source_file": "src/popup/index.tsx",
+      "source_location": "L1",
+      "id": "popup_index",
+      "community": 0,
+      "norm_label": "index.tsx"
+    },
+    {
+      "label": "container",
+      "file_type": "code",
+      "source_file": "src/popup/index.tsx",
+      "source_location": "L4",
+      "id": "popup_index_container",
+      "community": 0,
+      "norm_label": "container"
+    },
+    {
+      "label": "root",
+      "file_type": "code",
+      "source_file": "src/popup/index.tsx",
+      "source_location": "L5",
+      "id": "popup_index_root",
+      "community": 0,
+      "norm_label": "root"
+    },
+    {
+      "label": "setupTests.ts",
+      "file_type": "code",
+      "source_file": "src/setupTests.ts",
+      "source_location": "L1",
+      "id": "src_setuptests",
+      "community": 21,
+      "norm_label": "setuptests.ts"
+    },
+    {
+      "label": "SelectOption.ts",
+      "file_type": "code",
+      "source_file": "src/types/SelectOption.ts",
+      "source_location": "L1",
+      "id": "types_selectoption",
+      "community": 0,
+      "norm_label": "selectoption.ts"
+    },
+    {
+      "label": "SelectOption",
+      "file_type": "code",
+      "source_file": "src/types/SelectOption.ts",
+      "source_location": "L1",
+      "id": "types_selectoption_selectoption",
+      "community": 0,
+      "norm_label": "selectoption"
+    },
+    {
+      "label": "Service.ts",
+      "file_type": "code",
+      "source_file": "src/types/Service.ts",
+      "source_location": "L1",
+      "id": "types_service",
+      "community": 0,
+      "norm_label": "service.ts"
+    },
+    {
+      "label": "Service",
+      "file_type": "code",
+      "source_file": "src/types/Service.ts",
+      "source_location": "L1",
+      "id": "types_service_service",
+      "community": 0,
+      "norm_label": "service"
+    },
+    {
+      "label": "AddProject.ts",
+      "file_type": "code",
+      "source_file": "src/utils/projects/AddProject.ts",
+      "source_location": "L1",
+      "id": "projects_addproject",
+      "community": 6,
+      "norm_label": "addproject.ts"
+    },
+    {
+      "label": "addProject()",
+      "file_type": "code",
+      "source_file": "src/utils/projects/AddProject.ts",
+      "source_location": "L3",
+      "id": "projects_addproject_addproject",
+      "community": 6,
+      "norm_label": "addproject()"
+    },
+    {
+      "label": "Constant.ts",
+      "file_type": "code",
+      "source_file": "src/utils/projects/Constant.ts",
+      "source_location": "L1",
+      "id": "projects_constant",
+      "community": 6,
+      "norm_label": "constant.ts"
+    },
+    {
+      "label": "DeleteProject.ts",
+      "file_type": "code",
+      "source_file": "src/utils/projects/DeleteProject.ts",
+      "source_location": "L1",
+      "id": "projects_deleteproject",
+      "community": 6,
+      "norm_label": "deleteproject.ts"
+    },
+    {
+      "label": "deleteProject()",
+      "file_type": "code",
+      "source_file": "src/utils/projects/DeleteProject.ts",
+      "source_location": "L4",
+      "id": "projects_deleteproject_deleteproject",
+      "community": 6,
+      "norm_label": "deleteproject()"
+    },
+    {
+      "label": "ListProject.ts",
+      "file_type": "code",
+      "source_file": "src/utils/projects/ListProject.ts",
+      "source_location": "L1",
+      "id": "projects_listproject",
+      "community": 6,
+      "norm_label": "listproject.ts"
+    },
+    {
+      "label": "listProjects()",
+      "file_type": "code",
+      "source_file": "src/utils/projects/ListProject.ts",
+      "source_location": "L3",
+      "id": "projects_listproject_listprojects",
+      "community": 6,
+      "norm_label": "listprojects()"
+    },
+    {
+      "label": "ListServices.ts",
+      "file_type": "code",
+      "source_file": "src/utils/services/ListServices.ts",
+      "source_location": "L1",
+      "id": "services_listservices",
+      "community": 0,
+      "norm_label": "listservices.ts"
+    },
+    {
+      "label": "services",
+      "file_type": "code",
+      "source_file": "src/utils/services/ListServices.ts",
+      "source_location": "L3",
+      "id": "services_listservices_services",
+      "community": 0,
+      "norm_label": "services"
+    },
+    {
+      "label": "listServices()",
+      "file_type": "code",
+      "source_file": "src/utils/services/ListServices.ts",
+      "source_location": "L290",
+      "id": "services_listservices_listservices",
+      "community": 0,
+      "norm_label": "listservices()"
+    },
+    {
+      "label": "tsconfig.json",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L1",
+      "id": "tsconfig",
+      "community": 3,
+      "norm_label": "tsconfig.json"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "id": "tsconfig_compileroptions",
+      "community": 3,
+      "norm_label": "compileroptions"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "id": "tsconfig_compileroptions_target",
+      "community": 3,
+      "norm_label": "target"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "id": "tsconfig_compileroptions_lib",
+      "community": 3,
+      "norm_label": "lib"
+    },
+    {
+      "label": "allowJs",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "id": "tsconfig_compileroptions_allowjs",
+      "community": 3,
+      "norm_label": "allowjs"
+    },
+    {
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L6",
+      "id": "tsconfig_compileroptions_skiplibcheck",
+      "community": 3,
+      "norm_label": "skiplibcheck"
+    },
+    {
+      "label": "esModuleInterop",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L7",
+      "id": "tsconfig_compileroptions_esmoduleinterop",
+      "community": 3,
+      "norm_label": "esmoduleinterop"
+    },
+    {
+      "label": "allowSyntheticDefaultImports",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L8",
+      "id": "tsconfig_compileroptions_allowsyntheticdefaultimports",
+      "community": 3,
+      "norm_label": "allowsyntheticdefaultimports"
+    },
+    {
+      "label": "strict",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L9",
+      "id": "tsconfig_compileroptions_strict",
+      "community": 3,
+      "norm_label": "strict"
+    },
+    {
+      "label": "forceConsistentCasingInFileNames",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L10",
+      "id": "tsconfig_compileroptions_forceconsistentcasinginfilenames",
+      "community": 3,
+      "norm_label": "forceconsistentcasinginfilenames"
+    },
+    {
+      "label": "noFallthroughCasesInSwitch",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L11",
+      "id": "tsconfig_compileroptions_nofallthroughcasesinswitch",
+      "community": 3,
+      "norm_label": "nofallthroughcasesinswitch"
+    },
+    {
+      "label": "module",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L12",
+      "id": "tsconfig_compileroptions_module",
+      "community": 3,
+      "norm_label": "module"
+    },
+    {
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L13",
+      "id": "tsconfig_compileroptions_moduleresolution",
+      "community": 3,
+      "norm_label": "moduleresolution"
+    },
+    {
+      "label": "resolveJsonModule",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L14",
+      "id": "tsconfig_compileroptions_resolvejsonmodule",
+      "community": 3,
+      "norm_label": "resolvejsonmodule"
+    },
+    {
+      "label": "isolatedModules",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L15",
+      "id": "tsconfig_compileroptions_isolatedmodules",
+      "community": 3,
+      "norm_label": "isolatedmodules"
+    },
+    {
+      "label": "jsx",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L16",
+      "id": "tsconfig_compileroptions_jsx",
+      "community": 3,
+      "norm_label": "jsx"
+    },
+    {
+      "label": "outDir",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L17",
+      "id": "tsconfig_compileroptions_outdir",
+      "community": 3,
+      "norm_label": "outdir"
+    },
+    {
+      "label": "include",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": "L19",
+      "id": "tsconfig_include",
+      "community": 3,
+      "norm_label": "include"
+    },
+    {
+      "label": "webpack.config.js",
+      "file_type": "code",
+      "source_file": "webpack.config.js",
+      "source_location": "L1",
+      "id": "webpack_config",
+      "community": 17,
+      "norm_label": "webpack.config.js"
+    },
+    {
+      "label": "path",
+      "file_type": "code",
+      "source_file": "webpack.config.js",
+      "source_location": "L1",
+      "id": "webpack_config_path",
+      "community": 17,
+      "norm_label": "path"
+    },
+    {
+      "label": "HtmlWebpackPlugin",
+      "file_type": "code",
+      "source_file": "webpack.config.js",
+      "source_location": "L2",
+      "id": "webpack_config_htmlwebpackplugin",
+      "community": 17,
+      "norm_label": "htmlwebpackplugin"
+    },
+    {
+      "label": "CopyWebpackPlugin",
+      "file_type": "code",
+      "source_file": "webpack.config.js",
+      "source_location": "L3",
+      "id": "webpack_config_copywebpackplugin",
+      "community": 17,
+      "norm_label": "copywebpackplugin"
+    },
+    {
+      "label": "Chrome Extension Manifest",
+      "file_type": "document",
+      "source_file": "manifest.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "manifest_manifest",
+      "community": 7,
+      "norm_label": "chrome extension manifest"
+    },
+    {
+      "label": "NPM Package Configuration",
+      "file_type": "document",
+      "source_file": "package.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "package_package",
+      "community": 7,
+      "norm_label": "npm package configuration"
+    },
+    {
+      "label": "TypeScript Configuration",
+      "file_type": "document",
+      "source_file": "tsconfig.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "tsconfig_tsconfig",
+      "community": 7,
+      "norm_label": "typescript configuration"
+    },
+    {
+      "label": "Release Skill (Claude Code)",
+      "file_type": "document",
+      "source_file": ".claude/skills/release/skill.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "release_skill",
+      "community": 7,
+      "norm_label": "release skill (claude code)"
+    },
+    {
+      "label": "GitHub Actions Release Workflow",
+      "file_type": "document",
+      "source_file": ".github/workflows/release.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "workflows_release",
+      "community": 7,
+      "norm_label": "github actions release workflow"
+    },
+    {
+      "label": "GitHub Actions CI Workflow",
+      "file_type": "document",
+      "source_file": ".github/workflows/test.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "workflows_test",
+      "community": 7,
+      "norm_label": "github actions ci workflow"
+    },
+    {
+      "label": "GCP Selector README",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_readme",
+      "community": 7,
+      "norm_label": "gcp selector readme"
+    },
+    {
+      "label": "CI Version Injection from Git Tag",
+      "file_type": "rationale",
+      "source_file": ".github/workflows/release.yml",
+      "source_location": "step:Inject version into manifest.json and package.json",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "version_injection_rationale",
+      "community": 7,
+      "norm_label": "ci version injection from git tag"
+    },
+    {
+      "label": "GCP Selector Chrome Extension",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "gcp_selector_extension",
+      "community": 7,
+      "norm_label": "gcp selector chrome extension"
+    },
+    {
+      "label": "Fuzzy Search with Highlight",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "fuzzy_search_feature",
+      "community": 7,
+      "norm_label": "fuzzy search with highlight"
+    },
+    {
+      "label": "Chrome Storage Permission",
+      "file_type": "concept",
+      "source_file": "manifest.json",
+      "source_location": "permissions",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "chrome_storage_permission",
+      "community": 7,
+      "norm_label": "chrome storage permission"
+    },
+    {
+      "label": "App Icon SVG Source",
+      "file_type": "concept",
+      "source_file": "icons/icon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "icons_icon_svg",
+      "community": 13,
+      "norm_label": "app icon svg source"
+    },
+    {
+      "label": "App Icon 128px PNG",
+      "file_type": "image",
+      "source_file": "icons/icon128.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "icons_icon128_appicon",
+      "community": 13,
+      "norm_label": "app icon 128px png"
+    },
+    {
+      "label": "App Icon 16px PNG",
+      "file_type": "image",
+      "source_file": "icons/icon16.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "icons_icon16_appicon",
+      "community": 13,
+      "norm_label": "app icon 16px png"
+    },
+    {
+      "label": "App Icon 32px PNG",
+      "file_type": "image",
+      "source_file": "icons/icon32.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "icons_icon32_appicon",
+      "community": 13,
+      "norm_label": "app icon 32px png"
+    },
+    {
+      "label": "App Icon 48px PNG",
+      "file_type": "image",
+      "source_file": "icons/icon48.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "icons_icon48_appicon",
+      "community": 13,
+      "norm_label": "app icon 48px png"
+    },
+    {
+      "label": "Cloud Search Icon Visual Design",
+      "file_type": "concept",
+      "source_file": "icons/icon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "icons_icon_visual_design",
+      "community": 13,
+      "norm_label": "cloud search icon visual design"
+    },
+    {
+      "label": "Options Page UI",
+      "file_type": "image",
+      "source_file": "image/option.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_option_options_page",
+      "community": 9,
+      "norm_label": "options page ui"
+    },
+    {
+      "label": "Project Manager",
+      "file_type": "image",
+      "source_file": "image/option.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_option_project_manager",
+      "community": 9,
+      "norm_label": "project manager"
+    },
+    {
+      "label": "Enter Project ID Input Field",
+      "file_type": "image",
+      "source_file": "image/option.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_option_add_project_input",
+      "community": 9,
+      "norm_label": "enter project id input field"
+    },
+    {
+      "label": "Add Project Button",
+      "file_type": "image",
+      "source_file": "image/option.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_option_add_project_button",
+      "community": 9,
+      "norm_label": "add project button"
+    },
+    {
+      "label": "Project List Table",
+      "file_type": "image",
+      "source_file": "image/option.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_option_project_list",
+      "community": 9,
+      "norm_label": "project list table"
+    },
+    {
+      "label": "Delete Project Button (trash icon)",
+      "file_type": "image",
+      "source_file": "image/option.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_option_delete_button",
+      "community": 9,
+      "norm_label": "delete project button (trash icon)"
+    },
+    {
+      "label": "Project ID Column",
+      "file_type": "image",
+      "source_file": "image/option.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_option_project_id_column",
+      "community": 9,
+      "norm_label": "project id column"
+    },
+    {
+      "label": "Action Column",
+      "file_type": "image",
+      "source_file": "image/option.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_option_action_column",
+      "community": 9,
+      "norm_label": "action column"
+    },
+    {
+      "label": "Popup Project Selection UI",
+      "file_type": "image",
+      "source_file": "image/popup-project.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_project_project_selection",
+      "community": 10,
+      "norm_label": "popup project selection ui"
+    },
+    {
+      "label": "GCP Selector Title",
+      "file_type": "image",
+      "source_file": "image/popup-project.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_project_title",
+      "community": 10,
+      "norm_label": "gcp selector title"
+    },
+    {
+      "label": "Settings Button",
+      "file_type": "image",
+      "source_file": "image/popup-project.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_project_settings_button",
+      "community": 10,
+      "norm_label": "settings button"
+    },
+    {
+      "label": "Project ID Input Field",
+      "file_type": "image",
+      "source_file": "image/popup-project.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_project_project_id_input",
+      "community": 10,
+      "norm_label": "project id input field"
+    },
+    {
+      "label": "Autocomplete Dropdown with Highlighted Match",
+      "file_type": "image",
+      "source_file": "image/popup-project.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_project_autocomplete_dropdown",
+      "community": 10,
+      "norm_label": "autocomplete dropdown with highlighted match"
+    },
+    {
+      "label": "Select Service Dropdown",
+      "file_type": "image",
+      "source_file": "image/popup-project.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_project_service_selector",
+      "community": 10,
+      "norm_label": "select service dropdown"
+    },
+    {
+      "label": "Search Term Highlight in Suggestion",
+      "file_type": "image",
+      "source_file": "image/popup-project.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_project_search_highlight",
+      "community": 10,
+      "norm_label": "search term highlight in suggestion"
+    },
+    {
+      "label": "Chrome Extension Popup Window",
+      "file_type": "image",
+      "source_file": "image/popup-project.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_project_chrome_extension_popup",
+      "community": 10,
+      "norm_label": "chrome extension popup window"
+    },
+    {
+      "label": "Popup Service Selection UI",
+      "file_type": "image",
+      "source_file": "image/popup-service.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_service_service_selection",
+      "community": 12,
+      "norm_label": "popup service selection ui"
+    },
+    {
+      "label": "Project ID Dropdown Field",
+      "file_type": "image",
+      "source_file": "image/popup-service.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_service_project_id_field",
+      "community": 12,
+      "norm_label": "project id dropdown field"
+    },
+    {
+      "label": "Service Search/Filter Field",
+      "file_type": "image",
+      "source_file": "image/popup-service.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_service_service_field",
+      "community": 12,
+      "norm_label": "service search/filter field"
+    },
+    {
+      "label": "Cloud Run Service Option",
+      "file_type": "image",
+      "source_file": "image/popup-service.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_service_cloud_run",
+      "community": 12,
+      "norm_label": "cloud run service option"
+    },
+    {
+      "label": "Cloud Run Jobs Service Option",
+      "file_type": "image",
+      "source_file": "image/popup-service.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_service_cloud_run_jobs",
+      "community": 12,
+      "norm_label": "cloud run jobs service option"
+    },
+    {
+      "label": "Settings Button",
+      "file_type": "image",
+      "source_file": "image/popup-service.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_service_settings_button",
+      "community": 12,
+      "norm_label": "settings button"
+    },
+    {
+      "label": "Matched Text Highlight in Dropdown",
+      "file_type": "image",
+      "source_file": "image/popup-service.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_service_search_highlight",
+      "community": 12,
+      "norm_label": "matched text highlight in dropdown"
+    },
+    {
+      "label": "Popup Animated Demo GIF",
+      "file_type": "image",
+      "source_file": "image/popup.gif",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_animated_demo",
+      "community": 14,
+      "norm_label": "popup animated demo gif"
+    },
+    {
+      "label": "Chrome Browser Context",
+      "file_type": "concept",
+      "source_file": "image/popup.gif",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_chrome_browser",
+      "community": 14,
+      "norm_label": "chrome browser context"
+    },
+    {
+      "label": "Google Homepage (Japanese Locale)",
+      "file_type": "concept",
+      "source_file": "image/popup.gif",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_google_homepage",
+      "community": 14,
+      "norm_label": "google homepage (japanese locale)"
+    },
+    {
+      "label": "Chrome Extension Popup UI",
+      "file_type": "concept",
+      "source_file": "image/popup.gif",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_extension_popup",
+      "community": 14,
+      "norm_label": "chrome extension popup ui"
+    },
+    {
+      "label": "Demo Background Page",
+      "file_type": "concept",
+      "source_file": "image/popup.gif",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_demo_background",
+      "community": 14,
+      "norm_label": "demo background page"
+    },
+    {
+      "label": "Japanese Language Locale",
+      "file_type": "concept",
+      "source_file": "image/popup.gif",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_japanese_locale",
+      "community": 14,
+      "norm_label": "japanese language locale"
+    },
+    {
+      "label": "Main Popup UI",
+      "file_type": "image",
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_main_popup",
+      "community": 15,
+      "norm_label": "main popup ui"
+    },
+    {
+      "label": "GCP Selector Title",
+      "file_type": "image",
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_title",
+      "community": 15,
+      "norm_label": "gcp selector title"
+    },
+    {
+      "label": "Settings Button",
+      "file_type": "image",
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_settings_button",
+      "community": 15,
+      "norm_label": "settings button"
+    },
+    {
+      "label": "Project ID Dropdown",
+      "file_type": "image",
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_project_id_dropdown",
+      "community": 15,
+      "norm_label": "project id dropdown"
+    },
+    {
+      "label": "Service Dropdown",
+      "file_type": "image",
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_service_dropdown",
+      "community": 15,
+      "norm_label": "service dropdown"
+    },
+    {
+      "label": "Chrome Extension",
+      "file_type": "image",
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_popup_chrome_extension",
+      "community": 15,
+      "norm_label": "chrome extension"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/fixtures.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "e2e_fixtures",
+      "target": "e2e_fixtures_extension_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/fixtures.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "e2e_fixtures",
+      "target": "e2e_fixtures_test",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/integration.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "e2e_integration_spec",
+      "target": "e2e_fixtures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/option.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "e2e_option_spec",
+      "target": "e2e_fixtures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/popup.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "e2e_popup_spec",
+      "target": "e2e_fixtures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/integration.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "e2e_integration_spec",
+      "target": "e2e_fixtures_test",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/option.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "e2e_option_spec",
+      "target": "e2e_fixtures_test",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/popup.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "e2e_popup_spec",
+      "target": "e2e_fixtures_test",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e/popup.spec.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "e2e_popup_spec",
+      "target": "e2e_popup_spec_test_projects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_action",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_description",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_icons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_manifest_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_options_page",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_permissions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "manifest",
+      "target": "manifest_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "manifest_icons",
+      "target": "manifest_icons_128",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "manifest_icons",
+      "target": "manifest_icons_16",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "manifest_icons",
+      "target": "manifest_icons_32",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "manifest_icons",
+      "target": "manifest_icons_48",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "manifest.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "manifest_action",
+      "target": "manifest_action_default_popup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_author",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_description",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_devdependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_keywords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_license",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_scripts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_dev",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_format",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_format_check",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_lint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_lint_fix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_test",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_test_coverage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_test_e2e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_test_e2e_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_test_watch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_type_check",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_zip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_fortawesome_fontawesome_svg_core",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_fortawesome_free_solid_svg_icons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_fortawesome_react_fontawesome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_select",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_types_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_types_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_types_react_select",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_copy_webpack_plugin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_css_loader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_config_prettier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_plugin_prettier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_plugin_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_plugin_react_hooks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_html_webpack_plugin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_identity_obj_proxy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_jest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_jest_environment_jsdom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_playwright_test",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_prettier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_style_loader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_testing_library_jest_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_testing_library_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_testing_library_user_event",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_ts_jest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_ts_loader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_chrome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_eslint_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_jest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript_eslint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript_eslint_eslint_plugin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_typescript_eslint_parser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_webpack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_webpack_cli",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_webpack_dev_server",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/NoProjectsMessage.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "popup_noprojectsmessage",
+      "target": "popup_noprojectsmessage_noprojectsmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/NoProjectsMessage.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "popup_noprojectsmessage",
+      "target": "popup_noprojectsmessage_noprojectsmessageprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "popup_noprojectsmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/PopupHeader.test.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "popup_popupheader_test",
+      "target": "popup_popupheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "popup_popupheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/PopupHeader.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "popup_popupheader",
+      "target": "popup_popupheader_popupheader",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/PopupHeader.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "popup_popupheader",
+      "target": "popup_popupheader_popupheaderprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ProjectSelector.test.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "popup_projectselector_test",
+      "target": "popup_projectselector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ProjectSelector.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "popup_projectselector_test",
+      "target": "popup_projectselector_test_mockprojectids",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "popup_projectselector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ProjectSelector.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "popup_projectselector",
+      "target": "popup_projectselector_projectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ProjectSelector.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "popup_projectselector",
+      "target": "popup_projectselector_projectselector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ProjectSelector.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "popup_projectselector",
+      "target": "popup_projectselector_projectselectorprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ProjectSelector.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "popup_projectselector",
+      "target": "select_option",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ServiceSelector.test.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "popup_serviceselector_test",
+      "target": "popup_serviceselector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ServiceSelector.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "popup_serviceselector_test",
+      "target": "popup_serviceselector_test_mockservices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "popup_serviceselector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ServiceSelector.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "popup_serviceselector",
+      "target": "popup_serviceselector_serviceselector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ServiceSelector.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "popup_serviceselector",
+      "target": "popup_serviceselector_serviceselectorprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ServiceSelector.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "popup_serviceselector",
+      "target": "select_option",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ServiceSelector.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "popup_serviceselector",
+      "target": "types_selectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ServiceSelector.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "popup_serviceselector",
+      "target": "types_selectoption_selectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/popup/ServiceSelector.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "popup_serviceselector_serviceselectorprops",
+      "target": "types_selectoption_selectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/select/Option.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "select_option",
+      "target": "select_option_item",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/select/Option.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "select_option",
+      "target": "select_option_option",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useNavigation.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "hooks_usenavigation",
+      "target": "hooks_usenavigation_usenavigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useNavigation.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "hooks_usenavigation",
+      "target": "types_selectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useNavigation.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "hooks_usenavigation",
+      "target": "types_selectoption_selectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "hooks_usenavigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "hooks_usenavigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "hooks_usenavigation_usenavigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "popup_popup_popup",
+      "target": "hooks_usenavigation_usenavigation"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "hooks_usenavigation_usenavigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useOptions.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "hooks_useoptions",
+      "target": "hooks_useoptions_useoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "hooks_useoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "hooks_useoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "hooks_useoptions_useoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "popup_popup_popup",
+      "target": "hooks_useoptions_useoptions"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "hooks_useoptions_useoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useProjects.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "hooks_useprojects",
+      "target": "hooks_useprojects_useprojects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useProjects.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "hooks_useprojects",
+      "target": "projects_listproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "hooks_useprojects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "hooks_useprojects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "hooks_useprojects_useprojects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "popup_popup_popup",
+      "target": "hooks_useprojects_useprojects"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "hooks_useprojects_useprojects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "manifest.json",
+      "source_location": "options_page",
+      "weight": 1.0,
+      "source": "manifest_manifest",
+      "target": "option_option"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/option/index.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "option_index",
+      "target": "option_option",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/option/Option.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "option_option",
+      "target": "option_option_option",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/option/option.html",
+      "source_location": null,
+      "weight": 0.75,
+      "source": "option_option",
+      "target": "popup_popup"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/option/Option.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "option_option",
+      "target": "projects_addproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/option/Option.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "option_option",
+      "target": "projects_deleteproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/option/Option.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "option_option",
+      "target": "projects_listproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/option/index.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "option_index",
+      "target": "option_index_container",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/option/index.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "option_index",
+      "target": "option_index_root",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "popup_popup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "popup_popup_test_mocklistservices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "popup_popup_test_mockusenavigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "popup_popup_test_mockuseoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "popup_popup_test_mockuseprojects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.test.tsx",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "popup_popup_test",
+      "target": "services_listservices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "manifest.json",
+      "source_location": "action.default_popup",
+      "weight": 1.0,
+      "source": "manifest_manifest",
+      "target": "popup_popup"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/index.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "popup_index",
+      "target": "popup_popup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "popup_popup_popup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "popup_popup_projectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "services_listservices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "types_selectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "popup_popup",
+      "target": "types_selectoption_selectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/popup/Popup.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "popup_popup_popup",
+      "target": "services_listservices_listservices"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/index.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "popup_index",
+      "target": "popup_index_container",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/popup/index.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "popup_index",
+      "target": "popup_index_root",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/types/SelectOption.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "types_selectoption",
+      "target": "types_selectoption_selectoption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/services/ListServices.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_listservices",
+      "target": "types_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/types/Service.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "types_service",
+      "target": "types_service_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/projects/AddProject.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "projects_addproject",
+      "target": "projects_addproject_addproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/projects/AddProject.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "projects_addproject",
+      "target": "projects_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/projects/DeleteProject.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "projects_deleteproject",
+      "target": "projects_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/projects/ListProject.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "projects_listproject",
+      "target": "projects_constant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/projects/DeleteProject.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "projects_deleteproject",
+      "target": "projects_deleteproject_deleteproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/projects/DeleteProject.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "projects_deleteproject",
+      "target": "projects_listproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/utils/projects/DeleteProject.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "projects_deleteproject_deleteproject",
+      "target": "projects_listproject_listprojects"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/projects/ListProject.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "projects_listproject",
+      "target": "projects_listproject_listprojects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/services/ListServices.ts",
+      "source_location": "L290",
+      "weight": 1.0,
+      "source": "services_listservices",
+      "target": "services_listservices_listservices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/services/ListServices.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "services_listservices",
+      "target": "services_listservices_services",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tsconfig",
+      "target": "tsconfig_compileroptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "tsconfig",
+      "target": "tsconfig_include",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_allowjs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_allowsyntheticdefaultimports",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_esmoduleinterop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_forceconsistentcasinginfilenames",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_isolatedmodules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_lib",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_module",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_moduleresolution",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_nofallthroughcasesinswitch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_outdir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_resolvejsonmodule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_skiplibcheck",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_strict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "tsconfig_compileroptions",
+      "target": "tsconfig_compileroptions_target",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "webpack.config.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "webpack_config",
+      "target": "webpack_config_copywebpackplugin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "webpack.config.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "webpack_config",
+      "target": "webpack_config_htmlwebpackplugin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "webpack.config.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "webpack_config",
+      "target": "webpack_config_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "manifest.json",
+      "source_location": "permissions",
+      "weight": 1.0,
+      "source": "manifest_manifest",
+      "target": "chrome_storage_permission"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/release.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "version_injection_rationale",
+      "target": "manifest_manifest"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/release.yml",
+      "source_location": "step:Inject version into manifest.json and package.json",
+      "weight": 1.0,
+      "source": "workflows_release",
+      "target": "manifest_manifest"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "package.json",
+      "source_location": "scripts.type-check: tsc --noEmit",
+      "weight": 1.0,
+      "source": "package_package",
+      "target": "tsconfig_tsconfig"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/release.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "version_injection_rationale",
+      "target": "package_package"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/release.yml",
+      "source_location": "step:Inject version into manifest.json and package.json",
+      "weight": 1.0,
+      "source": "workflows_release",
+      "target": "package_package"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": ".github/workflows/test.yml",
+      "source_location": "steps:npm ci, npm run lint, npm test",
+      "weight": 1.0,
+      "source": "workflows_test",
+      "target": "package_package"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "Claude Skills section",
+      "weight": 1.0,
+      "source": "readme_readme",
+      "target": "release_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": ".claude/skills/release/skill.md",
+      "source_location": "Step 4: Upload to Chrome Web Store",
+      "weight": 1.0,
+      "source": "release_skill",
+      "target": "gcp_selector_extension"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".claude/skills/release/skill.md",
+      "source_location": "Step 3: Wait for CI to complete",
+      "weight": 1.0,
+      "source": "release_skill",
+      "target": "workflows_release"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": "Release steps section",
+      "weight": 1.0,
+      "source": "readme_readme",
+      "target": "workflows_release"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/workflows/release.yml",
+      "source_location": "step:Inject version from tag",
+      "weight": 1.0,
+      "source": "workflows_release",
+      "target": "version_injection_rationale"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "Testing section",
+      "weight": 1.0,
+      "source": "readme_readme",
+      "target": "workflows_test"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "Features section",
+      "weight": 1.0,
+      "source": "readme_readme",
+      "target": "fuzzy_search_feature"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "Features section",
+      "weight": 1.0,
+      "source": "readme_readme",
+      "target": "gcp_selector_extension"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "Release section: Versions are managed automatically by CI",
+      "weight": 1.0,
+      "source": "readme_readme",
+      "target": "version_injection_rationale"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "gcp_selector_extension",
+      "target": "fuzzy_search_feature"
+    },
+    {
+      "relation": "generates",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "icons/icon.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "icons_icon_svg",
+      "target": "icons_icon128_appicon"
+    },
+    {
+      "relation": "generates",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "icons/icon.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "icons_icon_svg",
+      "target": "icons_icon16_appicon"
+    },
+    {
+      "relation": "generates",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "icons/icon.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "icons_icon_svg",
+      "target": "icons_icon32_appicon"
+    },
+    {
+      "relation": "generates",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "icons/icon.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "icons_icon_svg",
+      "target": "icons_icon48_appicon"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "icons/icon.svg",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "icons_icon_svg",
+      "target": "icons_icon_visual_design"
+    },
+    {
+      "relation": "renders",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "icons/icon128.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "icons_icon128_appicon",
+      "target": "icons_icon_visual_design"
+    },
+    {
+      "relation": "renders",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "icons/icon16.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "icons_icon16_appicon",
+      "target": "icons_icon_visual_design"
+    },
+    {
+      "relation": "renders",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "icons/icon32.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "icons_icon32_appicon",
+      "target": "icons_icon_visual_design"
+    },
+    {
+      "relation": "renders",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "icons/icon48.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "icons_icon48_appicon",
+      "target": "icons_icon_visual_design"
+    },
+    {
+      "from": "image_option_options_page",
+      "to": "image_option_add_project_button",
+      "relation": "CONTAINS",
+      "type": "EXTRACTED",
+      "rationale": "The options page contains an 'Add Project' button next to the input field",
+      "confidence_score": 1.0,
+      "source": "image_option_options_page",
+      "target": "image_option_add_project_button"
+    },
+    {
+      "from": "image_option_options_page",
+      "to": "image_option_add_project_input",
+      "relation": "CONTAINS",
+      "type": "EXTRACTED",
+      "rationale": "The options page contains a text input field with placeholder 'Enter Project ID'",
+      "confidence_score": 1.0,
+      "source": "image_option_options_page",
+      "target": "image_option_add_project_input"
+    },
+    {
+      "from": "image_option_options_page",
+      "to": "image_option_project_list",
+      "relation": "MANAGES",
+      "type": "INFERRED",
+      "rationale": "The options page is the management UI for the list of GCP project IDs used by the extension",
+      "confidence_score": 0.95,
+      "source": "image_option_options_page",
+      "target": "image_option_project_list"
+    },
+    {
+      "from": "image_option_options_page",
+      "to": "image_option_project_manager",
+      "relation": "CONTAINS",
+      "type": "EXTRACTED",
+      "rationale": "The options page displays a 'Project Manager' heading as its primary title",
+      "confidence_score": 1.0,
+      "source": "image_option_options_page",
+      "target": "image_option_project_manager"
+    },
+    {
+      "from": "image_option_add_project_input",
+      "to": "image_option_add_project_button",
+      "relation": "PAIRED_WITH",
+      "type": "EXTRACTED",
+      "rationale": "The text input and Add Project button form a single data-entry unit for adding a new project ID",
+      "confidence_score": 1.0,
+      "source": "image_option_add_project_input",
+      "target": "image_option_add_project_button"
+    },
+    {
+      "from": "image_option_add_project_button",
+      "to": "image_option_project_list",
+      "relation": "APPENDS_TO",
+      "type": "INFERRED",
+      "rationale": "Clicking Add Project with a filled input appends a new entry to the project list",
+      "confidence_score": 0.95,
+      "source": "image_option_add_project_button",
+      "target": "image_option_project_list"
+    },
+    {
+      "from": "image_option_delete_button",
+      "to": "image_option_project_list",
+      "relation": "REMOVES_FROM",
+      "type": "INFERRED",
+      "rationale": "Clicking the trash icon removes the corresponding project entry from the list",
+      "confidence_score": 0.95,
+      "source": "image_option_delete_button",
+      "target": "image_option_project_list"
+    },
+    {
+      "from": "image_option_project_list",
+      "to": "image_option_action_column",
+      "relation": "HAS_COLUMN",
+      "type": "EXTRACTED",
+      "rationale": "The table has an 'Action' column header",
+      "confidence_score": 1.0,
+      "source": "image_option_project_list",
+      "target": "image_option_action_column"
+    },
+    {
+      "from": "image_option_project_list",
+      "to": "image_option_project_id_column",
+      "relation": "HAS_COLUMN",
+      "type": "EXTRACTED",
+      "rationale": "The table has a 'Project ID' column header",
+      "confidence_score": 1.0,
+      "source": "image_option_project_list",
+      "target": "image_option_project_id_column"
+    },
+    {
+      "from": "image_option_action_column",
+      "to": "image_option_delete_button",
+      "relation": "CONTAINS",
+      "type": "EXTRACTED",
+      "rationale": "Each row in the Action column shows a red trash-icon delete button",
+      "confidence_score": 1.0,
+      "source": "image_option_action_column",
+      "target": "image_option_delete_button"
+    },
+    {
+      "from": "image_popup_project_project_selection",
+      "to": "image_popup_project_chrome_extension_popup",
+      "relation": "is_primary_view_of",
+      "provenance": "INFERRED",
+      "confidence_score": 0.95,
+      "weight": 0.95,
+      "attributes": {},
+      "source": "image_popup_project_project_selection",
+      "target": "image_popup_project_chrome_extension_popup"
+    },
+    {
+      "from": "image_popup_project_project_selection",
+      "to": "image_popup_project_project_id_input",
+      "relation": "has_input_field",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "attributes": {
+        "label": "Project ID",
+        "current_value": "test",
+        "focused": true
+      },
+      "source": "image_popup_project_project_selection",
+      "target": "image_popup_project_project_id_input"
+    },
+    {
+      "from": "image_popup_project_project_selection",
+      "to": "image_popup_project_service_selector",
+      "relation": "has_input_field",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "attributes": {
+        "label": "Select service",
+        "state": "disabled_or_empty",
+        "depends_on": "project_id"
+      },
+      "source": "image_popup_project_project_selection",
+      "target": "image_popup_project_service_selector"
+    },
+    {
+      "from": "image_popup_project_project_selection",
+      "to": "image_popup_project_settings_button",
+      "relation": "has_action",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "attributes": {},
+      "source": "image_popup_project_project_selection",
+      "target": "image_popup_project_settings_button"
+    },
+    {
+      "from": "image_popup_project_project_selection",
+      "to": "image_popup_project_title",
+      "relation": "has_header",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "attributes": {},
+      "source": "image_popup_project_project_selection",
+      "target": "image_popup_project_title"
+    },
+    {
+      "from": "image_popup_project_title",
+      "to": "image_popup_project_chrome_extension_popup",
+      "relation": "identifies",
+      "provenance": "INFERRED",
+      "confidence_score": 0.85,
+      "weight": 0.85,
+      "attributes": {
+        "extension_name": "GCP Selector"
+      },
+      "source": "image_popup_project_title",
+      "target": "image_popup_project_chrome_extension_popup"
+    },
+    {
+      "from": "image_popup_project_project_id_input",
+      "to": "image_popup_project_autocomplete_dropdown",
+      "relation": "triggers",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "attributes": {
+        "suggestion": "test-project"
+      },
+      "source": "image_popup_project_project_id_input",
+      "target": "image_popup_project_autocomplete_dropdown"
+    },
+    {
+      "from": "image_popup_project_project_id_input",
+      "to": "image_popup_project_service_selector",
+      "relation": "precedes",
+      "provenance": "INFERRED",
+      "confidence_score": 0.95,
+      "weight": 0.95,
+      "attributes": {
+        "reason": "service selection likely depends on project selection"
+      },
+      "source": "image_popup_project_project_id_input",
+      "target": "image_popup_project_service_selector"
+    },
+    {
+      "from": "image_popup_project_autocomplete_dropdown",
+      "to": "image_popup_project_search_highlight",
+      "relation": "contains",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "weight": 1.0,
+      "attributes": {
+        "highlighted_text": "test",
+        "full_suggestion": "test-project"
+      },
+      "source": "image_popup_project_autocomplete_dropdown",
+      "target": "image_popup_project_search_highlight"
+    },
+    {
+      "relation": "CONTAINS",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "note": "Popup UI contains a Project ID dropdown field showing 'test-project'",
+      "source": "image_popup_service_service_selection",
+      "target": "image_popup_service_project_id_field"
+    },
+    {
+      "relation": "IMPLEMENTS",
+      "provenance": "INFERRED",
+      "confidence_score": 0.95,
+      "note": "The popup implements incremental search with keyword highlight to help users quickly locate GCP services",
+      "source": "image_popup_service_service_selection",
+      "target": "image_popup_service_search_highlight"
+    },
+    {
+      "relation": "CONTAINS",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "note": "Popup UI contains a Service search/filter field with 'run' typed in it",
+      "source": "image_popup_service_service_selection",
+      "target": "image_popup_service_service_field"
+    },
+    {
+      "relation": "CONTAINS",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "note": "Popup UI contains a Settings button (gear icon) in the top-right",
+      "source": "image_popup_service_service_selection",
+      "target": "image_popup_service_settings_button"
+    },
+    {
+      "relation": "PRECEDES",
+      "provenance": "INFERRED",
+      "confidence_score": 0.85,
+      "note": "User selects a Project ID first, then selects a service \u2014 typical GCP console navigation flow",
+      "source": "image_popup_service_project_id_field",
+      "target": "image_popup_service_service_field"
+    },
+    {
+      "relation": "SHOWS_RESULT",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "note": "Typing 'run' in the service field shows 'Cloud Run' as a dropdown option",
+      "source": "image_popup_service_service_field",
+      "target": "image_popup_service_cloud_run"
+    },
+    {
+      "relation": "SHOWS_RESULT",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "note": "Typing 'run' in the service field shows 'Cloud Run Jobs' as a dropdown option",
+      "source": "image_popup_service_service_field",
+      "target": "image_popup_service_cloud_run_jobs"
+    },
+    {
+      "relation": "USES",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "note": "'Run' portion of 'Cloud Run' is highlighted in red to indicate matched search term",
+      "source": "image_popup_service_cloud_run",
+      "target": "image_popup_service_search_highlight"
+    },
+    {
+      "relation": "USES",
+      "provenance": "EXTRACTED",
+      "confidence_score": 1.0,
+      "note": "'Run' portion of 'Cloud Run Jobs' is highlighted in red to indicate matched search term",
+      "source": "image_popup_service_cloud_run_jobs",
+      "target": "image_popup_service_search_highlight"
+    },
+    {
+      "relation": "DEPICTS",
+      "qualifier": "shows Chrome browser as demo environment",
+      "extraction_method": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "image_popup_animated_demo",
+      "target": "image_popup_chrome_browser"
+    },
+    {
+      "relation": "USES",
+      "qualifier": "Google homepage used as background context for demo",
+      "extraction_method": "INFERRED",
+      "confidence_score": 0.85,
+      "source": "image_popup_animated_demo",
+      "target": "image_popup_demo_background"
+    },
+    {
+      "relation": "DEMONSTRATES",
+      "qualifier": "animated GIF demonstrates the extension popup interaction",
+      "extraction_method": "INFERRED",
+      "confidence_score": 0.95,
+      "source": "image_popup_animated_demo",
+      "target": "image_popup_extension_popup"
+    },
+    {
+      "relation": "DEPICTS",
+      "qualifier": "Google homepage visible as active tab background",
+      "extraction_method": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "image_popup_animated_demo",
+      "target": "image_popup_google_homepage"
+    },
+    {
+      "relation": "TARGETS",
+      "qualifier": "demo appears to target Japanese-locale users",
+      "extraction_method": "INFERRED",
+      "confidence_score": 0.75,
+      "source": "image_popup_animated_demo",
+      "target": "image_popup_japanese_locale"
+    },
+    {
+      "relation": "HOSTS",
+      "qualifier": "Chrome browser hosts the extension popup",
+      "extraction_method": "INFERRED",
+      "confidence_score": 0.95,
+      "source": "image_popup_chrome_browser",
+      "target": "image_popup_extension_popup"
+    },
+    {
+      "relation": "DISPLAYED_IN",
+      "qualifier": "Google UI rendered in Japanese (hl=ja)",
+      "extraction_method": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "image_popup_google_homepage",
+      "target": "image_popup_japanese_locale"
+    },
+    {
+      "relation": "RENDERS",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "weight": 0.95,
+      "source": "image_popup_chrome_extension",
+      "target": "image_popup_main_popup"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "image_popup_main_popup",
+      "target": "image_popup_project_id_dropdown"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "image_popup_main_popup",
+      "target": "image_popup_service_dropdown"
+    },
+    {
+      "relation": "NAVIGATES_FROM",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "weight": 0.85,
+      "source": "image_popup_settings_button",
+      "target": "image_popup_main_popup"
+    },
+    {
+      "relation": "CONTAINS",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "image_popup_main_popup",
+      "target": "image_popup_title"
+    },
+    {
+      "relation": "PRECEDES",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "image/popup.png",
+      "source_location": null,
+      "weight": 0.85,
+      "source": "image_popup_project_id_dropdown",
+      "target": "image_popup_service_dropdown"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "ci_cd_pipeline",
+      "label": "CI/CD Pipeline: Test, Build, Release",
+      "nodes": [
+        "workflows_test",
+        "workflows_release",
+        "package_package",
+        "manifest_manifest"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": ".github/workflows/release.yml"
+    },
+    {
+      "id": "chrome_extension_entry_points",
+      "label": "Chrome Extension Entry Points (Popup and Option)",
+      "nodes": [
+        "manifest_manifest",
+        "popup_popup",
+        "option_option"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "manifest.json"
+    },
+    {
+      "id": "release_process_flow",
+      "label": "Full Release Process Flow",
+      "nodes": [
+        "release_skill",
+        "workflows_release",
+        "readme_readme",
+        "gcp_selector_extension"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".claude/skills/release/skill.md"
+    }
+  ],
+  "built_at_commit": "36361307c27f827f6779fcc52a5eb3790f413003"
+}
